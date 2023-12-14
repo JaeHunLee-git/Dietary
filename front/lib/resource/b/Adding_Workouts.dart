@@ -212,6 +212,7 @@ class Scene extends StatelessWidget {
                                         'Inter',
                                         fontSize: 16*ffem,
                                         fontWeight: FontWeight.w600,
+
                                         height: 1.2125*ffem/fem,
                                         color: Color(0xff434141),
                                       ),
