@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "741972565994",
+    "project_id": "caloriepay",
+    "storage_bucket": "caloriepay.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:741972565994:android:0389ab93f4856c091a9c93",
+        "android_client_info": {
+          "package_name": "com.example.test"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFyvt3qyPGADsqsIXWuFWjNBiUdAoS79c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
