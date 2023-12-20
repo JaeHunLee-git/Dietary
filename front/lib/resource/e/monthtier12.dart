@@ -4,7 +4,7 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 
-class Scene extends StatelessWidget {
+class monthtier12 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 360;
@@ -13,7 +13,7 @@ class Scene extends StatelessWidget {
     return Container(
       width: double.infinity,
       child: Container(
-        // GGD (160:8105)
+        // 1rV (160:8239)
         width: double.infinity,
         height: 780*fem,
         decoration: BoxDecoration (
@@ -22,7 +22,7 @@ class Scene extends StatelessWidget {
         child: Stack(
           children: [
             Positioned(
-              // rectangle164xuj (160:8106)
+              // rectangle164KMP (160:8240)
               left: 16*fem,
               top: 116*fem,
               child: Align(
@@ -46,24 +46,63 @@ class Scene extends StatelessWidget {
               ),
             ),
             Positioned(
-              // sSa1 (160:8107)
-              left: 162.5*fem,
-              top: 370*fem,
+              // zTX (160:8241)
+              left: 99*fem,
+              top: 204*fem,
+              child: Align(
+                child: SizedBox(
+                  width: 165*fem,
+                  height: 19*fem,
+                  child: Text(
+                    '12월 나의 건강티어는?',
+                    style: SafeGoogleFont (
+                      'Inter',
+                      fontSize: 15*ffem,
+                      fontWeight: FontWeight.w700,
+                      height: 1.2125*ffem/fem,
+                      letterSpacing: 1.5*fem,
+                      color: Color(0xff000000),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              // FuF (160:8242)
+              left: 104*fem,
+              top: 364*fem,
               child: Center(
                 child: Align(
                   child: SizedBox(
-                    width: 33*fem,
-                    height: 19*fem,
-                    child: Text(
-                      'S등급',
+                    width: 150*fem,
+                    height: 31*fem,
+                    child: RichText(
                       textAlign: TextAlign.center,
-                      style: SafeGoogleFont (
-                        'Inter',
-                        fontSize: 15*ffem,
-                        fontWeight: FontWeight.w700,
-                        height: 1.2125*ffem/fem,
-                        letterSpacing: 1.5*fem,
-                        color: Color(0xff17a0f9),
+                      text: TextSpan(
+                        style: SafeGoogleFont (
+                          'Inter',
+                          fontSize: 15*ffem,
+                          fontWeight: FontWeight.w700,
+                          height: 1.2125*ffem/fem,
+                          letterSpacing: 1.5*fem,
+                          color: Color(0xff979797),
+                        ),
+                        children: [
+                          TextSpan(
+                            text: '측정중\n',
+                          ),
+                          TextSpan(
+                            text: '티어정보는 매월 말일에 공개됩니다',
+                            style: SafeGoogleFont (
+                              'Inter',
+                              fontSize: 10*ffem,
+                              fontWeight: FontWeight.w700,
+                              height: 1.2125*ffem/fem,
+                              letterSpacing: 1.5*fem,
+                              color: Color(0xff979797),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -71,7 +110,65 @@ class Scene extends StatelessWidget {
               ),
             ),
             Positioned(
-              // group12168m (160:8108)
+              // caloriescorev8D (160:8243)
+              left: 26*fem,
+              top: 481*fem,
+              child: Container(
+                padding: EdgeInsets.fromLTRB(13*fem, 11*fem, 44*fem, 10*fem),
+                width: 306*fem,
+                height: 38*fem,
+                decoration: BoxDecoration (
+                  color: Color(0xff4d5466),
+                  borderRadius: BorderRadius.circular(10*fem),
+                ),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      // caloriescorengD (160:8245)
+                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 9*fem, 1*fem),
+                      child: Text(
+                        '12월 최고 Calorie Score',
+                        style: SafeGoogleFont (
+                          'Inter',
+                          fontSize: 13*ffem,
+                          fontWeight: FontWeight.w500,
+                          height: 1.2125*ffem/fem,
+                          letterSpacing: 0.65*fem,
+                          color: Color(0xffffffff),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      // line17tDT (160:8246)
+                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 36*fem, 10*fem),
+                      width: 0*fem,
+                      height: 1*fem,
+                      decoration: BoxDecoration (
+                        color: Color(0xffffffff),
+                      ),
+                    ),
+                    Container(
+                      // QxV (160:8247)
+                      margin: EdgeInsets.fromLTRB(0*fem, 1*fem, 0*fem, 0*fem),
+                      child: Text(
+                        '868점',
+                        style: SafeGoogleFont (
+                          'Inter',
+                          fontSize: 13*ffem,
+                          fontWeight: FontWeight.w500,
+                          height: 1.2125*ffem/fem,
+                          letterSpacing: 0.65*fem,
+                          color: Color(0xffffffff),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Positioned(
+              // group121X1X (160:8248)
               left: 95*fem,
               top: 160*fem,
               child: Container(
@@ -81,32 +178,32 @@ class Scene extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                      // autogroup5smkoos (92ACHmqKraCFrx4CKN5SmK)
+                      // autogroupggr1qH7 (92ADWzHfUvCv9wGedaggr1)
                       margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 7*fem, 0*fem),
                       width: 18*fem,
                       height: 18*fem,
                       child: Image.asset(
-                        'assets/resource/images/auto-group-5smk.png',
+                        'assets/resource/images/auto-group-ggr1.png',
                         width: 18*fem,
                         height: 18*fem,
                       ),
                     ),
                     Container(
-                      // autogroup6ca1v7o (92ACMMZh4JecNhhj1m6cA1)
+                      // autogroupvqyowqw (92ADazB16wjgdkeJwhVqyo)
                       width: 144*fem,
                       height: double.infinity,
                       child: Stack(
                         children: [
                           Positioned(
-                            // Fvm (160:8109)
+                            // JAh (160:8249)
                             left: 0*fem,
                             top: 0*fem,
                             child: Align(
                               child: SizedBox(
-                                width: 131*fem,
+                                width: 134*fem,
                                 height: 22*fem,
                                 child: Text(
-                                  '2023년 11월',
+                                  '2023년 12월',
                                   style: SafeGoogleFont (
                                     'Inter',
                                     fontSize: 18*ffem,
@@ -120,30 +217,24 @@ class Scene extends StatelessWidget {
                             ),
                           ),
                           Positioned(
-                            // ellipse24x4V (160:8110)
+                            // ellipse24atu (160:8250)
                             left: 126*fem,
                             top: 2*fem,
                             child: Align(
                               child: SizedBox(
                                 width: 18*fem,
                                 height: 18*fem,
-                                child: TextButton(
-                                  onPressed: () {},
-                                  style: TextButton.styleFrom (
-                                    padding: EdgeInsets.zero,
-                                  ),
-                                  child: Container(
-                                    decoration: BoxDecoration (
-                                      borderRadius: BorderRadius.circular(9*fem),
-                                      color: Color(0xffd9d9d9),
-                                    ),
+                                child: Container(
+                                  decoration: BoxDecoration (
+                                    borderRadius: BorderRadius.circular(9*fem),
+                                    color: Color(0xffd9d9d9),
                                   ),
                                 ),
                               ),
                             ),
                           ),
                           Positioned(
-                            // vector2a9 (160:8112)
+                            // vectorst1 (160:8252)
                             left: 132*fem,
                             top: 6*fem,
                             child: Align(
@@ -151,7 +242,7 @@ class Scene extends StatelessWidget {
                                 width: 6*fem,
                                 height: 10*fem,
                                 child: Image.asset(
-                                  'assets/resource/images/vector-oY1.png',
+                                  'assets/resource/images/vector-foj.png',
                                   width: 6*fem,
                                   height: 10*fem,
                                 ),
@@ -166,29 +257,7 @@ class Scene extends StatelessWidget {
               ),
             ),
             Positioned(
-              // wh7 (160:8114)
-              left: 99*fem,
-              top: 204*fem,
-              child: Align(
-                child: SizedBox(
-                  width: 163*fem,
-                  height: 19*fem,
-                  child: Text(
-                    '11월 나의 건강티어는?',
-                    style: SafeGoogleFont (
-                      'Inter',
-                      fontSize: 15*ffem,
-                      fontWeight: FontWeight.w700,
-                      height: 1.2125*ffem/fem,
-                      letterSpacing: 1.5*fem,
-                      color: Color(0xff000000),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Positioned(
-              // group1191ws (160:8115)
+              // group119nk5 (160:8254)
               left: 137*fem,
               top: 234*fem,
               child: Container(
@@ -198,16 +267,16 @@ class Scene extends StatelessWidget {
                   borderRadius: BorderRadius.circular(43*fem),
                 ),
                 child: Container(
-                  // group118k8m (160:8116)
+                  // group118v5b (160:8255)
                   width: double.infinity,
                   height: double.infinity,
                   decoration: BoxDecoration (
-                    color: Color(0xff17a0f9),
+                    color: Color(0xff979797),
                     borderRadius: BorderRadius.circular(43*fem),
                   ),
                   child: Center(
                     child: Text(
-                      'S',
+                      '?',
                       textAlign: TextAlign.center,
                       style: SafeGoogleFont (
                         'Luckiest Guy',
@@ -223,25 +292,50 @@ class Scene extends StatelessWidget {
               ),
             ),
             Positioned(
-              // group143qAD (160:8119)
+              // caloriescorecDK (160:8259)
+              left: 65.5*fem,
+              top: 536.5*fem,
+              child: Center(
+                child: Align(
+                  child: SizedBox(
+                    width: 234*fem,
+                    height: 44*fem,
+                    child: Text(
+                      '하루하루 성실한 식단기록과 운동은 \n건강 티어를 올리고 \nCalorie Score를 높이는데 도움이 되요!',
+                      textAlign: TextAlign.center,
+                      style: SafeGoogleFont (
+                        'Inter',
+                        fontSize: 12*ffem,
+                        fontWeight: FontWeight.w700,
+                        height: 1.2125*ffem/fem,
+                        letterSpacing: 1.2*fem,
+                        color: Color(0xff868686),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              // group144du7 (160:8260)
               left: 79*fem,
               top: 406*fem,
               child: Container(
                 width: 202*fem,
-                height: 54*fem,
+                height: 55*fem,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                      // frame1439gh (160:8120)
-                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 3*fem),
+                      // frame123mVX (160:8266)
+                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 4*fem),
                       width: double.infinity,
                       height: 36*fem,
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Container(
-                            // group142sch (160:8121)
+                            // group135Hyf (160:8267)
                             width: 26*fem,
                             height: double.infinity,
                             decoration: BoxDecoration (
@@ -251,7 +345,7 @@ class Scene extends StatelessWidget {
                             child: Center(
                               child: Center(
                                 child: Text(
-                                  '12',
+                                  '1',
                                   textAlign: TextAlign.center,
                                   style: SafeGoogleFont (
                                     'Inter',
@@ -269,7 +363,7 @@ class Scene extends StatelessWidget {
                             width: 18*fem,
                           ),
                           Container(
-                            // group141jeu (160:8124)
+                            // group134Mid (160:8270)
                             width: 26*fem,
                             height: double.infinity,
                             decoration: BoxDecoration (
@@ -280,7 +374,7 @@ class Scene extends StatelessWidget {
                             child: Center(
                               child: Center(
                                 child: Text(
-                                  '9',
+                                  '3',
                                   textAlign: TextAlign.center,
                                   style: SafeGoogleFont (
                                     'Inter',
@@ -298,17 +392,17 @@ class Scene extends StatelessWidget {
                             width: 18*fem,
                           ),
                           Container(
-                            // group140o8y (160:8127)
+                            // group133pcD (160:8273)
                             width: 26*fem,
                             height: double.infinity,
                             decoration: BoxDecoration (
-                              color: Color(0xffffc700),
+                              color: Color(0xffffc600),
                               borderRadius: BorderRadius.circular(20*fem),
                             ),
                             child: Center(
                               child: Center(
                                 child: Text(
-                                  '5',
+                                  '1',
                                   textAlign: TextAlign.center,
                                   style: SafeGoogleFont (
                                     'Inter',
@@ -326,7 +420,7 @@ class Scene extends StatelessWidget {
                             width: 18*fem,
                           ),
                           Container(
-                            // group139TzD (160:8130)
+                            // group1326Jq (160:8276)
                             width: 26*fem,
                             height: double.infinity,
                             decoration: BoxDecoration (
@@ -355,7 +449,7 @@ class Scene extends StatelessWidget {
                             width: 18*fem,
                           ),
                           Container(
-                            // group138L2R (160:8133)
+                            // group1319nu (160:8279)
                             width: 26*fem,
                             height: double.infinity,
                             decoration: BoxDecoration (
@@ -366,7 +460,7 @@ class Scene extends StatelessWidget {
                             child: Center(
                               child: Center(
                                 child: Text(
-                                  '3',
+                                  '1',
                                   textAlign: TextAlign.center,
                                   style: SafeGoogleFont (
                                     'Inter',
@@ -384,14 +478,14 @@ class Scene extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      // frame97cEq (160:8136)
+                      // autogroup5h571aD (92ADrjDmjg1hmnJURY5H57)
                       margin: EdgeInsets.fromLTRB(8.5*fem, 0*fem, 8*fem, 0*fem),
                       width: double.infinity,
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Center(
-                            // sKuw (160:8137)
+                            // sLMb (160:8261)
                             child: Container(
                               margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 34.5*fem, 0*fem),
                               child: Text(
@@ -409,7 +503,7 @@ class Scene extends StatelessWidget {
                             ),
                           ),
                           Center(
-                            // aDkR (160:8138)
+                            // adbb (160:8262)
                             child: Container(
                               margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 34*fem, 0*fem),
                               child: Text(
@@ -427,7 +521,7 @@ class Scene extends StatelessWidget {
                             ),
                           ),
                           Center(
-                            // b86h (160:8139)
+                            // b949 (160:8263)
                             child: Container(
                               margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 34*fem, 0*fem),
                               child: Text(
@@ -445,7 +539,7 @@ class Scene extends StatelessWidget {
                             ),
                           ),
                           Center(
-                            // c3Df (160:8140)
+                            // cFss (160:8264)
                             child: Container(
                               margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 34*fem, 0*fem),
                               child: Text(
@@ -463,7 +557,7 @@ class Scene extends StatelessWidget {
                             ),
                           ),
                           Center(
-                            // d9nV (160:8141)
+                            // dNBo (160:8265)
                             child: Text(
                               'D',
                               textAlign: TextAlign.center,
@@ -485,94 +579,11 @@ class Scene extends StatelessWidget {
               ),
             ),
             Positioned(
-              // caloriescoreHth (160:8142)
-              left: 65.5*fem,
-              top: 536.5*fem,
-              child: Center(
-                child: Align(
-                  child: SizedBox(
-                    width: 234*fem,
-                    height: 44*fem,
-                    child: Text(
-                      '하루하루 성실한 식단기록과 운동은 \n건강 티어를 올리고 \nCalorie Score를 높이는데 도움이 되요!',
-                      textAlign: TextAlign.center,
-                      style: SafeGoogleFont (
-                        'Inter',
-                        fontSize: 12*ffem,
-                        fontWeight: FontWeight.w700,
-                        height: 1.2125*ffem/fem,
-                        letterSpacing: 1.2*fem,
-                        color: Color(0xff868686),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Positioned(
-              // caloriescore7cq (160:8143)
-              left: 27*fem,
-              top: 481*fem,
-              child: Container(
-                padding: EdgeInsets.fromLTRB(13*fem, 11*fem, 44*fem, 10*fem),
-                width: 306*fem,
-                height: 38*fem,
-                decoration: BoxDecoration (
-                  color: Color(0xff4d5466),
-                  borderRadius: BorderRadius.circular(10*fem),
-                ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      // caloriescoreyuw (160:8145)
-                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 9*fem, 1*fem),
-                      child: Text(
-                        '12월 최고 Calorie Score',
-                        style: SafeGoogleFont (
-                          'Inter',
-                          fontSize: 13*ffem,
-                          fontWeight: FontWeight.w500,
-                          height: 1.2125*ffem/fem,
-                          letterSpacing: 0.65*fem,
-                          color: Color(0xffffffff),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      // line17tGD (160:8146)
-                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 36*fem, 10*fem),
-                      width: 0*fem,
-                      height: 1*fem,
-                      decoration: BoxDecoration (
-                        color: Color(0xffffffff),
-                      ),
-                    ),
-                    Container(
-                      // RX3 (160:8147)
-                      margin: EdgeInsets.fromLTRB(0*fem, 1*fem, 0*fem, 0*fem),
-                      child: Text(
-                        '848점',
-                        style: SafeGoogleFont (
-                          'Inter',
-                          fontSize: 13*ffem,
-                          fontWeight: FontWeight.w500,
-                          height: 1.2125*ffem/fem,
-                          letterSpacing: 0.65*fem,
-                          color: Color(0xffffffff),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Positioned(
-              // group114k3X (160:8148)
+              // group114uxR (160:8282)
               left: 0*fem,
               top: 0*fem,
               child: Container(
-                padding: EdgeInsets.fromLTRB(25*fem, 61*fem, 25*fem, 21*fem),
+                padding: EdgeInsets.fromLTRB(25*fem, 61*fem, 142.5*fem, 21*fem),
                 width: 360*fem,
                 height: 102*fem,
                 decoration: BoxDecoration (
@@ -585,57 +596,52 @@ class Scene extends StatelessWidget {
                     ),
                   ],
                 ),
-                child: Container(
-                  // group113d7K (160:8150)
-                  width: 192.5*fem,
-                  height: double.infinity,
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Container(
-                        // vectormUR (160:8151)
-                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 105.5*fem, 0*fem),
-                        child: TextButton(
-                          onPressed: () {},
-                          style: TextButton.styleFrom (
-                            padding: EdgeInsets.zero,
-                          ),
-                          child: Container(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      // vector2Qm (160:8284)
+                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 105.5*fem, 0*fem),
+                      child: TextButton(
+                        onPressed: () {},
+                        style: TextButton.styleFrom (
+                          padding: EdgeInsets.zero,
+                        ),
+                        child: Container(
+                          width: 11*fem,
+                          height: 20*fem,
+                          child: Image.asset(
+                            'assets/resource/images/vector-oeM.png',
                             width: 11*fem,
                             height: 20*fem,
-                            child: Image.asset(
-                              'assets/resource/images/vector-wPs.png',
-                              width: 11*fem,
-                              height: 20*fem,
-                            ),
                           ),
                         ),
                       ),
-                      Center(
-                        // sGZ (160:8152)
-                        child: Container(
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 0*fem),
-                          child: Text(
-                            '월별 리포트',
-                            textAlign: TextAlign.center,
-                            style: SafeGoogleFont (
-                              'Inter',
-                              fontSize: 18*ffem,
-                              fontWeight: FontWeight.w700,
-                              height: 1.1111111111*ffem/fem,
-                              letterSpacing: 0.25*fem,
-                              color: Color(0xff000000),
-                            ),
+                    ),
+                    Center(
+                      // 6vR (160:8285)
+                      child: Container(
+                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 0*fem),
+                        child: Text(
+                          '월별 리포트',
+                          textAlign: TextAlign.center,
+                          style: SafeGoogleFont (
+                            'Inter',
+                            fontSize: 18*ffem,
+                            fontWeight: FontWeight.w700,
+                            height: 1.1111111111*ffem/fem,
+                            letterSpacing: 0.25*fem,
+                            color: Color(0xff000000),
                           ),
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ),
             Positioned(
-              // tabmenuyaV (160:8153)
+              // tabmenuc85 (160:8286)
               left: 0*fem,
               top: 673*fem,
               child: Container(
@@ -660,45 +666,45 @@ class Scene extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      // autogroupfnmkc7f (92AD3Fasz7LbaTVWDPfnMK)
+                      // autogroup647oFgq (92AEYYQmP261P89Rhd647o)
                       margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 78*fem, 0*fem),
                       width: 15*fem,
                       height: 25*fem,
                       child: Image.asset(
-                        'assets/resource/images/auto-group-fnmk.png',
+                        'assets/resource/images/auto-group-647o.png',
                         width: 15*fem,
                         height: 25*fem,
                       ),
                     ),
                     Container(
-                      // social7q7 (160:8159)
+                      // socialm9P (160:8292)
                       margin: EdgeInsets.fromLTRB(0*fem, 0.5*fem, 78*fem, 0*fem),
                       width: 15*fem,
                       height: 15*fem,
                       child: Image.asset(
-                        'assets/resource/images/social-dt1.png',
+                        'assets/resource/images/social-vbF.png',
                         width: 15*fem,
                         height: 15*fem,
                       ),
                     ),
                     Container(
-                      // mydata2SH (160:8163)
+                      // mydata4eH (160:8296)
                       margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 78*fem, 0*fem),
                       width: 15*fem,
                       height: 16*fem,
                       child: Image.asset(
-                        'assets/resource/images/mydata-2GD.png',
+                        'assets/resource/images/mydata-4mK.png',
                         width: 15*fem,
                         height: 16*fem,
                       ),
                     ),
                     Container(
-                      // YQd (160:8166)
+                      // AxD (160:8299)
                       margin: EdgeInsets.fromLTRB(0*fem, 5.5*fem, 0*fem, 0*fem),
                       width: 21*fem,
                       height: 5*fem,
                       child: Image.asset(
-                        'assets/resource/images/-JCD.png',
+                        'assets/resource/images/-VDX.png',
                         width: 21*fem,
                         height: 5*fem,
                       ),
