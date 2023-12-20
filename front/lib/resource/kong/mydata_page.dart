@@ -3,6 +3,8 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
+import 'package:myapp/resource/kong/goal_weight_modification.dart';
+import 'package:myapp/resource/kong/modify_goal.dart';
 
 class mydata_page extends StatelessWidget {
   @override
@@ -10,7 +12,8 @@ class mydata_page extends StatelessWidget {
     double baseWidth = 360;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return Container(
+    return
+      Container(
       width: double.infinity,
       child: Container(
         // Wyb (160:10471)
@@ -208,7 +211,7 @@ class mydata_page extends StatelessWidget {
                                             children: [
                                               Container(
                                                 // e3X (160:10480)
-                                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 22*fem, 0*fem),
+                                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 10*fem, 0*fem),
                                                 child: Text(
                                                   '확인하기',
                                                   style: SafeGoogleFont (
@@ -296,7 +299,7 @@ class mydata_page extends StatelessWidget {
                                             children: [
                                               Container(
                                                 // autogrouputfou1P (92BYP7YeCB8jHJTUcjUtFo)
-                                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 6*fem, 0*fem),
+                                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 0*fem),
                                                 width: 18*fem,
                                                 height: double.infinity,
                                                 decoration: BoxDecoration (
@@ -310,7 +313,7 @@ class mydata_page extends StatelessWidget {
                                                       textAlign: TextAlign.center,
                                                       style: SafeGoogleFont (
                                                         'Luckiest Guy',
-                                                        fontSize: 12*ffem,
+                                                        fontSize: 8*ffem,
                                                         fontWeight: FontWeight.w400,
                                                         height: 1*ffem/fem,
                                                         letterSpacing: 1.2*fem,
@@ -327,7 +330,7 @@ class mydata_page extends StatelessWidget {
                                                   '등급',
                                                   style: SafeGoogleFont (
                                                     'Kanit',
-                                                    fontSize: 13*ffem,
+                                                    fontSize: 8*ffem,
                                                     fontWeight: FontWeight.w600,
                                                     height: 1.495*ffem/fem,
                                                     letterSpacing: 1*fem,
@@ -341,7 +344,7 @@ class mydata_page extends StatelessWidget {
                                       ),
                                       Container(
                                         // group148fem (160:10543)
-                                        padding: EdgeInsets.fromLTRB(20*fem, 7*fem, 7*fem, 6*fem),
+                                        padding: EdgeInsets.fromLTRB(5*fem, 6*fem, 3*fem, 6*fem),
                                         height: double.infinity,
                                         decoration: BoxDecoration (
                                           color: Color(0xff676f85),
@@ -352,7 +355,7 @@ class mydata_page extends StatelessWidget {
                                           children: [
                                             Container(
                                               // nUV (160:10546)
-                                              margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 22*fem, 0*fem),
+                                              margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 0*fem),
                                               child: Text(
                                                 '확인하기',
                                                 style: SafeGoogleFont (
@@ -370,10 +373,15 @@ class mydata_page extends StatelessWidget {
                                               margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 1*fem),
                                               width: 6*fem,
                                               height: 10*fem,
-                                              child: Image.asset(
-                                                'assets/resource/images/vector-J4V.png',
-                                                width: 6*fem,
-                                                height: 10*fem,
+                                              child: TextButton(
+                                                onPressed: () {
+                                                  Navigator.pop(context); // 전 페이지로 이동하는 코드
+                                                },
+                                                child: Image.asset(
+                                                  'assets/resource/images/vector-aHs.png',
+                                                  width: 22 * fem,
+                                                  height: 40 * fem,
+                                                ),
                                               ),
                                             ),
                                           ],
@@ -425,7 +433,7 @@ class mydata_page extends StatelessWidget {
                           ),
                           Container(
                             // baM (160:10493)
-                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 67*fem, 0*fem),
+                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 30*fem, 0*fem),
                             child: Text(
                               '다이어트',
                               style: SafeGoogleFont (
@@ -440,24 +448,26 @@ class mydata_page extends StatelessWidget {
                           Container(
                             // KFT (160:10489)
                             margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 1*fem),
-                            child: TextButton(
-                              onPressed: () {},
-                              style: TextButton.styleFrom (
-                                padding: EdgeInsets.zero,
-                              ),
-                              child: Text(
-                                '수정',
-                                textAlign: TextAlign.right,
-                                style: SafeGoogleFont (
-                                  'Inter',
-                                  fontSize: 12*ffem,
-                                  fontWeight: FontWeight.w700,
-                                  height: 1.2125*ffem/fem,
-                                  letterSpacing: 1.2*fem,
-                                  color: Color(0xffa5a5a5),
+                              child: TextButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => modify_goal()),
+                                  );
+                                },
+                                child: Text(
+                                  '수정',
+                                  textAlign: TextAlign.right,
+                                  style: SafeGoogleFont(
+                                    'Inter',
+                                    fontSize: 12 * ffem,
+                                    fontWeight: FontWeight.w700,
+                                    height: 1.2125 * ffem / fem,
+                                    letterSpacing: 1.2 * fem,
+                                    color: Color(0xffa5a5a5),
+                                  ),
                                 ),
                               ),
-                            ),
                           ),
                         ],
                       ),
@@ -491,7 +501,7 @@ class mydata_page extends StatelessWidget {
                               children: [
                                 Container(
                                   // prR (160:10524)
-                                  margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 64*fem, 0*fem),
+                                  margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 30*fem, 0*fem),
                                   child: Text(
                                     '현재 체중',
                                     style: SafeGoogleFont (
@@ -522,24 +532,26 @@ class mydata_page extends StatelessWidget {
                                 Container(
                                   // fs3 (160:10531)
                                   margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 1*fem),
-                                  child: TextButton(
-                                    onPressed: () {},
-                                    style: TextButton.styleFrom (
-                                      padding: EdgeInsets.zero,
-                                    ),
-                                    child: Text(
-                                      '수정',
-                                      textAlign: TextAlign.right,
-                                      style: SafeGoogleFont (
-                                        'Inter',
-                                        fontSize: 12*ffem,
-                                        fontWeight: FontWeight.w700,
-                                        height: 1.2125*ffem/fem,
-                                        letterSpacing: 1.2*fem,
-                                        color: Color(0xffa5a5a5),
+                                    child: TextButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(builder: (context) => goal_weight_modification()),
+                                        );
+                                      },
+                                      child: Text(
+                                        '수정',
+                                        textAlign: TextAlign.right,
+                                        style: SafeGoogleFont(
+                                          'Inter',
+                                          fontSize: 12 * ffem,
+                                          fontWeight: FontWeight.w700,
+                                          height: 1.2125 * ffem / fem,
+                                          letterSpacing: 1.2 * fem,
+                                          color: Color(0xffa5a5a5),
+                                        ),
                                       ),
                                     ),
-                                  ),
                                 ),
                               ],
                             ),
@@ -1216,6 +1228,6 @@ class mydata_page extends StatelessWidget {
           ],
         ),
       ),
-          );
+    );
   }
 }

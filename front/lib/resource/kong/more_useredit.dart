@@ -3,6 +3,14 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
+import 'package:myapp/resource/kong/weight_modification.dart';
+import 'package:myapp/resource/kong/goal_weight_modification.dart';
+import 'package:myapp/resource/kong/modify_goal.dart';
+import 'package:myapp/resource/kong/name.dart';
+import 'package:myapp/resource/kong/gender.dart';
+import 'package:myapp/resource/kong/height.dart';
+import 'package:myapp/resource/kong/age.dart';
+
 
 class more_useredit extends StatelessWidget {
   @override
@@ -42,21 +50,21 @@ class more_useredit extends StatelessWidget {
                   Container(
                     // vector9LR (160:10681)
                     margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 84*fem, 0*fem),
-                    child: TextButton(
-                      onPressed: () {},
-                      style: TextButton.styleFrom (
-                        padding: EdgeInsets.zero,
-                      ),
                       child: Container(
-                        width: 11*fem,
-                        height: 20*fem,
-                        child: Image.asset(
-                          'assets/resource/images/vector-aHs.png',
-                          width: 11*fem,
-                          height: 20*fem,
-                        ),
+                        width: 22*fem,
+                        height: 40*fem,
+                        child: TextButton(
+                          onPressed: () {
+                            Navigator.pop(context); // 전 페이지로 이동하는 코드
+                          },
+                          child: Image.asset(
+                            'assets/resource/images/vector-aHs.png',
+                            width: 22 * fem,
+                            height: 40 * fem,
+                          ),
+                        )
+
                       ),
-                    ),
                   ),
                   Center(
                     // Ecm (160:10682)
@@ -67,7 +75,7 @@ class more_useredit extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: SafeGoogleFont (
                           'Inter',
-                          fontSize: 18*ffem,
+                          fontSize: 15*ffem,
                           fontWeight: FontWeight.w700,
                           height: 1.1111111111*ffem/fem,
                           letterSpacing: 0.25*fem,
@@ -139,12 +147,12 @@ class more_useredit extends StatelessWidget {
                             children: [
                               Container(
                                 // rg5 (160:10665)
-                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 178.5*fem, 0*fem),
+                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 135.5*fem, 0*fem),
                                 child: Text(
                                   '이름',
                                   style: SafeGoogleFont (
                                     'Roboto',
-                                    fontSize: 13*ffem,
+                                    fontSize: 12*ffem,
                                     fontWeight: FontWeight.w500,
                                     height: 1.2307692308*ffem/fem,
                                     letterSpacing: 0.5*fem,
@@ -170,17 +178,24 @@ class more_useredit extends StatelessWidget {
                             ],
                           ),
                         ),
-                        Text(
-                          // WEq (160:10648)
-                          '수정',
-                          textAlign: TextAlign.right,
-                          style: SafeGoogleFont (
-                            'Inter',
-                            fontSize: 12*ffem,
-                            fontWeight: FontWeight.w700,
-                            height: 1.2125*ffem/fem,
-                            letterSpacing: 1.2*fem,
-                            color: Color(0xffa5a5a5),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => name()),
+                            );
+                          },
+                          child: Text(
+                            '수정',
+                            textAlign: TextAlign.right,
+                            style: SafeGoogleFont(
+                              'Inter',
+                              fontSize: 12 * ffem,
+                              fontWeight: FontWeight.w700,
+                              height: 1.2125 * ffem / fem,
+                              letterSpacing: 1.2 * fem,
+                              color: Color(0xffa5a5a5),
+                            ),
                           ),
                         ),
                       ],
@@ -196,16 +211,16 @@ class more_useredit extends StatelessWidget {
                       children: [
                         Container(
                           // frame148mAm (160:10667)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 58.5*fem, 0*fem),
+                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 65*fem, 0*fem),
                           height: double.infinity,
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
                                 // 6iq (160:10668)
-                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 182.5*fem, 0*fem),
+                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 135.5*fem, 0*fem),
                                 child: Text(
-                                  '성별',
+                                  '성별',//TODO 수정해야함
                                   style: SafeGoogleFont (
                                     'Roboto',
                                     fontSize: 13*ffem,
@@ -219,199 +234,7 @@ class more_useredit extends StatelessWidget {
                               Center(
                                 // QzR (160:10669)
                                 child: Text(
-                                  '남성',
-                                  textAlign: TextAlign.center,
-                                  style: SafeGoogleFont (
-                                    'Roboto',
-                                    fontSize: 13*ffem,
-                                    fontWeight: FontWeight.w500,
-                                    height: 1.2307692308*ffem/fem,
-                                    letterSpacing: 0.5*fem,
-                                    color: Color(0xff000000),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Text(
-                          // 9h7 (160:10649)
-                          '수정',
-                          textAlign: TextAlign.right,
-                          style: SafeGoogleFont (
-                            'Inter',
-                            fontSize: 12*ffem,
-                            fontWeight: FontWeight.w700,
-                            height: 1.2125*ffem/fem,
-                            letterSpacing: 1.2*fem,
-                            color: Color(0xffa5a5a5),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    // autogroupfhs5tub (92BfVfCEj2Js29Rx6jFhS5)
-                    margin: EdgeInsets.fromLTRB(8*fem, 0*fem, 8*fem, 23*fem),
-                    width: double.infinity,
-                    height: 16*fem,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          // frame149ECm (160:10670)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 55.5*fem, 0*fem),
-                          height: double.infinity,
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Container(
-                                // yAM (160:10671)
-                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 179.5*fem, 0*fem),
-                                child: Text(
-                                  '나이',
-                                  style: SafeGoogleFont (
-                                    'Roboto',
-                                    fontSize: 13*ffem,
-                                    fontWeight: FontWeight.w500,
-                                    height: 1.2307692308*ffem/fem,
-                                    letterSpacing: 0.5*fem,
-                                    color: Color(0xff000000),
-                                  ),
-                                ),
-                              ),
-                              Center(
-                                // tYD (160:10672)
-                                child: Text(
-                                  '25세',
-                                  textAlign: TextAlign.center,
-                                  style: SafeGoogleFont (
-                                    'Roboto',
-                                    fontSize: 13*ffem,
-                                    fontWeight: FontWeight.w500,
-                                    height: 1.2307692308*ffem/fem,
-                                    letterSpacing: 0.5*fem,
-                                    color: Color(0xff000000),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Text(
-                          // 28d (160:10650)
-                          '수정',
-                          textAlign: TextAlign.right,
-                          style: SafeGoogleFont (
-                            'Inter',
-                            fontSize: 12*ffem,
-                            fontWeight: FontWeight.w700,
-                            height: 1.2125*ffem/fem,
-                            letterSpacing: 1.2*fem,
-                            color: Color(0xffa5a5a5),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    // autogrouppq5bxny (92BfezG2WRDKUPJVVfpQ5b)
-                    margin: EdgeInsets.fromLTRB(8*fem, 0*fem, 8*fem, 23*fem),
-                    width: double.infinity,
-                    height: 16*fem,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          // frame150VY1 (160:10673)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 39.5*fem, 0*fem),
-                          height: double.infinity,
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Container(
-                                // qLy (160:10674)
-                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 171.5*fem, 0*fem),
-                                child: Text(
-                                  '키',
-                                  style: SafeGoogleFont (
-                                    'Roboto',
-                                    fontSize: 13*ffem,
-                                    fontWeight: FontWeight.w500,
-                                    height: 1.2307692308*ffem/fem,
-                                    letterSpacing: 0.5*fem,
-                                    color: Color(0xff000000),
-                                  ),
-                                ),
-                              ),
-                              Center(
-                                // cm9cZ (160:10675)
-                                child: Text(
-                                  '168.0cm',
-                                  textAlign: TextAlign.center,
-                                  style: SafeGoogleFont (
-                                    'Roboto',
-                                    fontSize: 13*ffem,
-                                    fontWeight: FontWeight.w500,
-                                    height: 1.2307692308*ffem/fem,
-                                    letterSpacing: 0.5*fem,
-                                    color: Color(0xff000000),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Text(
-                          // fqo (160:10651)
-                          '수정',
-                          textAlign: TextAlign.right,
-                          style: SafeGoogleFont (
-                            'Inter',
-                            fontSize: 12*ffem,
-                            fontWeight: FontWeight.w700,
-                            height: 1.2125*ffem/fem,
-                            letterSpacing: 1.2*fem,
-                            color: Color(0xffa5a5a5),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    // autogroupgjwfzt5 (92BfoKMUtJjaofq7p5gJwf)
-                    margin: EdgeInsets.fromLTRB(8*fem, 0*fem, 8*fem, 23*fem),
-                    width: double.infinity,
-                    height: 16*fem,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          // frame151Xd7 (160:10676)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 45.5*fem, 0*fem),
-                          height: double.infinity,
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Container(
-                                // Gah (160:10677)
-                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 169.5*fem, 0*fem),
-                                child: Text(
-                                  '체중',
-                                  style: SafeGoogleFont (
-                                    'Roboto',
-                                    fontSize: 13*ffem,
-                                    fontWeight: FontWeight.w500,
-                                    height: 1.2307692308*ffem/fem,
-                                    letterSpacing: 0.5*fem,
-                                    color: Color(0xff000000),
-                                  ),
-                                ),
-                              ),
-                              Center(
-                                // kgnow (160:10678)
-                                child: Text(
-                                  '63.0kg',
+                                  '남성', //TODO 수정해야함
                                   textAlign: TextAlign.center,
                                   style: SafeGoogleFont (
                                     'Roboto',
@@ -427,24 +250,238 @@ class more_useredit extends StatelessWidget {
                           ),
                         ),
                         TextButton(
-                          // LKf (160:10652)
-                          onPressed: () {},
-                          style: TextButton.styleFrom (
-                            padding: EdgeInsets.zero,
-                          ),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => gender()),
+                            );
+                          },
                           child: Text(
                             '수정',
                             textAlign: TextAlign.right,
-                            style: SafeGoogleFont (
+                            style: SafeGoogleFont(
                               'Inter',
-                              fontSize: 12*ffem,
+                              fontSize: 12 * ffem,
                               fontWeight: FontWeight.w700,
-                              height: 1.2125*ffem/fem,
-                              letterSpacing: 1.2*fem,
+                              height: 1.2125 * ffem / fem,
+                              letterSpacing: 1.2 * fem,
                               color: Color(0xffa5a5a5),
                             ),
                           ),
                         ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    // autogroupfhs5tub (92BfVfCEj2Js29Rx6jFhS5)
+                    margin: EdgeInsets.fromLTRB(8*fem, 0*fem, 8*fem, 23*fem),
+                    width: double.infinity,
+                    height: 16*fem,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          // frame149ECm (160:10670)
+                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 67*fem, 0*fem),
+                          height: double.infinity,
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Container(
+                                // yAM (160:10671)
+                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 129.5*fem, 0*fem),
+                                child: Text(
+                                  '나이',
+                                  style: SafeGoogleFont (
+                                    'Roboto',
+                                    fontSize: 13*ffem,
+                                    fontWeight: FontWeight.w500,
+                                    height: 1.2307692308*ffem/fem,
+                                    letterSpacing: 0.5*fem,
+                                    color: Color(0xff000000),
+                                  ),
+                                ),
+                              ),
+                              Center(
+                                // tYD (160:10672)
+                                child: Text(
+                                  '25세',//TODO 수정해야함
+                                  textAlign: TextAlign.center,
+                                  style: SafeGoogleFont (
+                                    'Roboto',
+                                    fontSize: 13*ffem,
+                                    fontWeight: FontWeight.w500,
+                                    height: 1.2307692308*ffem/fem,
+                                    letterSpacing: 0.5*fem,
+                                    color: Color(0xff000000),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => age()),
+                            );
+                          },
+                          child: Text(
+                            '수정',
+                            textAlign: TextAlign.right,
+                            style: SafeGoogleFont(
+                              'Inter',
+                              fontSize: 12 * ffem,
+                              fontWeight: FontWeight.w700,
+                              height: 1.2125 * ffem / fem,
+                              letterSpacing: 1.2 * fem,
+                              color: Color(0xffa5a5a5),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    // autogrouppq5bxny (92BfezG2WRDKUPJVVfpQ5b)
+                    margin: EdgeInsets.fromLTRB(8*fem, 0*fem, 8*fem, 23*fem),
+                    width: double.infinity,
+                    height: 16*fem,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          // frame150VY1 (160:10673)
+                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 49*fem, 0*fem),
+                          height: double.infinity,
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Container(
+                                // qLy (160:10674)
+                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 135.5*fem, 0*fem),
+                                child: Text(
+                                  '키',
+                                  style: SafeGoogleFont (
+                                    'Roboto',
+                                    fontSize: 13*ffem,
+                                    fontWeight: FontWeight.w500,
+                                    height: 1.2307692308*ffem/fem,
+                                    letterSpacing: 0.5*fem,
+                                    color: Color(0xff000000),
+                                  ),
+                                ),
+                              ),
+                              Center(
+                                // cm9cZ (160:10675)
+                                child: Text(
+                                  '168.0cm',//TODO 수정해야함
+                                  textAlign: TextAlign.center,
+                                  style: SafeGoogleFont (
+                                    'Roboto',
+                                    fontSize: 13*ffem,
+                                    fontWeight: FontWeight.w500,
+                                    height: 1.2307692308*ffem/fem,
+                                    letterSpacing: 0.5*fem,
+                                    color: Color(0xff000000),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => height()),
+                            );
+                          },
+                          child: Text(
+                            '수정',
+                            textAlign: TextAlign.right,
+                            style: SafeGoogleFont(
+                              'Inter',
+                              fontSize: 12 * ffem,
+                              fontWeight: FontWeight.w700,
+                              height: 1.2125 * ffem / fem,
+                              letterSpacing: 1.2 * fem,
+                              color: Color(0xffa5a5a5),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    // autogroupgjwfzt5 (92BfoKMUtJjaofq7p5gJwf)
+                    margin: EdgeInsets.fromLTRB(8*fem, 0*fem, 8*fem, 23*fem),
+                    width: double.infinity,
+                    height: 16*fem,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          // frame151Xd7 (160:10676)
+                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 48*fem, 0*fem),
+                          height: double.infinity,
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Container(
+                                // Gah (160:10677)
+                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 135.5*fem, 0*fem),
+                                child: Text(
+                                  '체중',
+                                  style: SafeGoogleFont (
+                                    'Roboto',
+                                    fontSize: 13*ffem,
+                                    fontWeight: FontWeight.w500,
+                                    height: 1.2307692308*ffem/fem,
+                                    letterSpacing: 0.5*fem,
+                                    color: Color(0xff000000),
+                                  ),
+                                ),
+                              ),
+                              Center(
+                                // kgnow (160:10678)
+                                child: Text(
+                                  '63.0kg',//TODO 수정해야함
+                                  textAlign: TextAlign.center,
+                                  style: SafeGoogleFont (
+                                    'Roboto',
+                                    fontSize: 13*ffem,
+                                    fontWeight: FontWeight.w500,
+                                    height: 1.2307692308*ffem/fem,
+                                    letterSpacing: 0.5*fem,
+                                    color: Color(0xff000000),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                          TextButton(
+                            onPressed: () {
+                               Navigator.push(
+                                 context,
+                                 MaterialPageRoute(builder: (context) => weight_modification()),
+                               );
+                            },
+                            child: Text(
+                              '수정',
+                              textAlign: TextAlign.right,
+                              style: SafeGoogleFont(
+                                'Inter',
+                                fontSize: 12 * ffem,
+                                fontWeight: FontWeight.w700,
+                                height: 1.2125 * ffem / fem,
+                                letterSpacing: 1.2 * fem,
+                                color: Color(0xffa5a5a5),
+                              ),
+                            ),
+                          ),
                       ],
                     ),
                   ),
@@ -458,14 +495,14 @@ class more_useredit extends StatelessWidget {
                       children: [
                         Container(
                           // frame1461Ro (160:10658)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 50*fem, 0*fem),
+                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 47*fem, 0*fem),
                           height: double.infinity,
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
                                 // keH (160:10659)
-                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 149*fem, 0*fem),
+                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 90.5*fem, 0*fem),
                                 child: Text(
                                   '사용자 목표',
                                   style: SafeGoogleFont (
@@ -481,7 +518,7 @@ class more_useredit extends StatelessWidget {
                               Center(
                                 // g29 (160:10660)
                                 child: Text(
-                                  '다이어트',
+                                  '다이어트',//TODO 수정해야함
                                   textAlign: TextAlign.center,
                                   style: SafeGoogleFont (
                                     'Roboto',
@@ -496,17 +533,24 @@ class more_useredit extends StatelessWidget {
                             ],
                           ),
                         ),
-                        Text(
-                          // Px9 (160:10653)
-                          '수정',
-                          textAlign: TextAlign.right,
-                          style: SafeGoogleFont (
-                            'Inter',
-                            fontSize: 12*ffem,
-                            fontWeight: FontWeight.w700,
-                            height: 1.2125*ffem/fem,
-                            letterSpacing: 1.2*fem,
-                            color: Color(0xffa5a5a5),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => modify_goal()),
+                            );
+                          },
+                          child: Text(
+                            '수정',
+                            textAlign: TextAlign.right,
+                            style: SafeGoogleFont(
+                              'Inter',
+                              fontSize: 12 * ffem,
+                              fontWeight: FontWeight.w700,
+                              height: 1.2125 * ffem / fem,
+                              letterSpacing: 1.2 * fem,
+                              color: Color(0xffa5a5a5),
+                            ),
                           ),
                         ),
                       ],
@@ -522,14 +566,14 @@ class more_useredit extends StatelessWidget {
                       children: [
                         Container(
                           // frame152Tx1 (160:10661)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 45.5*fem, 0*fem),
+                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 55*fem, 0*fem),
                           height: double.infinity,
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
                                 // DAV (160:10662)
-                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 153.5*fem, 0*fem),
+                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 100.5*fem, 0*fem),
                                 child: Text(
                                   '목표 체중',
                                   style: SafeGoogleFont (
@@ -545,7 +589,7 @@ class more_useredit extends StatelessWidget {
                               Center(
                                 // kg8oF (160:10663)
                                 child: Text(
-                                  '61.5kg',
+                                  '61.5kg',//TODO 수정해야함
                                   textAlign: TextAlign.center,
                                   style: SafeGoogleFont (
                                     'Roboto',
@@ -560,17 +604,24 @@ class more_useredit extends StatelessWidget {
                             ],
                           ),
                         ),
-                        Text(
-                          // 5Tb (160:10654)
-                          '수정',
-                          textAlign: TextAlign.right,
-                          style: SafeGoogleFont (
-                            'Inter',
-                            fontSize: 12*ffem,
-                            fontWeight: FontWeight.w700,
-                            height: 1.2125*ffem/fem,
-                            letterSpacing: 1.2*fem,
-                            color: Color(0xffa5a5a5),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => goal_weight_modification()),
+                            );
+                          },
+                          child: Text(
+                            '수정',
+                            textAlign: TextAlign.right,
+                            style: SafeGoogleFont(
+                              'Inter',
+                              fontSize: 12 * ffem,
+                              fontWeight: FontWeight.w700,
+                              height: 1.2125 * ffem / fem,
+                              letterSpacing: 1.2 * fem,
+                              color: Color(0xffa5a5a5),
+                            ),
                           ),
                         ),
                       ],
