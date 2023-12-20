@@ -3,8 +3,15 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
+import 'package:myapp/resource/gyu/Calendar.dart';
 
 class CalorieScore extends StatelessWidget {
+  final int calculatedScore;
+  // 생성자 내부에서 수식을 사용하여 calculatedScore 초기화
+  const CalorieScore({Key? key})
+      : calculatedScore = 100 + 200, // 예시로 100과 200을 더한 값을 할당
+        super(key: key);
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 360;
@@ -24,7 +31,7 @@ class CalorieScore extends StatelessWidget {
             Container(
               // group114weV (160:10411)
               margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 14*fem),
-              padding: EdgeInsets.fromLTRB(25*fem, 61*fem, 120*fem, 21*fem),
+              padding: EdgeInsets.fromLTRB(0*fem, 50*fem, 0*fem, 10*fem),
               width: double.infinity,
               decoration: BoxDecoration (
                 color: Color(0xffffffff),
@@ -170,7 +177,7 @@ class CalorieScore extends StatelessWidget {
                           child: Center(
                             child: Center(
                               child: Text(
-                                '868 점',
+                                '$calculatedScore 점',
                                 textAlign: TextAlign.center,
                                 style: SafeGoogleFont (
                                   'Inter',
@@ -278,7 +285,7 @@ class CalorieScore extends StatelessWidget {
                           '스코어  그래프',
                           style: SafeGoogleFont (
                             'Inter',
-                            fontSize: 20*ffem,
+                            fontSize: 16*ffem,
                             fontWeight: FontWeight.w600,
                             height: 1.2125*ffem/fem,
                             color: Color(0xffffffff),
@@ -377,7 +384,7 @@ class CalorieScore extends StatelessWidget {
                                         ),
                                         Container(
                                           // ellipse31DWm (160:10390)
-                                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 5*fem),
+                                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 0*fem),
                                           width: 6*fem,
                                           height: 6*fem,
                                           decoration: BoxDecoration (
@@ -434,7 +441,7 @@ class CalorieScore extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont (
                                         'Inter',
-                                        fontSize: 10*ffem,
+                                        fontSize: 9.5*ffem,
                                         fontWeight: FontWeight.w600,
                                         height: 1.2125*ffem/fem,
                                         color: Color(0xffffffff),
@@ -451,7 +458,7 @@ class CalorieScore extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont (
                                         'Inter',
-                                        fontSize: 10*ffem,
+                                        fontSize: 9.5*ffem,
                                         fontWeight: FontWeight.w600,
                                         height: 1.2125*ffem/fem,
                                         color: Color(0xffffffff),
@@ -468,7 +475,7 @@ class CalorieScore extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont (
                                         'Inter',
-                                        fontSize: 10*ffem,
+                                        fontSize: 9.5*ffem,
                                         fontWeight: FontWeight.w600,
                                         height: 1.2125*ffem/fem,
                                         color: Color(0xffffffff),
@@ -483,7 +490,7 @@ class CalorieScore extends StatelessWidget {
                                     textAlign: TextAlign.center,
                                     style: SafeGoogleFont (
                                       'Inter',
-                                      fontSize: 10*ffem,
+                                      fontSize: 9.5*ffem,
                                       fontWeight: FontWeight.w600,
                                       height: 1.2125*ffem/fem,
                                       color: Color(0xffffffff),
@@ -500,99 +507,7 @@ class CalorieScore extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
-              // tabmenuXC1 (160:10394)
-              padding: EdgeInsets.fromLTRB(30*fem, 21*fem, 30*fem, 21*fem),
-              width: double.infinity,
-              height: 108*fem,
-              decoration: BoxDecoration (
-                color: Color(0xffffffff),
-                borderRadius: BorderRadius.only (
-                  topLeft: Radius.circular(15*fem),
-                  topRight: Radius.circular(15*fem),
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0x1e000000),
-                    offset: Offset(0*fem, 2*fem),
-                    blurRadius: 24*fem,
-                  ),
-                ],
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    // autogroupjp5bC3F (92BXCeWivyRbZwSHmUJp5b)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 78*fem, 0*fem),
-                    width: 15*fem,
-                    height: 25*fem,
-                    child: Image.asset(
-                      'assets/resource/images/auto-group-jp5b.png',
-                      width: 15*fem,
-                      height: 25*fem,
-                    ),
-                  ),
-                  Container(
-                    // social7AD (160:10400)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0.5*fem, 78*fem, 0*fem),
-                    child: TextButton(
-                      onPressed: () {},
-                      style: TextButton.styleFrom (
-                        padding: EdgeInsets.zero,
-                      ),
-                      child: Container(
-                        width: 15*fem,
-                        height: 15*fem,
-                        child: Image.asset(
-                          'assets/resource/images/social-95F.png',
-                          width: 15*fem,
-                          height: 15*fem,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    // mydatazE1 (160:10404)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 78*fem, 0*fem),
-                    child: TextButton(
-                      onPressed: () {},
-                      style: TextButton.styleFrom (
-                        padding: EdgeInsets.zero,
-                      ),
-                      child: Container(
-                        width: 15*fem,
-                        height: 16*fem,
-                        child: Image.asset(
-                          'assets/resource/images/mydata-qxH.png',
-                          width: 15*fem,
-                          height: 16*fem,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    // taH (160:10407)
-                    margin: EdgeInsets.fromLTRB(0*fem, 5.5*fem, 0*fem, 0*fem),
-                    child: TextButton(
-                      onPressed: () {},
-                      style: TextButton.styleFrom (
-                        padding: EdgeInsets.zero,
-                      ),
-                      child: Container(
-                        width: 21*fem,
-                        height: 5*fem,
-                        child: Image.asset(
-                          'assets/resource/images/-ix5.png',
-                          width: 21*fem,
-                          height: 5*fem,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+
           ],
         ),
       ),
