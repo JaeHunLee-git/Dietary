@@ -175,7 +175,7 @@ class use_update extends StatelessWidget {
                                 children: [
                                   Container(
                                     // WsX (160:10088)
-                                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 151*fem, 0*fem),
+                                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 120*fem, 0*fem),
                                     child: Text(
                                       '비빔냉면',
                                       style: SafeGoogleFont (
@@ -216,7 +216,7 @@ class use_update extends StatelessWidget {
                                 children: [
                                   Container(
                                     // JoP (160:10093)
-                                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 165*fem, 0*fem),
+                                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 150*fem, 0*fem),
                                     child: Text(
                                       '총합',
                                       style: SafeGoogleFont (
@@ -295,7 +295,7 @@ class use_update extends StatelessWidget {
                         children: [
                           Container(
                             // Y5T (160:10080)
-                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 183*fem, 12*fem),
+                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 170*fem, 12*fem),
                             child: Text(
                               '영양정보 상세',
                               style: SafeGoogleFont (
@@ -326,12 +326,12 @@ class use_update extends StatelessWidget {
                               children: [
                                 Container(
                                   // 7Xs (160:10091)
-                                  margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 149*fem, 0*fem),
+                                  margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 130*fem, 0*fem),
                                   child: Text(
                                     '비빔냉면',
                                     style: SafeGoogleFont (
                                       'Inter',
-                                      fontSize: 20*ffem,
+                                      fontSize: 18*ffem,
                                       fontWeight: FontWeight.w700,
                                       height: 1.2125*ffem/fem,
                                       letterSpacing: 2*fem,
@@ -373,7 +373,7 @@ class use_update extends StatelessWidget {
                                     children: [
                                       Container(
                                         // NMK (160:10096)
-                                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 174*fem, 0*fem),
+                                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 150*fem, 0*fem),
                                         child: Text(
                                           '탄수화물',
                                           style: SafeGoogleFont (
@@ -500,6 +500,7 @@ class use_update extends StatelessWidget {
                 ),
               ),
             ),
+            // 여기부터 네비게이션 바
             Positioned(
               // tabmenuNGm (160:10104)
               left: 0*fem,
@@ -573,6 +574,8 @@ class use_update extends StatelessWidget {
                 ),
               ),
             ),
+
+            // 여기부터 AppBar임
             Positioned(
               // rectangle171rUm (160:10121)
               left: 0*fem,
@@ -620,12 +623,12 @@ class use_update extends StatelessWidget {
             ),
             Positioned(
               // 3p9 (160:10123)
-              left: 157.5*fem,
+              left: 140*fem,
               top: 61*fem,
               child: Center(
                 child: Align(
                   child: SizedBox(
-                    width: 45*fem,
+                    width: 80*fem,
                     height: 20*fem,
                     child: Text(
                       '사용하기',

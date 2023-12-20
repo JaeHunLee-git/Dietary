@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
+import 'package:myapp/resource/ljh/-Pe5.dart';
+import 'package:myapp/resource/ljh/menu_recomendation.dart';
+import 'package:myapp/resource/ljh/use_update.dart';
 import 'dart:ui';
 import 'package:myapp/utils.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -379,7 +382,12 @@ class mainpage extends StatelessWidget {
                       // qMf (160:10874)
                       margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 13*fem),
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(builder: (context) => menu_recomendation()),
+                          );
+                        },
                         style: TextButton.styleFrom (
                           padding: EdgeInsets.zero,
                         ),
@@ -446,6 +454,7 @@ class mainpage extends StatelessWidget {
                         ),
                       ),
                     ),
+                    SizedBox(height: 10.0),
                     Container(
                       // QsF (160:10857)
                       width: double.infinity,
@@ -456,65 +465,81 @@ class mainpage extends StatelessWidget {
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Container(
-                            // wMP (160:10858)
-                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 16*fem, 0*fem),
-                            padding: EdgeInsets.fromLTRB(14*fem, 14*fem, 14*fem, 8*fem),
-                            width: 156*fem,
-                            height: double.infinity,
-                            decoration: BoxDecoration (
-                              color: Color(0xffffffff),
-                              borderRadius: BorderRadius.circular(8*fem),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Color(0x3f000000),
-                                  offset: Offset(0*fem, 4*fem),
-                                  blurRadius: 2*fem,
-                                ),
-                              ],
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  // rectangle188PUH (160:10877)
-                                  margin: EdgeInsets.fromLTRB(53*fem, 0*fem, 53*fem, 14*fem),
-                                  width: double.infinity,
-                                  height: 4*fem,
-                                  decoration: BoxDecoration (
-                                    color: Color(0xfff55050),
-                                  ),
-                                ),
-                                Container(
-                                  // line11X4h (160:10861)
-                                  margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 2*fem),
-                                  width: double.infinity,
-                                  height: 1*fem,
-                                  decoration: BoxDecoration (
-                                    color: Color(0xffd9d9d9),
-                                  ),
-                                ),
-                                Container(
-                                  // incomeev1 (160:10860)
-                                  margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 16*fem, 0*fem),
-                                  child: Text(
-                                    '사용하기',
-                                    style: SafeGoogleFont (
-                                      'Inter',
-                                      fontSize: 14*ffem,
-                                      fontWeight: FontWeight.w600,
-                                      height: 1.2125*ffem/fem,
-                                      letterSpacing: 1*fem,
-                                      color: Color(0xff3c4847),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
                           TextButton(
                             // aHs (160:10862)
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(builder: (context) => use_update()),
+                              );
+                            },
+                            style: TextButton.styleFrom (
+                              padding: EdgeInsets.zero,
+                            ),
+                            child: Container(
+                              padding: EdgeInsets.fromLTRB(14*fem, 5*fem, 14*fem, 8*fem),
+                              width: 156*fem,
+                              height: double.infinity,
+                              decoration: BoxDecoration (
+                                color: Color(0xffffffff),
+                                borderRadius: BorderRadius.circular(8*fem),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Color(0x3f000000),
+                                    offset: Offset(0*fem, 4*fem),
+                                    blurRadius: 2*fem,
+                                  ),
+                                ],
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    // rectangle188PUH (160:10877)
+                                    margin: EdgeInsets.fromLTRB(53*fem, 10*fem, 53*fem, 14*fem),
+                                    width: double.infinity,
+                                    height: 4*fem,
+                                    decoration: BoxDecoration (
+                                      color: Color(0xfff55050),
+                                    ),
+                                  ),
+                                  Container(
+                                    // line11X4h (160:10861)
+                                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 2*fem),
+                                    width: double.infinity,
+                                    height: 1*fem,
+                                    decoration: BoxDecoration (
+                                      color: Color(0xffd9d9d9),
+                                    ),
+                                  ),
+                                  Container(
+                                    // incomeev1 (160:10860)
+                                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 16*fem, 0*fem),
+                                    child: Text(
+                                      '사용하기',
+                                      style: SafeGoogleFont (
+                                        'Inter',
+                                        fontSize: 14*ffem,
+                                        fontWeight: FontWeight.w600,
+                                        height: 1.2125*ffem/fem,
+                                        letterSpacing: 1*fem,
+                                        color: Color(0xff3c4847),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+
+                          TextButton(
+                            // aHs (160:10862)
+                            onPressed: () {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(builder: (context) => Pe5()),
+                              );
+                            },
                             style: TextButton.styleFrom (
                               padding: EdgeInsets.zero,
                             ),
@@ -620,7 +645,7 @@ class mainpage extends StatelessWidget {
               child: Container(
                 padding: EdgeInsets.fromLTRB(98*fem, 11*fem, 98*fem, 11*fem),
                 width: 360*fem,
-                height: 157*fem,
+                height: 50*fem,
                 decoration: BoxDecoration (
                   color: Color(0xff18c07a),
                   borderRadius: BorderRadius.only (
@@ -743,7 +768,7 @@ class mainpage extends StatelessWidget {
                   children: [
                     Container(
                       // autogroup5slreW1 (92Bo12X91c43L7QpXp5sLR)
-                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 78*fem, 0*fem),
+                      margin: EdgeInsets.fromLTRB(10*fem, 0*fem, 10*fem, 0*fem),  // 수정된 부분
                       width: 15*fem,
                       height: 25*fem,
                       child: Image.asset(
@@ -754,7 +779,7 @@ class mainpage extends StatelessWidget {
                     ),
                     Container(
                       // socialMvD (160:10911)
-                      margin: EdgeInsets.fromLTRB(0*fem, 0.5*fem, 78*fem, 0*fem),
+                      margin: EdgeInsets.fromLTRB(22*fem, 0.5*fem, 10*fem, 0*fem),  // 수정된 부분
                       child: TextButton(
                         onPressed: () {},
                         style: TextButton.styleFrom (
@@ -773,7 +798,7 @@ class mainpage extends StatelessWidget {
                     ),
                     Container(
                       // mydataqaV (160:10915)
-                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 78*fem, 0*fem),
+                      margin: EdgeInsets.fromLTRB(22*fem, 0*fem, 10*fem, 0*fem),  // 수정된 부분
                       child: TextButton(
                         onPressed: () {},
                         style: TextButton.styleFrom (
@@ -792,7 +817,7 @@ class mainpage extends StatelessWidget {
                     ),
                     Container(
                       // 8pV (160:10918)
-                      margin: EdgeInsets.fromLTRB(0*fem, 5.5*fem, 0*fem, 0*fem),
+                      margin: EdgeInsets.fromLTRB(22*fem, 5.5*fem, 0*fem, 0*fem),
                       child: TextButton(
                         onPressed: () {},
                         style: TextButton.styleFrom (
