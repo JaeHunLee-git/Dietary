@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/resource/a/first_page.dart';
 import 'package:myapp/utils.dart';
 import 'package:myapp/resource/a/calendarDetails_usageHistory.dart';
 import 'firebase_options.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         body: SingleChildScrollView(
-          child: Scene(),
+          child: first_page(),
         ),
       ),
     );
