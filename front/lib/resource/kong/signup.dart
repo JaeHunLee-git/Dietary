@@ -6,22 +6,22 @@ import 'package:myapp/utils.dart';
 import 'package:myapp/resource/kong/Register.dart';
 import 'package:myapp/resource/kong/signin.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase/firebase.dart' as fb;
+//import 'package:firebase/firebase.dart' as fb;
 
-void saveToDatabase(String name, String password, String email, String phoneNumber) async {
-  try {
-    await fb.database().ref('users').push().set({
-      'name': name,
-      'password': password,
-      'email': email,
-      'phoneNumber': phoneNumber,
-    });
-    // 데이터가 성공적으로 저장됐을 때 추가 작업을 수행할 수 있습니다.
-  } catch (e) {
-    // 데이터 저장 중 에러가 발생했을 때의 처리
-    print('Error: $e');
-  }
-}
+// void saveToDatabase(String name, String password, String email, String phoneNumber) async {
+//   try {
+//     await fb.database().ref('users').push().set({
+//       'name': name,
+//       'password': password,
+//       'email': email,
+//       'phoneNumber': phoneNumber,
+//     });
+//     // 데이터가 성공적으로 저장됐을 때 추가 작업을 수행할 수 있습니다.
+//   } catch (e) {
+//     // 데이터 저장 중 에러가 발생했을 때의 처리
+//     print('Error: $e');
+//   }
+// }
 
 class UserDataHandler {
   Future<void> saveUserData(String name, String phoneNumber, String email, String password) async {
@@ -396,7 +396,7 @@ class _signupState extends State<signup> {
                       child: Center(
                         child: TextButton(
                           onPressed: () {
-                            saveToDatabase(name, password, email, phoneNumber);
+                            //saveToDatabase(name, password, email, phoneNumber);
                             Navigator.push(
                               context,
                               MaterialPageRoute(builder: (context) => Register()),
