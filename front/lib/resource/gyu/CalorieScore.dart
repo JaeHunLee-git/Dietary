@@ -4,7 +4,7 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 
-class Calorie_Score_1 extends StatelessWidget {
+class CalorieScore extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 360;

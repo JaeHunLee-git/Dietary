@@ -4,7 +4,7 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 
-class calendarDetails_accumulateHistory extends StatelessWidget {
+class calendar_Details extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 360;
@@ -13,27 +13,27 @@ class calendarDetails_accumulateHistory extends StatelessWidget {
     return Container(
       width: double.infinity,
       child: Container(
-        // W4M (160:8038)
+        // kJR (160:7965)
         width: double.infinity,
-        height: 798*fem,
+        height: 908*fem,
         decoration: BoxDecoration (
           color: Color(0xffededed),
         ),
         child: Stack(
           children: [
             Positioned(
-              // autogroupachbCSy (92A9kgPkiBii3rh1zTacHB)
+              // autogroupxipxrsF (92A61sTM3iJndD8Fy8XiPX)
               left: 0*fem,
               top: 0*fem,
               child: Container(
                 padding: EdgeInsets.fromLTRB(16*fem, 116*fem, 16*fem, 14*fem),
                 width: 360*fem,
-                height: 690*fem,
+                height: 800*fem,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                      // group104tKo (160:8039)
+                      // group104x9b (160:7966)
                       margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 14*fem),
                       padding: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 7*fem),
                       width: double.infinity,
@@ -52,7 +52,7 @@ class calendarDetails_accumulateHistory extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Container(
-                            // group1028V3 (160:8041)
+                            // group102RJ5 (160:7968)
                             margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 11*fem),
                             padding: EdgeInsets.fromLTRB(120*fem, 13*fem, 120*fem, 11*fem),
                             width: double.infinity,
@@ -62,7 +62,7 @@ class calendarDetails_accumulateHistory extends StatelessWidget {
                               borderRadius: BorderRadius.circular(15*fem),
                             ),
                             child: TextButton(
-                              // group101pMs (160:8043)
+                              // group101vEq (160:7970)
                               onPressed: () {},
                               style: TextButton.styleFrom (
                                 padding: EdgeInsets.zero,
@@ -74,7 +74,7 @@ class calendarDetails_accumulateHistory extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Container(
-                                      // xDB (160:8045)
+                                      // fCR (160:7972)
                                       margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 27*fem, 0*fem),
                                       child: Text(
                                         '상세보기',
@@ -89,12 +89,12 @@ class calendarDetails_accumulateHistory extends StatelessWidget {
                                       ),
                                     ),
                                     Container(
-                                      // vector4X7 (160:8046)
+                                      // vectorAus (160:7973)
                                       margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 3.22*fem),
                                       width: 20*fem,
                                       height: 10.99*fem,
                                       child: Image.asset(
-                                        'assets/resource/images/vector-Eqj.png',
+                                        'assets/resource/images/vector-h81.png',
                                         width: 20*fem,
                                         height: 10.99*fem,
                                       ),
@@ -105,26 +105,26 @@ class calendarDetails_accumulateHistory extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            // group103akM (160:8047)
+                            // autogroupwryq5X3 (92A6ANDBzX4R9KYY8dWRYq)
                             margin: EdgeInsets.fromLTRB(10*fem, 0*fem, 10*fem, 0*fem),
                             width: double.infinity,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                Container(
-                                  // autogroup8261iLm (92AA4WDPSPNo2CyqYu8261)
-                                  margin: EdgeInsets.fromLTRB(15*fem, 0*fem, 17*fem, 10*fem),
-                                  width: double.infinity,
-                                  height: 106*fem,
-                                  child: Container(
-                                    // autogroupbwim3tq (92AABaqvZPfpTJL529bwim)
-                                    width: 161*fem,
-                                    height: double.infinity,
+                            height: 142*fem,
+                            child: Container(
+                              // group103QZK (160:7978)
+                              width: double.infinity,
+                              height: double.infinity,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  Container(
+                                    // autogroupjhqwMUZ (92A6NrrNZMLp9FLUcFJHqw)
+                                    padding: EdgeInsets.fromLTRB(15*fem, 0*fem, 15*fem, 10*fem),
+                                    width: double.infinity,
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
                                         RichText(
-                                          // ynV (160:8049)
+                                          // Up5 (160:7980)
                                           text: TextSpan(
                                             style: SafeGoogleFont (
                                               'Inter',
@@ -156,7 +156,7 @@ class calendarDetails_accumulateHistory extends StatelessWidget {
                                           height: 10*fem,
                                         ),
                                         RichText(
-                                          // kcaltY5 (160:8052)
+                                          // kcalZDF (160:7983)
                                           text: TextSpan(
                                             style: SafeGoogleFont (
                                               'Inter',
@@ -191,7 +191,7 @@ class calendarDetails_accumulateHistory extends StatelessWidget {
                                           height: 10*fem,
                                         ),
                                         RichText(
-                                          // kcalpq3 (160:8053)
+                                          // kcaltuj (160:7984)
                                           text: TextSpan(
                                             style: SafeGoogleFont (
                                               'Inter',
@@ -226,7 +226,7 @@ class calendarDetails_accumulateHistory extends StatelessWidget {
                                           height: 10*fem,
                                         ),
                                         Text(
-                                          // kcalyLZ (160:8050)
+                                          // kcalSJy (160:7981)
                                           '잔여 칼로리 ‧  780kcal',
                                           style: SafeGoogleFont (
                                             'Inter',
@@ -240,42 +240,42 @@ class calendarDetails_accumulateHistory extends StatelessWidget {
                                       ],
                                     ),
                                   ),
-                                ),
-                                Container(
-                                  // line117Bs (160:8048)
-                                  margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 6*fem),
-                                  width: double.infinity,
-                                  height: 1*fem,
-                                  decoration: BoxDecoration (
-                                    color: Color(0xffa5a5a5),
-                                  ),
-                                ),
-                                Container(
-                                  // kcalr9T (160:8051)
-                                  margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 5*fem, 0*fem),
-                                  child: Text(
-                                    '1290kcal 적립 예정',
-                                    textAlign: TextAlign.right,
-                                    style: SafeGoogleFont (
-                                      'Inter',
-                                      fontSize: 15*ffem,
-                                      fontWeight: FontWeight.w700,
-                                      height: 1.2125*ffem/fem,
-                                      letterSpacing: 1*fem,
-                                      color: Color(0xff000000),
+                                  Container(
+                                    // line11NCd (160:7979)
+                                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 6*fem),
+                                    width: double.infinity,
+                                    height: 1*fem,
+                                    decoration: BoxDecoration (
+                                      color: Color(0xffa5a5a5),
                                     ),
                                   ),
-                                ),
-                              ],
+                                  Container(
+                                    // kcali1b (160:7982)
+                                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 5*fem, 0*fem),
+                                    child: Text(
+                                      '1290kcal 적립 예정',
+                                      textAlign: TextAlign.right,
+                                      style: SafeGoogleFont (
+                                        'Inter',
+                                        fontSize: 15*ffem,
+                                        fontWeight: FontWeight.w700,
+                                        height: 1.2125*ffem/fem,
+                                        letterSpacing: 1*fem,
+                                        color: Color(0xff000000),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ],
                       ),
                     ),
                     Container(
-                      // autogrouptlhj9uF (92A8uNUaiXWaoT5sULtLHj)
+                      // autogrouptqnm1mP (92A4CWKF5E4F4xM39ptqNM)
                       width: double.infinity,
-                      height: 343*fem,
+                      height: 453*fem,
                       decoration: BoxDecoration (
                         color: Color(0xffffffff),
                         borderRadius: BorderRadius.circular(15*fem),
@@ -290,7 +290,7 @@ class calendarDetails_accumulateHistory extends StatelessWidget {
                       child: Stack(
                         children: [
                           Positioned(
-                            // autogrouphnqdeLD (92A99SuTg5Ux5DqWVJHnQd)
+                            // autogroupw2hjuLy (92A4XkGBdEAw8KhuQWw2hj)
                             left: 11*fem,
                             top: 127*fem,
                             child: Container(
@@ -300,10 +300,10 @@ class calendarDetails_accumulateHistory extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.end,
                                 children: [
                                   Container(
-                                    // 9nm (160:8059)
-                                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 170*fem, 6*fem),
+                                    // wYZ (160:7991)
+                                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 172*fem, 6*fem),
                                     child: Text(
-                                      '오후 20:15',
+                                      '오전 11:45',
                                       style: SafeGoogleFont (
                                         'Inter',
                                         fontSize: 15*ffem,
@@ -315,7 +315,7 @@ class calendarDetails_accumulateHistory extends StatelessWidget {
                                     ),
                                   ),
                                   Text(
-                                    // Fqo (160:8058)
+                                    // psF (160:7989)
                                     '상세보기',
                                     textAlign: TextAlign.right,
                                     style: SafeGoogleFont (
@@ -332,7 +332,49 @@ class calendarDetails_accumulateHistory extends StatelessWidget {
                             ),
                           ),
                           Positioned(
-                            // NvR (160:8060)
+                            // autogroupwckdN85 (92A4u4yzGhfh21hRjowCkd)
+                            left: 11*fem,
+                            top: 303*fem,
+                            child: Container(
+                              width: 286*fem,
+                              height: 25*fem,
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  Container(
+                                    // GUM (160:7992)
+                                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 165*fem, 6*fem),
+                                    child: Text(
+                                      '오후 18:23 ',
+                                      style: SafeGoogleFont (
+                                        'Inter',
+                                        fontSize: 15*ffem,
+                                        fontWeight: FontWeight.w700,
+                                        height: 1.2125*ffem/fem,
+                                        letterSpacing: 1.5*fem,
+                                        color: Color(0xff000000),
+                                      ),
+                                    ),
+                                  ),
+                                  Text(
+                                    // P3B (160:7990)
+                                    '상세보기',
+                                    textAlign: TextAlign.right,
+                                    style: SafeGoogleFont (
+                                      'Inter',
+                                      fontSize: 12*ffem,
+                                      fontWeight: FontWeight.w700,
+                                      height: 1.2125*ffem/fem,
+                                      letterSpacing: 1.2*fem,
+                                      color: Color(0xffa5a5a5),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            // ir9 (160:7993)
                             left: 18*fem,
                             top: 15*fem,
                             child: Align(
@@ -354,7 +396,7 @@ class calendarDetails_accumulateHistory extends StatelessWidget {
                             ),
                           ),
                           Positioned(
-                            // line11UTf (160:8061)
+                            // line11cwX (160:7994)
                             left: 10*fem,
                             top: 52*fem,
                             child: Align(
@@ -370,9 +412,9 @@ class calendarDetails_accumulateHistory extends StatelessWidget {
                             ),
                           ),
                           Positioned(
-                            // line16bYH (160:8062)
+                            // line16kH3 (160:7995)
                             left: 10*fem,
-                            top: 322*fem,
+                            top: 282*fem,
                             child: Align(
                               child: SizedBox(
                                 width: 308*fem,
@@ -386,9 +428,25 @@ class calendarDetails_accumulateHistory extends StatelessWidget {
                             ),
                           ),
                           Positioned(
-                            // line14vqT (160:8063)
+                            // line18s6m (160:7996)
+                            left: 10*fem,
+                            top: 432*fem,
+                            child: Align(
+                              child: SizedBox(
+                                width: 308*fem,
+                                height: 1*fem,
+                                child: Container(
+                                  decoration: BoxDecoration (
+                                    color: Color(0xff182127),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            // line14zBP (160:7997)
                             left: 26*fem,
-                            top: 268*fem,
+                            top: 228*fem,
                             child: Align(
                               child: SizedBox(
                                 width: 276*fem,
@@ -402,89 +460,98 @@ class calendarDetails_accumulateHistory extends StatelessWidget {
                             ),
                           ),
                           Positioned(
-                            // group106Fsj (160:8064)
-                            left: 21*fem,
-                            top: 66*fem,
-                            child: TextButton(
-                              onPressed: () {},
-                              style: TextButton.styleFrom (
-                                padding: EdgeInsets.zero,
-                              ),
-                              child: Container(
-                                width: 286*fem,
-                                height: 40*fem,
-                                decoration: BoxDecoration (
-                                  borderRadius: BorderRadius.circular(25*fem),
-                                ),
-                                child: Row(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      // group112Jb7 (160:8068)
-                                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 26*fem, 0*fem),
-                                      width: 130*fem,
-                                      height: double.infinity,
-                                      decoration: BoxDecoration (
-                                        color: Color(0xffd9d9d9),
-                                        borderRadius: BorderRadius.circular(25*fem),
-                                      ),
-                                      child: Center(
-                                        child: Text(
-                                          '사용',
-                                          style: SafeGoogleFont (
-                                            'Inter',
-                                            fontSize: 15*ffem,
-                                            fontWeight: FontWeight.w700,
-                                            height: 1.2125*ffem/fem,
-                                            letterSpacing: 1*fem,
-                                            color: Color(0xff868686),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    Container(
-                                      // group111ZX3 (160:8065)
-                                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 0*fem),
-                                      width: 130*fem,
-                                      height: double.infinity,
-                                      decoration: BoxDecoration (
-                                        color: Color(0xff677086),
-                                        borderRadius: BorderRadius.circular(25*fem),
-                                      ),
-                                      child: Center(
-                                        child: Text(
-                                          '적립',
-                                          style: SafeGoogleFont (
-                                            'Inter',
-                                            fontSize: 15*ffem,
-                                            fontWeight: FontWeight.w700,
-                                            height: 1.2125*ffem/fem,
-                                            letterSpacing: 1*fem,
-                                            color: Color(0xffffffff),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
+                            // line1782h (160:7998)
+                            left: 10*fem,
+                            top: 378*fem,
+                            child: Align(
+                              child: SizedBox(
+                                width: 308*fem,
+                                height: 1*fem,
+                                child: Container(
+                                  decoration: BoxDecoration (
+                                    color: Color(0xffa5a5a5),
+                                  ),
                                 ),
                               ),
                             ),
                           ),
                           Positioned(
-                            // group107SKw (160:8071)
-                            left: 26*fem,
-                            top: 206*fem,
+                            // group106rjP (160:7999)
+                            left: 21*fem,
+                            top: 66*fem,
                             child: Container(
-                              width: 280*fem,
+                              width: 286*fem,
+                              height: 40*fem,
+                              decoration: BoxDecoration (
+                                borderRadius: BorderRadius.circular(25*fem),
+                              ),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    // autogroup4ubfNhj (92A5Robmz2gaxMWKPb4Ubf)
+                                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 26*fem, 0*fem),
+                                    width: 130*fem,
+                                    height: double.infinity,
+                                    decoration: BoxDecoration (
+                                      color: Color(0xff677086),
+                                      borderRadius: BorderRadius.circular(25*fem),
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        '사용',
+                                        style: SafeGoogleFont (
+                                          'Inter',
+                                          fontSize: 15*ffem,
+                                          fontWeight: FontWeight.w700,
+                                          height: 1.2125*ffem/fem,
+                                          letterSpacing: 1*fem,
+                                          color: Color(0xffffffff),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    // autogroupc1rvefF (92A5XYwCZh8gtqjL68c1rV)
+                                    width: 130*fem,
+                                    height: double.infinity,
+                                    decoration: BoxDecoration (
+                                      color: Color(0xffd9d9d9),
+                                      borderRadius: BorderRadius.circular(25*fem),
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        '적립',
+                                        style: SafeGoogleFont (
+                                          'Inter',
+                                          fontSize: 15*ffem,
+                                          fontWeight: FontWeight.w700,
+                                          height: 1.2125*ffem/fem,
+                                          letterSpacing: 1*fem,
+                                          color: Color(0xff868686),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            // group107kCV (160:8004)
+                            left: 26*fem,
+                            top: 166*fem,
+                            child: Container(
+                              width: 278*fem,
                               height: 25*fem,
                               child: Row(
                                 crossAxisAlignment: CrossAxisAlignment.end,
                                 children: [
                                   Container(
-                                    // AFw (160:8073)
-                                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 109*fem, 0*fem),
+                                    // U8V (160:8006)
+                                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 151*fem, 0*fem),
                                     child: Text(
-                                      '웨이트트레이닝',
+                                      '김치찌개',
                                       style: SafeGoogleFont (
                                         'Inter',
                                         fontSize: 20*ffem,
@@ -496,8 +563,8 @@ class calendarDetails_accumulateHistory extends StatelessWidget {
                                     ),
                                   ),
                                   Text(
-                                    // kcalfyP (160:8072)
-                                    '300kcal',
+                                    // kcalz6q (160:8005)
+                                    '243kcal',
                                     style: SafeGoogleFont (
                                       'Inter',
                                       fontSize: 15*ffem,
@@ -512,42 +579,20 @@ class calendarDetails_accumulateHistory extends StatelessWidget {
                             ),
                           ),
                           Positioned(
-                            // pLV (160:8074)
-                            left: 18*fem,
-                            top: 166*fem,
-                            child: Align(
-                              child: SizedBox(
-                                width: 142*fem,
-                                height: 28*fem,
-                                child: Text(
-                                  '채원이랑 헬스장',
-                                  style: SafeGoogleFont (
-                                    'Inter',
-                                    fontSize: 23*ffem,
-                                    fontWeight: FontWeight.w700,
-                                    height: 1.2125*ffem/fem,
-                                    letterSpacing: 2.3*fem,
-                                    color: Color(0xff000000),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            // autogroupy7suigm (92A9GCDDfFKF8fQSGNY7Su)
+                            // group1088D3 (160:8007)
                             left: 26*fem,
-                            top: 237*fem,
+                            top: 342*fem,
                             child: Container(
-                              width: 277*fem,
+                              width: 278*fem,
                               height: 25*fem,
                               child: Row(
                                 crossAxisAlignment: CrossAxisAlignment.end,
                                 children: [
                                   Container(
-                                    // Ssf (160:8077)
-                                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 152*fem, 0*fem),
+                                    // TFK (160:8009)
+                                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 151*fem, 0*fem),
                                     child: Text(
-                                      '러닝머신',
+                                      '비빔냉면',
                                       style: SafeGoogleFont (
                                         'Inter',
                                         fontSize: 20*ffem,
@@ -559,8 +604,49 @@ class calendarDetails_accumulateHistory extends StatelessWidget {
                                     ),
                                   ),
                                   Text(
-                                    // kcalAYm (160:8075)
-                                    '210kcal',
+                                    // kcalAvR (160:8008)
+                                    '427kcal',
+                                    style: SafeGoogleFont (
+                                      'Inter',
+                                      fontSize: 15*ffem,
+                                      fontWeight: FontWeight.w700,
+                                      height: 1.2125*ffem/fem,
+                                      letterSpacing: 1.5*fem,
+                                      color: Color(0xff868686),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            // autogroup7k7wKHX (92A4fps49jr9gNQ3xJ7k7w)
+                            left: 26*fem,
+                            top: 197*fem,
+                            child: Container(
+                              width: 277*fem,
+                              height: 25*fem,
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  Container(
+                                    // eKo (160:8013)
+                                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 166*fem, 0*fem),
+                                    child: Text(
+                                      '공기밥',
+                                      style: SafeGoogleFont (
+                                        'Inter',
+                                        fontSize: 20*ffem,
+                                        fontWeight: FontWeight.w700,
+                                        height: 1.2125*ffem/fem,
+                                        letterSpacing: 2*fem,
+                                        color: Color(0xff677086),
+                                      ),
+                                    ),
+                                  ),
+                                  Text(
+                                    // kcalxrH (160:8010)
+                                    '319kcal',
                                     textAlign: TextAlign.right,
                                     style: SafeGoogleFont (
                                       'Inter',
@@ -576,9 +662,9 @@ class calendarDetails_accumulateHistory extends StatelessWidget {
                             ),
                           ),
                           Positioned(
-                            // autogroupcszyi4V (92A9N7D2opziFyX6p1CSzy)
+                            // autogroupn5adumX (92A4naAp8ugSjoxyjNN5AD)
                             left: 26*fem,
-                            top: 272*fem,
+                            top: 232*fem,
                             child: Container(
                               width: 277*fem,
                               height: 25*fem,
@@ -586,8 +672,8 @@ class calendarDetails_accumulateHistory extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Container(
-                                    // RUh (160:8078)
-                                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 166*fem, 0*fem),
+                                    // SWZ (160:8014)
+                                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 164*fem, 0*fem),
                                     child: Text(
                                       '총합',
                                       style: SafeGoogleFont (
@@ -601,8 +687,8 @@ class calendarDetails_accumulateHistory extends StatelessWidget {
                                     ),
                                   ),
                                   Text(
-                                    // kcal8tu (160:8076)
-                                    '510kcal',
+                                    // kcalMNd (160:8011)
+                                    '562kcal',
                                     textAlign: TextAlign.right,
                                     style: SafeGoogleFont (
                                       'Inter',
@@ -610,7 +696,49 @@ class calendarDetails_accumulateHistory extends StatelessWidget {
                                       fontWeight: FontWeight.w700,
                                       height: 1.2125*ffem/fem,
                                       letterSpacing: 1.8*fem,
-                                      color: Color(0xff18c07a),
+                                      color: Color(0xfff55050),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            // autogroup4jvftdT (92A51edMgxGctdNhfo4jVf)
+                            left: 26*fem,
+                            top: 381*fem,
+                            child: Container(
+                              width: 277*fem,
+                              height: 26*fem,
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  Container(
+                                    // R7b (160:8015)
+                                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 165*fem, 1*fem),
+                                    child: Text(
+                                      '총합',
+                                      style: SafeGoogleFont (
+                                        'Inter',
+                                        fontSize: 20*ffem,
+                                        fontWeight: FontWeight.w700,
+                                        height: 1.2125*ffem/fem,
+                                        letterSpacing: 2*fem,
+                                        color: Color(0xff677086),
+                                      ),
+                                    ),
+                                  ),
+                                  Text(
+                                    // kcal9JV (160:8012)
+                                    '427kcal',
+                                    textAlign: TextAlign.right,
+                                    style: SafeGoogleFont (
+                                      'Inter',
+                                      fontSize: 18*ffem,
+                                      fontWeight: FontWeight.w700,
+                                      height: 1.2125*ffem/fem,
+                                      letterSpacing: 1.8*fem,
+                                      color: Color(0xfff55050),
                                     ),
                                   ),
                                 ],
@@ -625,25 +753,91 @@ class calendarDetails_accumulateHistory extends StatelessWidget {
               ),
             ),
             Positioned(
-              // group98g9j (160:8054)
+              // group98V7T (160:7985)
               left: 0*fem,
-              top: 690*fem,
+              top: 800*fem,
               child: Container(
                 width: 360*fem,
                 height: 108*fem,
                 decoration: BoxDecoration (
-                  color: Color(0xffd9d9d9),
                   borderRadius: BorderRadius.circular(15*fem),
                 ),
                 child: Center(
+                  // rectangle173cxm (160:7986)
+                  child: SizedBox(
+                    width: double.infinity,
+                    height: 108*fem,
+                    child: Container(
+                      decoration: BoxDecoration (
+                        borderRadius: BorderRadius.circular(15*fem),
+                        color: Color(0xffd9d9d9),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              // rectangle171Z7K (160:8016)
+              left: 0*fem,
+              top: 0*fem,
+              child: Align(
+                child: SizedBox(
+                  width: 360*fem,
+                  height: 102*fem,
+                  child: Container(
+                    decoration: BoxDecoration (
+                      color: Color(0xffffffff),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color(0x3f000000),
+                          offset: Offset(0*fem, 4*fem),
+                          blurRadius: 2*fem,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              // vectore8m (160:8017)
+              left: 25*fem,
+              top: 60.9999980927*fem,
+              child: Align(
+                child: SizedBox(
+                  width: 11*fem,
+                  height: 20*fem,
+                  child: TextButton(
+                    onPressed: () {},
+                    style: TextButton.styleFrom (
+                      padding: EdgeInsets.zero,
+                    ),
+                    child: Image.asset(
+                      'assets/resource/images/vector-hoj.png',
+                      width: 11*fem,
+                      height: 20*fem,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              // YE9 (160:8018)
+              left: 108*fem,
+              top: 61*fem,
+              child: Align(
+                child: SizedBox(
+                  width: 130*fem,
+                  height: 20*fem,
                   child: Text(
-                    '네비게이션바 영역',
+                    '칼로리 소비 캘린더',
                     style: SafeGoogleFont (
-                      'Kanit',
-                      fontSize: 20*ffem,
-                      fontWeight: FontWeight.w600,
-                      height: 1.495*ffem/fem,
-                      letterSpacing: 1*fem,
+                      'Inter',
+                      fontSize: 18*ffem,
+                      fontWeight: FontWeight.w700,
+                      height: 1.1111111111*ffem/fem,
+                      letterSpacing: 0.25*fem,
                       color: Color(0xff000000),
                     ),
                   ),
@@ -651,7 +845,7 @@ class calendarDetails_accumulateHistory extends StatelessWidget {
               ),
             ),
             Positioned(
-              // tabmenu93K (160:8083)
+              // tabmenuCpV (160:8019)
               left: 0*fem,
               top: 673*fem,
               child: Container(
@@ -676,117 +870,50 @@ class calendarDetails_accumulateHistory extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      // autogroupsxsqPTT (92ABnTLqy3dy1dKMMqSxSq)
+                      // autogroupydeu3KK (92A8RtGP56VK1D9CpnYdEu)
                       margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 78*fem, 0*fem),
                       width: 15*fem,
                       height: 25*fem,
                       child: Image.asset(
-                        'assets/resource/images/auto-group-sxsq.png',
+                        'assets/resource/images/auto-group-ydeu.png',
                         width: 15*fem,
                         height: 25*fem,
                       ),
                     ),
                     Container(
-                      // socialJ4d (160:8089)
+                      // social9dF (160:8025)
                       margin: EdgeInsets.fromLTRB(0*fem, 0.5*fem, 78*fem, 0*fem),
                       width: 15*fem,
                       height: 15*fem,
                       child: Image.asset(
-                        'assets/resource/images/social-RmX.png',
+                        'assets/resource/images/social-W5b.png',
                         width: 15*fem,
                         height: 15*fem,
                       ),
                     ),
                     Container(
-                      // mydataCfo (160:8093)
+                      // mydata4VK (160:8029)
                       margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 78*fem, 0*fem),
                       width: 15*fem,
                       height: 16*fem,
                       child: Image.asset(
-                        'assets/resource/images/mydata-SE9.png',
+                        'assets/resource/images/mydata-wRo.png',
                         width: 15*fem,
                         height: 16*fem,
                       ),
                     ),
                     Container(
-                      // iu3 (160:8096)
+                      // aCm (160:8032)
                       margin: EdgeInsets.fromLTRB(0*fem, 5.5*fem, 0*fem, 0*fem),
                       width: 21*fem,
                       height: 5*fem,
                       child: Image.asset(
-                        'assets/resource/images/-oVF.png',
+                        'assets/resource/images/-gG5.png',
                         width: 21*fem,
                         height: 5*fem,
                       ),
                     ),
                   ],
-                ),
-              ),
-            ),
-            Positioned(
-              // rectangle1712uj (160:8100)
-              left: 0*fem,
-              top: 0*fem,
-              child: Align(
-                child: SizedBox(
-                  width: 360*fem,
-                  height: 102*fem,
-                  child: Container(
-                    decoration: BoxDecoration (
-                      color: Color(0xffffffff),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color(0x3f000000),
-                          offset: Offset(0*fem, 4*fem),
-                          blurRadius: 2*fem,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Positioned(
-              // vectorvkD (160:8101)
-              left: 25*fem,
-              top: 60.9999980927*fem,
-              child: Align(
-                child: SizedBox(
-                  width: 11*fem,
-                  height: 20*fem,
-                  child: TextButton(
-                    onPressed: () {},
-                    style: TextButton.styleFrom (
-                      padding: EdgeInsets.zero,
-                    ),
-                    child: Image.asset(
-                      'assets/resource/images/vector-1Au.png',
-                      width: 11*fem,
-                      height: 20*fem,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Positioned(
-              // Rgy (160:8102)
-              left: 108*fem,
-              top: 61*fem,
-              child: Align(
-                child: SizedBox(
-                  width: 130*fem,
-                  height: 20*fem,
-                  child: Text(
-                    '칼로리 소비 캘린더',
-                    style: SafeGoogleFont (
-                      'Inter',
-                      fontSize: 18*ffem,
-                      fontWeight: FontWeight.w700,
-                      height: 1.1111111111*ffem/fem,
-                      letterSpacing: 0.25*fem,
-                      color: Color(0xff000000),
-                    ),
-                  ),
                 ),
               ),
             ),
