@@ -3,6 +3,8 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
+import 'package:myapp/resource/kong/signup.dart';
+import 'package:myapp/resource/kong/signin.dart';
 
 class first_page extends StatelessWidget {
   @override
@@ -13,8 +15,8 @@ class first_page extends StatelessWidget {
     return Container(
       width: double.infinity,
       child: Container(
-        // 18q (160:11078)
-        padding: EdgeInsets.fromLTRB(45*fem, 306*fem, 45*fem, 142*fem),
+        // xPw (1:149)
+        padding: EdgeInsets.fromLTRB(16*fem, 49*fem, 45*fem, 142*fem),
         width: double.infinity,
         decoration: BoxDecoration (
           color: Color(0xffededed),
@@ -23,8 +25,8 @@ class first_page extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              // caloriepay7hf (160:11085)
-              margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 192*fem),
+              // caloriepaybho (1:154)
+              margin: EdgeInsets.fromLTRB(0*fem, 180*fem, 0*fem, 142*fem),
               child: Text(
                 'Calorie Pay',
                 style: SafeGoogleFont (
@@ -37,24 +39,22 @@ class first_page extends StatelessWidget {
               ),
             ),
             Container(
-              // group1pry (160:11081)
-              margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 16*fem),
+              margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 16 * fem),
               child: TextButton(
                 onPressed: () {},
-                style: TextButton.styleFrom (
+                style: TextButton.styleFrom(
                   padding: EdgeInsets.zero,
                 ),
                 child: Container(
-                  padding: EdgeInsets.fromLTRB(20*fem, 13*fem, 121*fem, 14*fem),
                   width: double.infinity,
-                  decoration: BoxDecoration (
+                  decoration: BoxDecoration(
                     color: Color(0xff18c07a),
-                    borderRadius: BorderRadius.circular(10*fem),
+                    borderRadius: BorderRadius.circular(10 * fem),
                     boxShadow: [
                       BoxShadow(
                         color: Color(0x3f000000),
-                        offset: Offset(0*fem, 4*fem),
-                        blurRadius: 2*fem,
+                        offset: Offset(0 * fem, 4 * fem),
+                        blurRadius: 2 * fem,
                       ),
                     ],
                   ),
@@ -62,27 +62,38 @@ class first_page extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
-                        // vectorsKT (160:11084)
-                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 31*fem, 0*fem),
-                        width: 29*fem,
-                        height: 23*fem,
+                        margin: EdgeInsets.fromLTRB(20 * fem, 0 * fem, 0 * fem, 0 * fem),
+                        width: 29 * fem,
+                        height: 23 * fem,
                         child: Image.asset(
                           'assets/resource/images/vector-5uP.png',
-                          width: 29*fem,
-                          height: 23*fem,
+                          width: 29 * fem,
+                          height: 23 * fem,
                         ),
                       ),
-                      Container(
-                        // bWM (160:11083)
-                        margin: EdgeInsets.fromLTRB(0*fem, 1*fem, 0*fem, 0*fem),
+                      SizedBox(width: 50,),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => signup()),
+                          );
+                        },
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.symmetric(vertical: 13 * fem), // 버튼의 상하 패딩만 설정
+                          backgroundColor: Color(0xff18c07a),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10 * fem),
+                          ),
+                        ),
                         child: Text(
                           '이메일로 회원가입',
-                          style: SafeGoogleFont (
-                            'Roboto',
-                            fontSize: 14*ffem,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 12 * ffem,
                             fontWeight: FontWeight.w600,
-                            height: 1.4285714286*ffem/fem,
-                            letterSpacing: 0.25*fem,
+                            height: 1.3 * ffem / fem,
+                            letterSpacing: 0.25 * fem,
                             color: Color(0xffffffff),
                           ),
                         ),
@@ -93,8 +104,8 @@ class first_page extends StatelessWidget {
               ),
             ),
             Container(
-              // group79VLq (160:11086)
-              margin: EdgeInsets.fromLTRB(77*fem, 0*fem, 78*fem, 0*fem),
+              // group79Qah (1:155)
+              margin: EdgeInsets.fromLTRB(78*fem, 0*fem, 78*fem, 0*fem),
               child: TextButton(
                 onPressed: () {},
                 style: TextButton.styleFrom (
@@ -106,8 +117,8 @@ class first_page extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
-                        // cRT (160:11087)
-                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 15*fem, 2*fem),
+                        // GFX (1:156)
+                        margin: EdgeInsets.fromLTRB(15*fem, 0*fem, 15*fem, 2*fem),
                         child: Text(
                           '이미 회원이신가요? ',
                           style: SafeGoogleFont (
@@ -119,17 +130,26 @@ class first_page extends StatelessWidget {
                           ),
                         ),
                       ),
+                      SizedBox(height: 5,),
                       Container(
-                        // ijP (160:11088)
-                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 13*fem, 0*fem),
-                        child: Text(
-                          '로그인',
-                          style: SafeGoogleFont (
-                            'Inter',
-                            fontSize: 14*ffem,
-                            fontWeight: FontWeight.w700,
-                            height: 1.2125*ffem/fem,
-                            color: Color(0xff868686),
+                        // upH (1:157)
+                        margin: EdgeInsets.fromLTRB(13*fem, 0*fem, 13*fem, 0*fem),
+                        child: TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => signin()),
+                            );
+                          },
+                          child: Text(
+                            '로그인',
+                            style: SafeGoogleFont (
+                              'Inter',
+                              fontSize: 14*ffem,
+                              fontWeight: FontWeight.w700,
+                              height: 1.2125*ffem/fem,
+                              color: Color(0xff868686),
+                            ),
                           ),
                         ),
                       ),
@@ -141,6 +161,6 @@ class first_page extends StatelessWidget {
           ],
         ),
       ),
-          );
+    );
   }
 }
