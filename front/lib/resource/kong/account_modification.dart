@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/resource/kong/password.dart';
+import 'package:myapp/resource/kong/phonenumber_change.dart';
+import 'package:myapp/resource/kong/email.dart';
 import 'package:myapp/utils.dart';
 
 class account_modification extends StatelessWidget {
@@ -48,13 +51,18 @@ class account_modification extends StatelessWidget {
                         padding: EdgeInsets.zero,
                       ),
                       child: Container(
-                        width: 11*fem,
-                        height: 20*fem,
-                        child: Image.asset(
-                          'assets/resource/images/vector-xn1.png',
-                          width: 11*fem,
-                          height: 20*fem,
-                        ),
+                        width: 22*fem,
+                        height: 40*fem,
+                        child: TextButton(
+                          onPressed: () {
+                            Navigator.pop(context); // 전 페이지로 이동하는 코드
+                          },
+                          child: Image.asset(
+                            'assets/resource/images/vector-aHs.png',
+                            width: 22 * fem,
+                            height: 40 * fem,
+                          ),
+                        )
                       ),
                     ),
                   ),
@@ -160,17 +168,24 @@ class account_modification extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Text(
-                          // LAq (160:10792)
-                          '변경',
-                          textAlign: TextAlign.right,
-                          style: SafeGoogleFont (
-                            'Inter',
-                            fontSize: 12*ffem,
-                            fontWeight: FontWeight.w700,
-                            height: 1.2125*ffem/fem,
-                            letterSpacing: 1.2*fem,
-                            color: Color(0xffa5a5a5),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => email()),
+                            );
+                          },
+                          child: Text(
+                            '변경',
+                            textAlign: TextAlign.right,
+                            style: SafeGoogleFont(
+                              'Inter',
+                              fontSize: 12 * ffem,
+                              fontWeight: FontWeight.w700,
+                              height: 1.2125 * ffem / fem,
+                              letterSpacing: 1.2 * fem,
+                              color: Color(0xffa5a5a5),
+                            ),
                           ),
                         ),
                       ],
@@ -214,17 +229,24 @@ class account_modification extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Text(
-                          // r2h (160:10796)
-                          '변경',
-                          textAlign: TextAlign.right,
-                          style: SafeGoogleFont (
-                            'Inter',
-                            fontSize: 12*ffem,
-                            fontWeight: FontWeight.w700,
-                            height: 1.2125*ffem/fem,
-                            letterSpacing: 1.2*fem,
-                            color: Color(0xffa5a5a5),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => password()),
+                            );
+                          },
+                          child: Text(
+                            '수정',
+                            textAlign: TextAlign.right,
+                            style: SafeGoogleFont(
+                              'Inter',
+                              fontSize: 12 * ffem,
+                              fontWeight: FontWeight.w700,
+                              height: 1.2125 * ffem / fem,
+                              letterSpacing: 1.2 * fem,
+                              color: Color(0xffa5a5a5),
+                            ),
                           ),
                         ),
                       ],
@@ -269,24 +291,26 @@ class account_modification extends StatelessWidget {
                           ),
                         ),
                         TextButton(
-                          // ZbK (160:10800)
-                          onPressed: () {},
-                          style: TextButton.styleFrom (
-                            padding: EdgeInsets.zero,
-                          ),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => phonenumber_change()),
+                            );
+                          },
                           child: Text(
                             '변경',
                             textAlign: TextAlign.right,
-                            style: SafeGoogleFont (
+                            style: SafeGoogleFont(
                               'Inter',
-                              fontSize: 12*ffem,
+                              fontSize: 12 * ffem,
                               fontWeight: FontWeight.w700,
-                              height: 1.2125*ffem/fem,
-                              letterSpacing: 1.2*fem,
+                              height: 1.2125 * ffem / fem,
+                              letterSpacing: 1.2 * fem,
                               color: Color(0xffa5a5a5),
                             ),
                           ),
                         ),
+
                       ],
                     ),
                   ),
