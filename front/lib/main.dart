@@ -6,9 +6,17 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/resource/gyu/Calendar.dart';
 import 'package:myapp/resource/gyu/CalorieScore.dart';
 import 'package:myapp/resource/kong/first_page.dart';
+import 'package:myapp/resource/ljh/mainpage.dart';
 import 'package:myapp/utils.dart';
 import 'package:myapp/resource/gyu/calendar_Details.dart';
 import 'firebase_options.dart';
+import 'package:myapp/resource/sungjin/Calorie-Score_2.dart';
+import 'package:myapp/resource/gyu/Calendar.dart';
+import 'package:myapp/resource/gyu/calendar_Details.dart';
+import 'package:myapp/resource/gyu/CalorieScore.dart';
+import 'package:myapp/resource/gyu/DailyReport.dart';
+import 'package:myapp/resource/gyu/DailyReportDetails.dart';
+import 'package:myapp/resource/gyu/tier.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,7 +38,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         body: SingleChildScrollView(
-          child: first_page(),
+          child: mainpage(),
         ),
       ),
     );
