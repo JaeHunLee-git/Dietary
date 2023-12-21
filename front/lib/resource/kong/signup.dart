@@ -5,38 +5,30 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 import 'package:myapp/resource/kong/Register.dart';
 import 'package:myapp/resource/kong/signin.dart';
+import 'package:myapp/main.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-//import 'package:firebase/firebase.dart' as fb;
+import 'package:firebase_auth/firebase_auth.dart';
 
-// void saveToDatabase(String name, String password, String email, String phoneNumber) async {
-//   try {
-//     await fb.database().ref('users').push().set({
-//       'name': name,
-//       'password': password,
-//       'email': email,
-//       'phoneNumber': phoneNumber,
-//     });
-//     // 데이터가 성공적으로 저장됐을 때 추가 작업을 수행할 수 있습니다.
-//   } catch (e) {
-//     // 데이터 저장 중 에러가 발생했을 때의 처리
-//     print('Error: $e');
-//   }
-// }
 
-class UserDataHandler {
-  Future<void> saveUserData(String name, String phoneNumber, String email, String password) async {
-    try {
-      await FirebaseFirestore.instance.collection('users').add({
-        'name': name,
-        'phoneNumber': phoneNumber,
-        'email': email,
-        'password': password,
-        // 다른 필요한 데이터도 추가할 수 있습니다.
-      });
-    } catch (e) {
-      print('Error saving user data: $e');
-      throw e;
-    }
+Future<void> registerUser(String name, String password, String email, String phoneNumber) async {
+  try {
+    UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      email: email,
+      password: password,
+    );
+
+    userId = userCredential.user!.uid;
+
+    await FirebaseFirestore.instance.collection('user').doc(userId).set({
+      'name': name,
+      'password': password,
+      'email': email,
+      'phoneNumber': phoneNumber,
+    });
+
+    print('User registered successfully with ID: $userId');
+  } catch (e) {
+    print('Error: $e');
   }
 }
 
@@ -396,7 +388,7 @@ class _signupState extends State<signup> {
                       child: Center(
                         child: TextButton(
                           onPressed: () {
-                            //saveToDatabase(name, password, email, phoneNumber);
+                           registerUser(name, password, email, phoneNumber);
                             Navigator.push(
                               context,
                               MaterialPageRoute(builder: (context) => Register()),

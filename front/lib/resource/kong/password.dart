@@ -3,6 +3,8 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 
 class password extends StatefulWidget {
   password({super.key});
@@ -13,6 +15,7 @@ class password extends StatefulWidget {
 
 class passwordState extends State<password> {
   String password='';
+  String passwordText='';
 
   @override
   Widget build(BuildContext context) {
@@ -55,11 +58,6 @@ class passwordState extends State<password> {
                         Container(
                           // vectorWh3 (160:10760)
                           margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 99.5*fem, 0*fem),
-                          child: TextButton(
-                            onPressed: () {},
-                            style: TextButton.styleFrom (
-                              padding: EdgeInsets.zero,
-                            ),
                             child: Container(
                               width: 22*fem,
                               height: 40*fem,
@@ -72,9 +70,8 @@ class passwordState extends State<password> {
                                   width: 22 * fem,
                                   height: 40 * fem,
                                 ),
-                              )
+                              ),
                             ),
-                          ),
                         ),
                         Center(
                           // cVB (160:10761)
@@ -158,7 +155,22 @@ class passwordState extends State<password> {
                     // group1723iu (160:10750)
                     margin: EdgeInsets.fromLTRB(16*fem, 0*fem, 16*fem, 407*fem),
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        FirebaseFirestore.instance.collection('Password').doc('Password').set({
+                          'Password': password,
+                        })
+                            .then((value) {
+                          setState(() {
+                            passwordText = '저장돼었습니다';
+                          });
+                        })
+                            .catchError((error) {
+                          setState(() {
+                            passwordText = '저장실패';
+                          });
+                          // 저장에 실패한 경우 처리
+                        });
+                      },
                       style: TextButton.styleFrom (
                         padding: EdgeInsets.zero,
                       ),
@@ -193,6 +205,13 @@ class passwordState extends State<password> {
                           ),
                         ),
                       ),
+                    ),
+                  ),
+                  Text(
+                    passwordText,
+                    style: TextStyle(
+                      color: passwordText == '저장실패' ? Colors.red : Colors.green,
+                      fontSize: 70,
                     ),
                   ),
                   Container(

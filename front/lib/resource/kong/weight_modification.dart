@@ -3,6 +3,8 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 
 class weight_modification extends StatefulWidget {
   const weight_modification({super.key});
@@ -13,6 +15,8 @@ class weight_modification extends StatefulWidget {
 
 class _weight_modificationState extends State<weight_modification> {
   String Weight='';
+  String WeightText='';
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 360;
@@ -53,11 +57,6 @@ class _weight_modificationState extends State<weight_modification> {
                     Container(
                       // vectorGys (160:10696)
                       margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 110.5*fem, 0*fem),
-                      child: TextButton(
-                        onPressed: () {},
-                        style: TextButton.styleFrom (
-                          padding: EdgeInsets.zero,
-                        ),
                         child: Container(
                           width: 22*fem,
                           height: 40*fem,
@@ -72,7 +71,6 @@ class _weight_modificationState extends State<weight_modification> {
                             ),
                           )
                         ),
-                      ),
                     ),
                     Center(
                       // A3f (160:10697)
@@ -156,7 +154,22 @@ class _weight_modificationState extends State<weight_modification> {
                 // group172xtd (160:10686)
                 margin: EdgeInsets.fromLTRB(16*fem, 0*fem, 16*fem, 407*fem),
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    FirebaseFirestore.instance.collection('Weight').doc('Weight').set({
+                      'Weight': Weight,
+                    })
+                        .then((value) {
+                      setState(() {
+                        WeightText = '저장돼었습니다';
+                      });
+                    })
+                        .catchError((error) {
+                      setState(() {
+                        WeightText = '저장실패';
+                      });
+                      // 저장에 실패한 경우 처리
+                    });
+                  },
                   style: TextButton.styleFrom (
                     padding: EdgeInsets.zero,
                   ),
@@ -191,6 +204,13 @@ class _weight_modificationState extends State<weight_modification> {
                       ),
                     ),
                   ),
+                ),
+              ),
+              Text(
+                WeightText,
+                style: TextStyle(
+                  color: WeightText == '저장실패' ? Colors.red : Colors.green,
+                  fontSize: 70,
                 ),
               ),
               Container(

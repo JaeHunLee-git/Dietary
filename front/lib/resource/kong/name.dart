@@ -3,6 +3,8 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 
 class name extends StatefulWidget {
   name({super.key});
@@ -13,6 +15,7 @@ class name extends StatefulWidget {
 
 class nameState extends State<name> {
   String name='';
+  String nameText='';
   @override
   Widget build(BuildContext context) {
     double baseWidth = 360;
@@ -150,7 +153,22 @@ class nameState extends State<name> {
                     // group172xtd (160:10686)
                     margin: EdgeInsets.fromLTRB(16*fem, 0*fem, 16*fem, 407*fem),
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        FirebaseFirestore.instance.collection('Name').doc('Name').set({
+                          'Name': name,
+                        })
+                            .then((value) {
+                          setState(() {
+                            nameText = '저장돼었습니다';
+                          });
+                        })
+                            .catchError((error) {
+                          setState(() {
+                            nameText = '저장실패';
+                          });
+                          // 저장에 실패한 경우 처리
+                        });
+                      },
                       style: TextButton.styleFrom (
                         padding: EdgeInsets.zero,
                       ),
@@ -185,6 +203,13 @@ class nameState extends State<name> {
                           ),
                         ),
                       ),
+                    ),
+                  ),
+                  Text(
+                    nameText,
+                    style: TextStyle(
+                      color: nameText == '저장실패' ? Colors.red : Colors.green,
+                      fontSize: 70,
                     ),
                   ),
                   Container(

@@ -3,6 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class goal_weight_modification extends StatefulWidget {
   goal_weight_modification({super.key});
@@ -13,6 +14,7 @@ class goal_weight_modification extends StatefulWidget {
 
 class _goal_weight_modificationState extends State<goal_weight_modification> {
   String Weight='';
+  String _WeightText='';
 
   @override
   Widget build(BuildContext context) {
@@ -55,26 +57,20 @@ class _goal_weight_modificationState extends State<goal_weight_modification> {
                     Container(
                       // vectorepd (160:10728)
                       margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 89*fem, 0*fem),
-                      child: TextButton(
-                        onPressed: () {},
-                        style: TextButton.styleFrom (
-                          padding: EdgeInsets.zero,
-                        ),
                         child: Container(
-                          width: 11*fem,
-                          height: 20*fem,
+                          width: 22*fem,
+                          height: 40*fem,
                           child: TextButton(
                             onPressed: () {
                               Navigator.pop(context); // 전 페이지로 이동하는 코드
                             },
                             child: Image.asset(
                               'assets/resource/images/vector-aHs.png',
-                              width: 11 * fem,
-                              height: 20 * fem,
+                              width: 22 * fem,
+                              height: 40 * fem,
                             ),
-                          )
+                          ),
                         ),
-                      ),
                     ),
                     Center(
                       // LxM (160:10729)
@@ -159,6 +155,20 @@ class _goal_weight_modificationState extends State<goal_weight_modification> {
                 margin: EdgeInsets.fromLTRB(16*fem, 0*fem, 16*fem, 407*fem),
                 child: TextButton(
                   onPressed: () {
+                    FirebaseFirestore.instance.collection('Gweight').doc('Gweight').set({ //TODO 컬랙션, 컬렉션 안의 문서
+                      'Weight': Weight, // TODO 문서에 저장되는 필드 이름, 해당 필드에 저장되는 데이터
+                    })
+                        .then((value) {
+                      setState(() {
+                        _WeightText = '저장돼었습니다';
+                      });
+                    })
+                        .catchError((error) {
+                      setState(() {
+                        _WeightText = '저장실패';
+                      });
+                      // 저장에 실패한 경우 처리
+                    });
                     // 수정한 Weight 데베 저장
                   },
                   style: TextButton.styleFrom (
@@ -197,7 +207,14 @@ class _goal_weight_modificationState extends State<goal_weight_modification> {
                   ),
                 ),
               ),
-              Container(
+          Text(
+            _WeightText,
+            style: TextStyle(
+              color: _WeightText == '저장실패' ? Colors.red : Colors.green,
+              fontSize: 70,
+            ),
+          ),
+          Container(
                 // tabmenuadj (160:10730)
                 padding: EdgeInsets.fromLTRB(30*fem, 21*fem, 30*fem, 21*fem),
                 width: double.infinity,

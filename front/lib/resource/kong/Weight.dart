@@ -4,6 +4,20 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 import 'package:myapp/resource/kong/caloriepay_start.dart';
+import 'package:myapp/main.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+Future<void> setUser(String Gweight) async {
+  try {
+    await FirebaseFirestore.instance.collection('users').doc(userId).set({
+      'Gweight': Gweight,
+
+    });
+    print('User data added successfully for user: $userId');
+  } catch (e) {
+    print('Error adding user data: $e');
+  }
+}
 
 class Weight extends StatefulWidget {
 
@@ -12,6 +26,7 @@ class Weight extends StatefulWidget {
 }
 
 class _WeightState extends State<Weight> {
+  String Gweight='';
 
   bool isTextHidden = true;
   bool isMaleSelected = true;
@@ -138,6 +153,9 @@ class _WeightState extends State<Weight> {
                             });
                           },
                           obscureText: isTextHidden,
+                          onChanged: (value){
+                            Gweight=value;
+                          },
                         ),
                       ),
                     ],
@@ -182,6 +200,7 @@ class _WeightState extends State<Weight> {
                   margin: EdgeInsets.fromLTRB(21*fem, 0*fem, 21*fem, 0*fem),
                   child: TextButton(
                     onPressed: () {
+                      setUser(Gweight);
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => caloriepay_start()),

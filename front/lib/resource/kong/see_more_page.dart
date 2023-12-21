@@ -61,7 +61,7 @@ class _see_more_pageState extends State<see_more_page> {
                             children: [
                               Container(
                                 // XR7 (160:10572)
-                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 180*fem, 0*fem),
+                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 140*fem, 0*fem),
                                 child: Text(
                                   '사용자 정보',
                                   style: SafeGoogleFont (
@@ -119,7 +119,7 @@ class _see_more_pageState extends State<see_more_page> {
                             children: [
                               Container(
                                 // AsP (160:10582)
-                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 178.5*fem, 0*fem),
+                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 148*fem, 0*fem),
                                 child: Text(
                                   '이름',
                                   style: SafeGoogleFont (
@@ -159,7 +159,7 @@ class _see_more_pageState extends State<see_more_page> {
                             children: [
                               Container(
                                 // K81 (160:10585)
-                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 182.5*fem, 0*fem),
+                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 148*fem, 0*fem),
                                 child: Text(
                                   '성별',
                                   style: SafeGoogleFont (
@@ -199,7 +199,7 @@ class _see_more_pageState extends State<see_more_page> {
                             children: [
                               Container(
                                 // 62H (160:10588)
-                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 179.5*fem, 0*fem),
+                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 148*fem, 0*fem),
                                 child: Text(
                                   '나이',
                                   style: SafeGoogleFont (
@@ -239,7 +239,7 @@ class _see_more_pageState extends State<see_more_page> {
                             children: [
                               Container(
                                 // tD3 (160:10591)
-                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 171.5*fem, 0*fem),
+                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 159*fem, 0*fem),
                                 child: Text(
                                   '키',
                                   style: SafeGoogleFont (
@@ -279,7 +279,7 @@ class _see_more_pageState extends State<see_more_page> {
                             children: [
                               Container(
                                 // 64D (160:10594)
-                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 169.5*fem, 0*fem),
+                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 149*fem, 0*fem),
                                 child: Text(
                                   '체중',
                                   style: SafeGoogleFont (
@@ -319,7 +319,7 @@ class _see_more_pageState extends State<see_more_page> {
                             children: [
                               Container(
                                 // V6M (160:10576)
-                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 149*fem, 0*fem),
+                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 110*fem, 0*fem),
                                 child: Text(
                                   '사용자 목표',
                                   style: SafeGoogleFont (
@@ -359,7 +359,7 @@ class _see_more_pageState extends State<see_more_page> {
                             children: [
                               Container(
                                 // gAq (160:10579)
-                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 153.5*fem, 0*fem),
+                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 123*fem, 0*fem),
                                 child: Text(
                                   '목표 체중',
                                   style: SafeGoogleFont (
@@ -433,7 +433,7 @@ class _see_more_pageState extends State<see_more_page> {
                             children: [
                               Container(
                                 // TDX (160:10600)
-                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 194*fem, 0*fem),
+                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 160*fem, 0*fem),
                                 child: Text(
                                   '계정 정보',
                                   style: SafeGoogleFont (
@@ -491,7 +491,7 @@ class _see_more_pageState extends State<see_more_page> {
                             children: [
                               Container(
                                 // Lgd (160:10604)
-                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 134*fem, 0*fem),
+                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 120*fem, 0*fem),
                                 child: Text(
                                   '이메일',
                                   style: SafeGoogleFont (
@@ -529,7 +529,7 @@ class _see_more_pageState extends State<see_more_page> {
                             children: [
                               Container(
                                 // M5w (160:10607)
-                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 242*fem, 0*fem),
+                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 222*fem, 0*fem),
                                 child: Text(
                                   '비밀번호',
                                   style: SafeGoogleFont (
@@ -567,7 +567,7 @@ class _see_more_pageState extends State<see_more_page> {
                             children: [
                               Container(
                                 // YgD (160:10610)
-                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 184*fem, 0*fem),
+                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 170*fem, 0*fem),
                                 child: Text(
                                   '전화번호',
                                   style: SafeGoogleFont (
@@ -699,11 +699,6 @@ class _see_more_pageState extends State<see_more_page> {
                         Container(
                           // vectoruSD (160:10618)
                           margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 126.5*fem, 0*fem),
-                          child: TextButton(
-                            onPressed: () {},
-                            style: TextButton.styleFrom (
-                              padding: EdgeInsets.zero,
-                            ),
                             child: Container(
                               width: 11*fem,
                               height: 20*fem,
@@ -713,7 +708,6 @@ class _see_more_pageState extends State<see_more_page> {
                                 height: 20*fem,
                               ),
                             ),
-                          ),
                         ),
                         Center(
                           // o1o (160:10619)
@@ -724,7 +718,7 @@ class _see_more_pageState extends State<see_more_page> {
                               textAlign: TextAlign.center,
                               style: SafeGoogleFont (
                                 'Inter',
-                                fontSize: 18*ffem,
+                                fontSize: 12*ffem,
                                 fontWeight: FontWeight.w700,
                                 height: 1.1111111111*ffem/fem,
                                 letterSpacing: 0.25*fem,
