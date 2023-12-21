@@ -26,6 +26,8 @@ void main() async {
   runApp(MyApp());
 }
 
+String? userId='';
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -38,7 +40,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         body: SingleChildScrollView(
-          child: mainpage(),
+          child: first_page(),
         ),
       ),
     );

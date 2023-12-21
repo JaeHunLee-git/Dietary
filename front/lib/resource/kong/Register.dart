@@ -4,6 +4,24 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 import 'package:myapp/resource/kong/user_personal_settings.dart';
+import 'package:myapp/main.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+
+Future<void> setUser(String age, String height, String weight, String gender) async {
+  try {
+    await FirebaseFirestore.instance.collection('users').doc(userId).set({
+      'age': age,
+      'height': height,
+      'weight': weight,
+      'gender': gender,
+    });
+    print('User data added successfully for user: $userId');
+  } catch (e) {
+    print('Error adding user data: $e');
+  }
+}
+
 
 class Register extends StatefulWidget {
   @override
@@ -11,6 +29,11 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register> {
+  String age='';
+  String height='';
+  String weight='';
+  String gender='';
+
   Color maleColor = Color(0xff18c07a); // Default color for male
   Color femaleColor = Color(0xffd9d9d9);
 
@@ -139,6 +162,9 @@ class _RegisterState extends State<Register> {
                             });
                           },
                           obscureText: isTextHidden,
+                          onChanged: (value) {
+                            age=value;
+                          },
                         ),
                       ),
                     ],
@@ -199,6 +225,9 @@ class _RegisterState extends State<Register> {
                             });
                           },
                           obscureText: isTextHidden,
+                          onChanged: (value) {
+                            height=value;
+                          },
                         ),
                       ),
                     ],
@@ -259,6 +288,9 @@ class _RegisterState extends State<Register> {
                             });
                           },
                           obscureText: isTextHidden,
+                          onChanged: (value) {
+                            weight=value;
+                          },
                         ),
                       ),
                     ],
@@ -298,9 +330,12 @@ class _RegisterState extends State<Register> {
                             if (isMaleSelected) {
                               maleColor = Color(0xff18c07a);
                               femaleColor = Color(0xffd9d9d9);
+                              gender = '남자';
+
                             } else {
                               maleColor = Color(0xffd9d9d9);
                               femaleColor = Color(0xff18c07a);
+                              gender='여자';
                             }
                           });
                         },
@@ -364,6 +399,7 @@ class _RegisterState extends State<Register> {
                   margin: EdgeInsets.fromLTRB(19*fem, 0*fem, 23*fem, 0*fem),
                   child: TextButton(
                     onPressed: () {
+                      setUser(age, height, weight, gender);
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => user_personal_settings()),

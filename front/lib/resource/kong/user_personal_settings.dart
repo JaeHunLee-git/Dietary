@@ -4,6 +4,21 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 import 'package:myapp/resource/kong/Weight.dart';
+import 'package:myapp/main.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+Future<void> setUser(String goal, String activity) async {
+  try {
+    await FirebaseFirestore.instance.collection('users').doc(userId).set({
+      'goal': goal,
+      'activity': activity,
+
+    });
+    print('User data added successfully for user: $userId');
+  } catch (e) {
+    print('Error adding user data: $e');
+  }
+}
 
 class user_personal_settings extends StatefulWidget {
 
@@ -12,6 +27,9 @@ class user_personal_settings extends StatefulWidget {
 }
 
 class _user_persoal_settingsState extends State<user_personal_settings> {
+  String goal='';
+  String activity='';
+
   bool isSelectedMany = false;
   bool isSelectedNormal = false;
   bool isSelectedALittle = false;
@@ -106,6 +124,7 @@ class _user_persoal_settingsState extends State<user_personal_settings> {
                         setState(() {
                           isSelectedDiet = true;
                           isSelectedMaintain = false;
+                          goal='다이어트';
                         });
                       },
                       child: Container(
@@ -136,6 +155,7 @@ class _user_persoal_settingsState extends State<user_personal_settings> {
                         setState(() {
                           isSelectedDiet = false;
                           isSelectedMaintain = true;
+                          goal='유지어트';
                         });
                       },
                       child: Container(
@@ -186,6 +206,7 @@ class _user_persoal_settingsState extends State<user_personal_settings> {
                           isSelectedNormal = false;
                           isSelectedALittle = false;
                           isSelectedNone = false;
+                          activity='많다';
                         });
                       },
                       child: Container(
@@ -233,6 +254,7 @@ class _user_persoal_settingsState extends State<user_personal_settings> {
                           isSelectedNormal = !isSelectedNormal;
                           isSelectedALittle = false;
                           isSelectedNone = false;
+                          activity='보통';
                         });
                       },
                       child: Container(
@@ -280,6 +302,7 @@ class _user_persoal_settingsState extends State<user_personal_settings> {
                           isSelectedNormal = false;
                           isSelectedALittle = !isSelectedALittle;
                           isSelectedNone = false;
+                          activity='조금 많다';
                         });
                       },
                       child: Container(
@@ -327,6 +350,7 @@ class _user_persoal_settingsState extends State<user_personal_settings> {
                           isSelectedNormal = false;
                           isSelectedALittle = false;
                           isSelectedNone = !isSelectedNone;
+                          activity='거의 없다';
                         });
                       },
                       child: Container(
@@ -375,6 +399,7 @@ class _user_persoal_settingsState extends State<user_personal_settings> {
                   margin: EdgeInsets.fromLTRB(21*fem, 0*fem, 21*fem, 0*fem),
                   child: TextButton(
                     onPressed: () {
+                      setUser(goal,activity);
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Weight()),

@@ -3,6 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class phonenumber_change extends StatefulWidget {
   const phonenumber_change({super.key});
@@ -13,6 +14,7 @@ class phonenumber_change extends StatefulWidget {
 
 class _phonenumber_changeState extends State<phonenumber_change> {
   String phoneNumber='';
+  String _numberText='';
 
   @override
   Widget build(BuildContext context) {
@@ -152,7 +154,22 @@ class _phonenumber_changeState extends State<phonenumber_change> {
                 // group1723iu (160:10750)
                 margin: EdgeInsets.fromLTRB(16*fem, 0*fem, 16*fem, 407*fem),
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    FirebaseFirestore.instance.collection('Number').doc('Number').set({
+                      'Number': phoneNumber,
+                    })
+                        .then((value) {
+                      setState(() {
+                        _numberText = '저장돼었습니다';
+                      });
+                    })
+                        .catchError((error) {
+                      setState(() {
+                        _numberText = '저장실패';
+                      });
+                      // 저장에 실패한 경우 처리
+                    });
+                  },
                   style: TextButton.styleFrom (
                     padding: EdgeInsets.zero,
                   ),
@@ -187,6 +204,13 @@ class _phonenumber_changeState extends State<phonenumber_change> {
                       ),
                     ),
                   ),
+                ),
+              ),
+              Text(
+                _numberText,
+                style: TextStyle(
+                  color: _numberText == '저장실패' ? Colors.red : Colors.green,
+                  fontSize: 70,
                 ),
               ),
               Container(

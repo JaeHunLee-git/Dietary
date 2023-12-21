@@ -193,13 +193,7 @@ class mydata_page extends StatelessWidget {
                                           ),
                                         ),
                                       ),
-                                      TextButton(
-                                        // group909sT (160:10477)
-                                        onPressed: () {},
-                                        style: TextButton.styleFrom (
-                                          padding: EdgeInsets.zero,
-                                        ),
-                                        child: Container(
+                                      Container(
                                           padding: EdgeInsets.fromLTRB(20*fem, 7*fem, 7*fem, 6*fem),
                                           height: double.infinity,
                                           decoration: BoxDecoration (
@@ -229,16 +223,21 @@ class mydata_page extends StatelessWidget {
                                                 margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 1*fem),
                                                 width: 6*fem,
                                                 height: 10*fem,
-                                                child: Image.asset(
-                                                  'assets/resource/images/vector-qEd.png',
-                                                  width: 6*fem,
-                                                  height: 10*fem,
+                                                child: TextButton(
+                                                  onPressed: () {
+                                                    Navigator.pop(context); // 전 페이지로 이동하는 코드
+                                                  },
+                                                  child: Image.asset(
+                                                    'assets/resource/images/vector-aHs.png',
+                                                    width: 22 * fem,
+                                                    height: 40 * fem,
+                                                  ),
                                                 ),
                                               ),
                                             ],
                                           ),
                                         ),
-                                      ),
+
                                     ],
                                   ),
                                 ),
@@ -313,7 +312,7 @@ class mydata_page extends StatelessWidget {
                                                       textAlign: TextAlign.center,
                                                       style: SafeGoogleFont (
                                                         'Luckiest Guy',
-                                                        fontSize: 8*ffem,
+                                                        fontSize: 9*ffem,
                                                         fontWeight: FontWeight.w400,
                                                         height: 1*ffem/fem,
                                                         letterSpacing: 1.2*fem,
@@ -433,7 +432,7 @@ class mydata_page extends StatelessWidget {
                           ),
                           Container(
                             // baM (160:10493)
-                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 30*fem, 0*fem),
+                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 20*fem, 0*fem),
                             child: Text(
                               '다이어트',
                               style: SafeGoogleFont (
@@ -589,7 +588,7 @@ class mydata_page extends StatelessWidget {
                                       text: '나의 BMI ',
                                       style: SafeGoogleFont (
                                         'Inter',
-                                        fontSize: 12*ffem,
+                                        fontSize: 10*ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.2125*ffem/fem,
                                         letterSpacing: 1.2*fem,
@@ -600,7 +599,7 @@ class mydata_page extends StatelessWidget {
                                       text: '22.32(정상)',
                                       style: SafeGoogleFont (
                                         'Inter',
-                                        fontSize: 12*ffem,
+                                        fontSize: 10*ffem,
                                         fontWeight: FontWeight.w400,
                                         height: 1.2125*ffem/fem,
                                         letterSpacing: 1.2*fem,
@@ -729,263 +728,6 @@ class mydata_page extends StatelessWidget {
                               decoration: BoxDecoration (
                                 border: Border.all(color: Color(0xff000000)),
                               ),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Container(
-                                    // autogroupku2yH57 (92Ba2pJBFS261farLvKU2y)
-                                    margin: EdgeInsets.fromLTRB(11.5*fem, 0*fem, 9*fem, 33*fem),
-                                    width: double.infinity,
-                                    height: 59*fem,
-                                    child: Stack(
-                                      children: [
-                                        Positioned(
-                                          // group146oJM (160:10505)
-                                          left: 15.5*fem,
-                                          top: 0*fem,
-                                          child: Align(
-                                            child: SizedBox(
-                                              width: 234*fem,
-                                              height: 38*fem,
-                                              child: Image.asset(
-                                                'assets/resource/images/group-146-nbP.png',
-                                                width: 234*fem,
-                                                height: 38*fem,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Positioned(
-                                          // kgtah (160:10515)
-                                          left: 220.5*fem,
-                                          top: 44*fem,
-                                          child: Center(
-                                            child: Align(
-                                              child: SizedBox(
-                                                width: 47*fem,
-                                                height: 15*fem,
-                                                child: Text(
-                                                  '63.0kg',
-                                                  textAlign: TextAlign.center,
-                                                  style: SafeGoogleFont (
-                                                    'Inter',
-                                                    fontSize: 12*ffem,
-                                                    fontWeight: FontWeight.w400,
-                                                    height: 1.2125*ffem/fem,
-                                                    letterSpacing: 1.2*fem,
-                                                    color: Color(0xfff55050),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Positioned(
-                                          // kgB41 (160:10516)
-                                          left: 162.5*fem,
-                                          top: 32*fem,
-                                          child: Center(
-                                            child: Align(
-                                              child: SizedBox(
-                                                width: 47*fem,
-                                                height: 15*fem,
-                                                child: Text(
-                                                  '63.6kg',
-                                                  textAlign: TextAlign.center,
-                                                  style: SafeGoogleFont (
-                                                    'Inter',
-                                                    fontSize: 12*ffem,
-                                                    fontWeight: FontWeight.w400,
-                                                    height: 1.2125*ffem/fem,
-                                                    letterSpacing: 1.2*fem,
-                                                    color: Color(0xfff55050),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Positioned(
-                                          // kgTXK (160:10517)
-                                          left: 109.5*fem,
-                                          top: 22*fem,
-                                          child: Center(
-                                            child: Align(
-                                              child: SizedBox(
-                                                width: 47*fem,
-                                                height: 15*fem,
-                                                child: Text(
-                                                  '64.0kg',
-                                                  textAlign: TextAlign.center,
-                                                  style: SafeGoogleFont (
-                                                    'Inter',
-                                                    fontSize: 12*ffem,
-                                                    fontWeight: FontWeight.w400,
-                                                    height: 1.2125*ffem/fem,
-                                                    letterSpacing: 1.2*fem,
-                                                    color: Color(0xfff55050),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Positioned(
-                                          // kgZ4Z (160:10518)
-                                          left: 52.5*fem,
-                                          top: 26*fem,
-                                          child: Center(
-                                            child: Align(
-                                              child: SizedBox(
-                                                width: 47*fem,
-                                                height: 15*fem,
-                                                child: Text(
-                                                  '64.0kg',
-                                                  textAlign: TextAlign.center,
-                                                  style: SafeGoogleFont (
-                                                    'Inter',
-                                                    fontSize: 12*ffem,
-                                                    fontWeight: FontWeight.w400,
-                                                    height: 1.2125*ffem/fem,
-                                                    letterSpacing: 1.2*fem,
-                                                    color: Color(0xfff55050),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Positioned(
-                                          // kgFCH (160:10519)
-                                          left: 0*fem,
-                                          top: 15*fem,
-                                          child: Center(
-                                            child: Align(
-                                              child: SizedBox(
-                                                width: 46*fem,
-                                                height: 15*fem,
-                                                child: Text(
-                                                  '64.5kg',
-                                                  textAlign: TextAlign.center,
-                                                  style: SafeGoogleFont (
-                                                    'Inter',
-                                                    fontSize: 12*ffem,
-                                                    fontWeight: FontWeight.w400,
-                                                    height: 1.2125*ffem/fem,
-                                                    letterSpacing: 1.2*fem,
-                                                    color: Color(0xfff55050),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Container(
-                                    // line25LzR (160:10498)
-                                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 11*fem),
-                                    width: double.infinity,
-                                    height: 2*fem,
-                                    decoration: BoxDecoration (
-                                      color: Color(0xff000000),
-                                    ),
-                                  ),
-                                  Container(
-                                    // group1375SD (160:10499)
-                                    margin: EdgeInsets.fromLTRB(20.5*fem, 0*fem, 20*fem, 0*fem),
-                                    width: double.infinity,
-                                    child: Row(
-                                      crossAxisAlignment: CrossAxisAlignment.center,
-                                      children: [
-                                        Center(
-                                          // cBF (160:10504)
-                                          child: Container(
-                                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 36*fem, 0*fem),
-                                            child: Text(
-                                              '11.9',
-                                              textAlign: TextAlign.center,
-                                              style: SafeGoogleFont (
-                                                'Inter',
-                                                fontSize: 10*ffem,
-                                                fontWeight: FontWeight.w600,
-                                                height: 1.2125*ffem/fem,
-                                                color: Color(0xff000000),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Center(
-                                          // HoB (160:10503)
-                                          child: Container(
-                                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 33*fem, 0*fem),
-                                            child: Text(
-                                              '11.16',
-                                              textAlign: TextAlign.center,
-                                              style: SafeGoogleFont (
-                                                'Inter',
-                                                fontSize: 10*ffem,
-                                                fontWeight: FontWeight.w600,
-                                                height: 1.2125*ffem/fem,
-                                                color: Color(0xff000000),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Center(
-                                          // zhb (160:10502)
-                                          child: Container(
-                                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 31.5*fem, 0*fem),
-                                            child: Text(
-                                              '11.23',
-                                              textAlign: TextAlign.center,
-                                              style: SafeGoogleFont (
-                                                'Inter',
-                                                fontSize: 10*ffem,
-                                                fontWeight: FontWeight.w600,
-                                                height: 1.2125*ffem/fem,
-                                                color: Color(0xff000000),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Center(
-                                          // VPT (160:10501)
-                                          child: Container(
-                                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 34*fem, 0*fem),
-                                            child: Text(
-                                              '11.30',
-                                              textAlign: TextAlign.center,
-                                              style: SafeGoogleFont (
-                                                'Inter',
-                                                fontSize: 10*ffem,
-                                                fontWeight: FontWeight.w600,
-                                                height: 1.2125*ffem/fem,
-                                                color: Color(0xff000000),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Center(
-                                          // aA1 (160:10500)
-                                          child: Text(
-                                            '12.7',
-                                            textAlign: TextAlign.center,
-                                            style: SafeGoogleFont (
-                                              'Inter',
-                                              fontSize: 10*ffem,
-                                              fontWeight: FontWeight.w600,
-                                              height: 1.2125*ffem/fem,
-                                              color: Color(0xff000000),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
                             ),
                           ),
                           Positioned(
@@ -1000,7 +742,7 @@ class mydata_page extends StatelessWidget {
                                   '체중 변화',
                                   style: SafeGoogleFont (
                                     'Inter',
-                                    fontSize: 20*ffem,
+                                    fontSize: 18*ffem,
                                     fontWeight: FontWeight.w700,
                                     height: 1.2125*ffem/fem,
                                     letterSpacing: 2*fem,
@@ -1011,7 +753,6 @@ class mydata_page extends StatelessWidget {
                             ),
                           ),
                           Positioned(
-                            // line20oHf (160:10521)
                             left: 10*fem,
                             top: 52*fem,
                             child: Align(
@@ -1117,7 +858,7 @@ class mydata_page extends StatelessWidget {
                       textAlign: TextAlign.center,
                       style: SafeGoogleFont (
                         'Inter',
-                        fontSize: 18*ffem,
+                        fontSize: 14*ffem,
                         fontWeight: FontWeight.w700,
                         height: 1.1111111111*ffem/fem,
                         letterSpacing: 0.25*fem,
@@ -1125,103 +866,6 @@ class mydata_page extends StatelessWidget {
                       ),
                     ),
                   ),
-                ),
-              ),
-            ),
-            Positioned(
-              // tabmenutM3 (160:10550)
-              left: 0*fem,
-              top: 673*fem,
-              child: Container(
-                padding: EdgeInsets.fromLTRB(30*fem, 21*fem, 30*fem, 21*fem),
-                width: 360*fem,
-                height: 108*fem,
-                decoration: BoxDecoration (
-                  color: Color(0xffffffff),
-                  borderRadius: BorderRadius.only (
-                    topLeft: Radius.circular(15*fem),
-                    topRight: Radius.circular(15*fem),
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Color(0x1e000000),
-                      offset: Offset(0*fem, 2*fem),
-                      blurRadius: 24*fem,
-                    ),
-                  ],
-                ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      // homeXeu (160:10553)
-                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 78*fem, 0*fem),
-                      child: TextButton(
-                        onPressed: () {},
-                        style: TextButton.styleFrom (
-                          padding: EdgeInsets.zero,
-                        ),
-                        child: Container(
-                          width: 15*fem,
-                          height: 16*fem,
-                          child: Image.asset(
-                            'assets/resource/images/home-2xV.png',
-                            width: 15*fem,
-                            height: 16*fem,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      // socialcgM (160:10556)
-                      margin: EdgeInsets.fromLTRB(0*fem, 0.5*fem, 78*fem, 0*fem),
-                      child: TextButton(
-                        onPressed: () {},
-                        style: TextButton.styleFrom (
-                          padding: EdgeInsets.zero,
-                        ),
-                        child: Container(
-                          width: 15*fem,
-                          height: 15*fem,
-                          child: Image.asset(
-                            'assets/resource/images/social-qT3.png',
-                            width: 15*fem,
-                            height: 15*fem,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      // autogroupyd6mK4y (92Bc56ESD3dSXut9FZYD6M)
-                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 78*fem, 0*fem),
-                      width: 15*fem,
-                      height: 25*fem,
-                      child: Image.asset(
-                        'assets/resource/images/auto-group-yd6m.png',
-                        width: 15*fem,
-                        height: 25*fem,
-                      ),
-                    ),
-                    Container(
-                      // q3K (160:10563)
-                      margin: EdgeInsets.fromLTRB(0*fem, 5.5*fem, 0*fem, 0*fem),
-                      child: TextButton(
-                        onPressed: () {},
-                        style: TextButton.styleFrom (
-                          padding: EdgeInsets.zero,
-                        ),
-                        child: Container(
-                          width: 21*fem,
-                          height: 5*fem,
-                          child: Image.asset(
-                            'assets/resource/images/-cz1.png',
-                            width: 21*fem,
-                            height: 5*fem,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
                 ),
               ),
             ),

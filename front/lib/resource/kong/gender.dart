@@ -3,6 +3,8 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 
 class gender extends StatefulWidget {
   gender({super.key});
@@ -56,11 +58,6 @@ class genderState extends State<gender> {
                         Container(
                           // vectordBT (160:8767)
                           margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 110.5*fem, 0*fem),
-                          child: TextButton(
-                            onPressed: () {},
-                            style: TextButton.styleFrom (
-                              padding: EdgeInsets.zero,
-                            ),
                             child: Container(
                               width: 22*fem,
                               height: 40*fem,
@@ -73,9 +70,8 @@ class genderState extends State<gender> {
                                   width: 22 * fem,
                                   height: 40 * fem,
                                 ),
-                              )
+                              ),
                             ),
-                          ),
                         ),
                         Center(
                           // uPs (160:8768)

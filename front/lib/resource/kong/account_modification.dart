@@ -6,6 +6,9 @@ import 'package:myapp/resource/kong/password.dart';
 import 'package:myapp/resource/kong/phonenumber_change.dart';
 import 'package:myapp/resource/kong/email.dart';
 import 'package:myapp/utils.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:myapp/resource/kong/Delete.dart';
+
 
 class account_modification extends StatelessWidget {
   @override
@@ -45,11 +48,6 @@ class account_modification extends StatelessWidget {
                   Container(
                     // vectorFUq (160:10806)
                     margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 89*fem, 0*fem),
-                    child: TextButton(
-                      onPressed: () {},
-                      style: TextButton.styleFrom (
-                        padding: EdgeInsets.zero,
-                      ),
                       child: Container(
                         width: 22*fem,
                         height: 40*fem,
@@ -64,7 +62,6 @@ class account_modification extends StatelessWidget {
                           ),
                         )
                       ),
-                    ),
                   ),
                   Center(
                     // 9aD (160:10807)
@@ -75,7 +72,7 @@ class account_modification extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: SafeGoogleFont (
                           'Inter',
-                          fontSize: 18*ffem,
+                          fontSize: 15*ffem,
                           fontWeight: FontWeight.w700,
                           height: 1.1111111111*ffem/fem,
                           letterSpacing: 0.25*fem,
@@ -139,7 +136,7 @@ class account_modification extends StatelessWidget {
                       children: [
                         Container(
                           // WBo (160:10790)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 90*fem, 0*fem),
+                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 70*fem, 0*fem),
                           child: Text(
                             '이메일',
                             style: SafeGoogleFont (
@@ -154,7 +151,7 @@ class account_modification extends StatelessWidget {
                         ),
                         Container(
                           // jeongchaewonnavercom2R3 (160:10791)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 20*fem, 0*fem),
+                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 10*fem, 0*fem),
                           child: Text(
                             'jeongchaewon@naver.com',
                             textAlign: TextAlign.right,
@@ -200,7 +197,7 @@ class account_modification extends StatelessWidget {
                       children: [
                         Container(
                           // 1Xs (160:10794)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 198*fem, 0*fem),
+                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 170*fem, 0*fem),
                           child: Text(
                             '비밀번호',
                             style: SafeGoogleFont (
@@ -215,7 +212,7 @@ class account_modification extends StatelessWidget {
                         ),
                         Container(
                           // L4M (160:10795)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 20*fem, 0*fem),
+                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 12*fem, 0*fem),
                           child: Text(
                             '****',
                             textAlign: TextAlign.right,
@@ -237,7 +234,7 @@ class account_modification extends StatelessWidget {
                             );
                           },
                           child: Text(
-                            '수정',
+                            '변경',
                             textAlign: TextAlign.right,
                             style: SafeGoogleFont(
                               'Inter',
@@ -261,7 +258,7 @@ class account_modification extends StatelessWidget {
                       children: [
                         Container(
                           // X8q (160:10798)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 140*fem, 0*fem),
+                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 113*fem, 0*fem),
                           child: Text(
                             '전화번호',
                             style: SafeGoogleFont (
@@ -276,7 +273,7 @@ class account_modification extends StatelessWidget {
                         ),
                         Container(
                           // F4q (160:10799)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 20*fem, 0*fem),
+                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 13*fem, 0*fem),
                           child: Text(
                             '010-7487-0519',
                             textAlign: TextAlign.right,
@@ -343,16 +340,30 @@ class account_modification extends StatelessWidget {
               ),
               child: Center(
                 child: Center(
-                  child: Text(
-                    '회원 탈퇴',
-                    textAlign: TextAlign.center,
-                    style: SafeGoogleFont (
-                      'Inter',
-                      fontSize: 15*ffem,
-                      fontWeight: FontWeight.w700,
-                      height: 1.0666666667*ffem/fem,
-                      letterSpacing: 0.5*fem,
-                      color: Color(0xfff55050),
+                  child: TextButton(
+                    onPressed: () async {
+                      try {
+                        await FirebaseFirestore.instance.collection('users').doc('사용자ID').delete();//TODO 사용자고유 ID 부분 변수 만들기
+                        // 사용자 정보가 성공적으로 삭제되었습니다.
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Delete()),
+                        );
+                      } catch (e) {
+                        // 삭제 중에 오류가 발생했습니다. 처리해야 할 내용을 여기에 추가하세요.
+                      }
+                    },
+                    child: Text(
+                      '회원 탈퇴',
+                      textAlign: TextAlign.center,
+                      style: SafeGoogleFont (
+                        'Inter',
+                        fontSize: 15*ffem,
+                        fontWeight: FontWeight.w700,
+                        height: 1.0666666667*ffem/fem,
+                        letterSpacing: 0.5*fem,
+                        color: Color(0xfff55050),
+                      ),
                     ),
                   ),
                 ),
@@ -379,22 +390,6 @@ class account_modification extends StatelessWidget {
                         blurRadius: 2*fem,
                       ),
                     ],
-                  ),
-                  child: Center(
-                    child: Center(
-                      child: Text(
-                        '저장하기',
-                        textAlign: TextAlign.center,
-                        style: SafeGoogleFont (
-                          'Inter',
-                          fontSize: 15*ffem,
-                          fontWeight: FontWeight.w700,
-                          height: 1.0666666667*ffem/fem,
-                          letterSpacing: 0.5*fem,
-                          color: Color(0xffffffff),
-                        ),
-                      ),
-                    ),
                   ),
                 ),
               ),
