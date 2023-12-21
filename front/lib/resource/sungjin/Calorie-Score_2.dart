@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/resource/sungjin/social_caloriesum.dart';
 import 'package:myapp/utils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -1113,7 +1114,13 @@ class Calorie_Score_2 extends StatelessWidget {
                 left: 192*fem,
                 top: 116*fem,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => social_caloriesum()),
+                    );
+                  },
                   style: TextButton.styleFrom (
                     padding: EdgeInsets.zero,
                   ),
@@ -1228,6 +1235,79 @@ class Calorie_Score_2 extends StatelessWidget {
                               color: Color(0xff000000),
                             ),
                           ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Positioned(
+                // tabmenuanZ (160:8719)
+                left: 0*fem,
+                top: 673*fem,
+                child: Container(
+                  padding: EdgeInsets.fromLTRB(30*fem, 21*fem, 30*fem, 21*fem),
+                  width: 360*fem,
+                  height: 108*fem,
+                  decoration: BoxDecoration (
+                    color: Color(0xffffffff),
+                    borderRadius: BorderRadius.only (
+                      topLeft: Radius.circular(15*fem),
+                      topRight: Radius.circular(15*fem),
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color(0x1e000000),
+                        offset: Offset(0*fem, 2*fem),
+                        blurRadius: 24*fem,
+                      ),
+                    ],
+                  ),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        // home3AM (160:8722)
+                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 78*fem, 0*fem),
+                        width: 15*fem,
+                        height: 16*fem,
+                        child: Image.asset(
+                          'assets/resource/images/home-uRP.png',
+                          width: 15*fem,
+                          height: 16*fem,
+                        ),
+                      ),
+                      Container(
+                        // autogroupq7ghZ8h (92APDHy4EqYSh5rjytq7GH)
+                        margin: EdgeInsets.fromLTRB(0*fem, 0.5*fem, 78*fem, 0*fem),
+                        width: 15*fem,
+                        height: 24.5*fem,
+                        child: Image.asset(
+                          'assets/resource/images/auto-group-q7gh.png',
+                          width: 15*fem,
+                          height: 24.5*fem,
+                        ),
+                      ),
+                      Container(
+                        // mydatafhX (160:8729)
+                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 78*fem, 0*fem),
+                        width: 15*fem,
+                        height: 16*fem,
+                        child: Image.asset(
+                          'assets/resource/images/mydata-PQZ.png',
+                          width: 15*fem,
+                          height: 16*fem,
+                        ),
+                      ),
+                      Container(
+                        // NM3 (160:8732)
+                        margin: EdgeInsets.fromLTRB(0*fem, 5.5*fem, 0*fem, 0*fem),
+                        width: 21*fem,
+                        height: 5*fem,
+                        child: Image.asset(
+                          'assets/resource/images/-AGd.png',
+                          width: 21*fem,
+                          height: 5*fem,
                         ),
                       ),
                     ],
