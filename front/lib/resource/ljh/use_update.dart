@@ -4,6 +4,8 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 
+import 'mainpage.dart';
+
 class use_update extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -275,227 +277,6 @@ class use_update extends StatelessWidget {
                     SizedBox(
                       height: 14*fem,
                     ),
-                    Container(
-                      // autogroupearkF6M (92BE6PX5LJLGHfK2zSeARK)
-                      padding: EdgeInsets.fromLTRB(10*fem, 15*fem, 10*fem, 20*fem),
-                      width: double.infinity,
-                      decoration: BoxDecoration (
-                        color: Color(0xffffffff),
-                        borderRadius: BorderRadius.circular(15*fem),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color(0x3f000000),
-                            offset: Offset(0*fem, 4*fem),
-                            blurRadius: 2*fem,
-                          ),
-                        ],
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Container(
-                            // Y5T (160:10080)
-                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 170*fem, 12*fem),
-                            child: Text(
-                              '영양정보 상세',
-                              style: SafeGoogleFont (
-                                'Inter',
-                                fontSize: 20*ffem,
-                                fontWeight: FontWeight.w700,
-                                height: 1.2125*ffem/fem,
-                                letterSpacing: 2*fem,
-                                color: Color(0xff000000),
-                              ),
-                            ),
-                          ),
-                          Container(
-                            // line113H7 (160:10082)
-                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 12*fem),
-                            width: double.infinity,
-                            height: 1*fem,
-                            decoration: BoxDecoration (
-                              color: Color(0xff182127),
-                            ),
-                          ),
-                          Container(
-                            // group109nEh (160:10089)
-                            margin: EdgeInsets.fromLTRB(16*fem, 0*fem, 16*fem, 13.5*fem),
-                            width: double.infinity,
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                Container(
-                                  // 7Xs (160:10091)
-                                  margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 130*fem, 0*fem),
-                                  child: Text(
-                                    '비빔냉면',
-                                    style: SafeGoogleFont (
-                                      'Inter',
-                                      fontSize: 18*ffem,
-                                      fontWeight: FontWeight.w700,
-                                      height: 1.2125*ffem/fem,
-                                      letterSpacing: 2*fem,
-                                      color: Color(0xff000000),
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  // kcal2uj (160:10090)
-                                  margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 1*fem),
-                                  child: Text(
-                                    '427kcal',
-                                    textAlign: TextAlign.right,
-                                    style: SafeGoogleFont (
-                                      'Inter',
-                                      fontSize: 15*ffem,
-                                      fontWeight: FontWeight.w700,
-                                      height: 1.2125*ffem/fem,
-                                      letterSpacing: 1.5*fem,
-                                      color: Color(0xff868686),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Container(
-                            // frame121Umj (160:10095)
-                            margin: EdgeInsets.fromLTRB(29*fem, 0*fem, 16*fem, 29.5*fem),
-                            width: double.infinity,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  // autogroup6odpcd3 (92BEMxuTQ7NvEs5YdC6oDP)
-                                  width: double.infinity,
-                                  child: Row(
-                                    crossAxisAlignment: CrossAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                        // NMK (160:10096)
-                                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 150*fem, 0*fem),
-                                        child: Text(
-                                          '탄수화물',
-                                          style: SafeGoogleFont (
-                                            'Inter',
-                                            fontSize: 14*ffem,
-                                            fontWeight: FontWeight.w700,
-                                            height: 1.2125*ffem/fem,
-                                            letterSpacing: 1.4*fem,
-                                            color: Color(0xff000000),
-                                          ),
-                                        ),
-                                      ),
-                                      Text(
-                                        // gUv9 (160:10097)
-                                        '71.3 g',
-                                        textAlign: TextAlign.right,
-                                        style: SafeGoogleFont (
-                                          'Inter',
-                                          fontSize: 14*ffem,
-                                          fontWeight: FontWeight.w700,
-                                          height: 1.2125*ffem/fem,
-                                          letterSpacing: 1.4*fem,
-                                          color: Color(0xff000000),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 9*fem,
-                                ),
-                                Container(
-                                  // autogroupvwqpPGR (92BESo6jrj4WeouUAkVwqP)
-                                  width: double.infinity,
-                                  child: Row(
-                                    crossAxisAlignment: CrossAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                        // w33 (160:10098)
-                                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 183*fem, 0*fem),
-                                        child: Text(
-                                          '단백질',
-                                          style: SafeGoogleFont (
-                                            'Inter',
-                                            fontSize: 14*ffem,
-                                            fontWeight: FontWeight.w700,
-                                            height: 1.2125*ffem/fem,
-                                            letterSpacing: 1.4*fem,
-                                            color: Color(0xff000000),
-                                          ),
-                                        ),
-                                      ),
-                                      Text(
-                                        // gey3 (160:10099)
-                                        '18.5 g',
-                                        textAlign: TextAlign.right,
-                                        style: SafeGoogleFont (
-                                          'Inter',
-                                          fontSize: 14*ffem,
-                                          fontWeight: FontWeight.w700,
-                                          height: 1.2125*ffem/fem,
-                                          letterSpacing: 1.4*fem,
-                                          color: Color(0xff000000),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 9*fem,
-                                ),
-                                Container(
-                                  // autogroup76ihNu3 (92BEXD93u3fh6h1G6b76iH)
-                                  width: double.infinity,
-                                  child: Row(
-                                    crossAxisAlignment: CrossAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                        // YHj (160:10100)
-                                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 204*fem, 0*fem),
-                                        child: Text(
-                                          '지방',
-                                          style: SafeGoogleFont (
-                                            'Inter',
-                                            fontSize: 14*ffem,
-                                            fontWeight: FontWeight.w700,
-                                            height: 1.2125*ffem/fem,
-                                            letterSpacing: 1.4*fem,
-                                            color: Color(0xff000000),
-                                          ),
-                                        ),
-                                      ),
-                                      Text(
-                                        // gfNM (160:10101)
-                                        '7.5 g',
-                                        textAlign: TextAlign.right,
-                                        style: SafeGoogleFont (
-                                          'Inter',
-                                          fontSize: 14*ffem,
-                                          fontWeight: FontWeight.w700,
-                                          height: 1.2125*ffem/fem,
-                                          letterSpacing: 1.4*fem,
-                                          color: Color(0xff000000),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Container(
-                            // line18ozM (160:10084)
-                            width: double.infinity,
-                            height: 1*fem,
-                            decoration: BoxDecoration (
-                              color: Color(0xff182127),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
                   ],
                 ),
               ),
@@ -608,7 +389,13 @@ class use_update extends StatelessWidget {
                   width: 11*fem,
                   height: 20*fem,
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () async {
+                      // Navigate to MyApp page
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => mainpage()),
+                      );
+                    },
                     style: TextButton.styleFrom (
                       padding: EdgeInsets.zero,
                     ),
