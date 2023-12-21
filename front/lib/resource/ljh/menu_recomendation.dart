@@ -4,6 +4,8 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 
+import 'mainpage.dart';
+
 class menu_recomendation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -400,7 +402,13 @@ class menu_recomendation extends StatelessWidget {
                   width: 11 * fem,
                   height: 20 * fem,
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () async {
+                      // Navigate to MyApp page
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => mainpage()),
+                      );
+                    },
                     style: TextButton.styleFrom(
                       padding: EdgeInsets.zero,
                     ),
