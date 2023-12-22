@@ -5,7 +5,15 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 import 'package:myapp/resource/gyu/Calendar.dart';
 
-class tier extends StatelessWidget {
+class tier extends StatefulWidget {
+  @override
+  _TierState createState() => _TierState();
+}
+
+class _TierState extends State<tier> {
+  int currentMonth = DateTime.now().month;
+  int currentYear = DateTime.now().year;
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 360;
@@ -35,25 +43,36 @@ class tier extends StatelessWidget {
           child: Stack(
             children: [
               Positioned(
-                // rectangle164KMP (160:8240)
-                left: 16*fem,
-                top: 116*fem,
+                left: 50 * fem,
+                top: 30 * fem,
                 child: Align(
                   child: SizedBox(
-                    width: 328*fem,
-                    height: 542*fem,
-                    child: Container(
-                      decoration: BoxDecoration (
-                        borderRadius: BorderRadius.circular(15*fem),
-                        color: Color(0xffffffff),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color(0x3f000000),
-                            offset: Offset(0*fem, 4*fem),
-                            blurRadius: 2*fem,
-                          ),
-                        ],
+                    width: 400 * fem,
+                    height: 50 * fem,
+                    child: Text(
+                      '$currentYear년 $currentMonth월 나의 건강티어는?',
+                      style: TextStyle(
+                        fontSize: 21 * ffem,
+                        fontWeight: FontWeight.w700,
+                        color: Color(0xff000000),
                       ),
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 0 * fem,
+                top: 0 * fem,
+                child: Align(
+                  child: SizedBox(
+                    width: 134 * fem,
+                    height: 22 * fem,
+                    child: Row(
+                      children: [
+
+                        SizedBox(width: 10), // 버튼과 텍스트 사이 여백
+
+                      ],
                     ),
                   ),
                 ),
@@ -61,13 +80,13 @@ class tier extends StatelessWidget {
               Positioned(
                 // zTX (160:8241)
                 left: 99*fem,
-                top: 204*fem,
+                top: 30*fem,
                 child: Align(
                   child: SizedBox(
                     width: 165*fem,
                     height: 19*fem,
                     child: Text(
-                      '12월 나의 건강티어는?',
+                      '',
                       style: SafeGoogleFont (
                         'Inter',
                         fontSize: 15*ffem,
@@ -82,13 +101,13 @@ class tier extends StatelessWidget {
               ),
               Positioned(
                 // FuF (160:8242)
-                left: 104*fem,
-                top: 364*fem,
+                left: 98*fem,
+                top: 260*fem,
                 child: Center(
                   child: Align(
                     child: SizedBox(
-                      width: 150*fem,
-                      height: 31*fem,
+                      width: 168*fem,
+                      height: 60*fem,
                       child: RichText(
                         textAlign: TextAlign.center,
                         text: TextSpan(
@@ -125,7 +144,7 @@ class tier extends StatelessWidget {
               Positioned(
                 // caloriescorev8D (160:8243)
                 left: 26*fem,
-                top: 481*fem,
+                top: 400*fem,
                 child: Container(
                   padding: EdgeInsets.fromLTRB(13*fem, 11*fem, 44*fem, 10*fem),
                   width: 306*fem,
@@ -183,22 +202,33 @@ class tier extends StatelessWidget {
               Positioned(
                 // group121X1X (160:8248)
                 left: 95*fem,
-                top: 160*fem,
+                top: 163*fem,
                 child: Container(
                   width: 169*fem,
                   height: 22*fem,
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Container(
-                        // autogroupggr1qH7 (92ADWzHfUvCv9wGedaggr1)
-                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 7*fem, 0*fem),
-                        width: 18*fem,
-                        height: 18*fem,
-                        child: Image.asset(
-                          'assets/resource/images/auto-group-ggr1.png',
-                          width: 18*fem,
-                          height: 18*fem,
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            currentMonth -= 1;
+                            if (currentMonth < 1) {
+                              currentMonth = 12;
+                              currentYear -= 1;
+                            }
+                          });
+                        },
+                        child: Container(
+                          // autogroupggr1qH7 (92ADWzHfUvCv9wGedaggr1)
+                          margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 7 * fem, 0 * fem),
+                          width: 18 * fem,
+                          height: 18 * fem,
+                          child: Image.asset(
+                            'assets/resource/images/auto-group-ggr1.png',
+                            width: 18 * fem,
+                            height: 18 * fem,
+                          ),
                         ),
                       ),
                       Container(
@@ -216,7 +246,7 @@ class tier extends StatelessWidget {
                                   width: 134*fem,
                                   height: 22*fem,
                                   child: Text(
-                                    '2023년 12월',
+                                    '                        ',
                                     style: SafeGoogleFont (
                                       'Inter',
                                       fontSize: 18*ffem,
@@ -247,17 +277,25 @@ class tier extends StatelessWidget {
                               ),
                             ),
                             Positioned(
-                              // vectorst1 (160:8252)
-                              left: 132*fem,
-                              top: 6*fem,
-                              child: Align(
-                                child: SizedBox(
-                                  width: 6*fem,
-                                  height: 10*fem,
+                              left: 130.8 * fem, // 원하는 위치 x 좌표
+                              top: 5.4 * fem,
+                              child: GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    currentMonth += 1;
+                                    if (currentMonth > 12) {
+                                      currentMonth = 1;
+                                      currentYear += 1;
+                                    }
+                                  });
+                                },
+                                child: Container(
+                                  width: 10 * fem,
+                                  height: 10 * fem,
                                   child: Image.asset(
                                     'assets/resource/images/vector-foj.png',
-                                    width: 6*fem,
-                                    height: 10*fem,
+                                    width: 18 * fem,
+                                    height: 18 * fem,
                                   ),
                                 ),
                               ),
@@ -271,8 +309,8 @@ class tier extends StatelessWidget {
               ),
               Positioned(
                 // group119nk5 (160:8254)
-                left: 137*fem,
-                top: 234*fem,
+                left: 140*fem,
+                top: 108*fem,
                 child: Container(
                   width: 86*fem,
                   height: 119*fem,
@@ -307,7 +345,7 @@ class tier extends StatelessWidget {
               Positioned(
                 // caloriescorecDK (160:8259)
                 left: 65.5*fem,
-                top: 536.5*fem,
+                top: 480*fem,
                 child: Center(
                   child: Align(
                     child: SizedBox(
@@ -332,7 +370,7 @@ class tier extends StatelessWidget {
               Positioned(
                 // group144du7 (160:8260)
                 left: 79*fem,
-                top: 406*fem,
+                top: 315*fem,
                 child: Container(
                   width: 202*fem,
                   height: 55*fem,
@@ -614,55 +652,7 @@ class tier extends StatelessWidget {
                       ),
                     ],
                   ),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        // autogroup647oFgq (92AEYYQmP261P89Rhd647o)
-                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 78*fem, 0*fem),
-                        width: 15*fem,
-                        height: 25*fem,
-                        child: Image.asset(
-                          'assets/resource/images/auto-group-647o.png',
-                          width: 15*fem,
-                          height: 25*fem,
-                        ),
-                      ),
-                      Container(
-                        // socialm9P (160:8292)
-                        margin: EdgeInsets.fromLTRB(0*fem, 0.5*fem, 78*fem, 0*fem),
-                        width: 15*fem,
-                        height: 15*fem,
-                        child: Image.asset(
-                          'assets/resource/images/social-vbF.png',
-                          width: 15*fem,
-                          height: 15*fem,
-                        ),
-                      ),
-                      Container(
-                        // mydata4eH (160:8296)
-                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 78*fem, 0*fem),
-                        width: 15*fem,
-                        height: 16*fem,
-                        child: Image.asset(
-                          'assets/resource/images/mydata-4mK.png',
-                          width: 15*fem,
-                          height: 16*fem,
-                        ),
-                      ),
-                      Container(
-                        // AxD (160:8299)
-                        margin: EdgeInsets.fromLTRB(0*fem, 5.5*fem, 0*fem, 0*fem),
-                        width: 21*fem,
-                        height: 5*fem,
-                        child: Image.asset(
-                          'assets/resource/images/-VDX.png',
-                          width: 21*fem,
-                          height: 5*fem,
-                        ),
-                      ),
-                    ],
-                  ),
+
                 ),
               ),
             ],
