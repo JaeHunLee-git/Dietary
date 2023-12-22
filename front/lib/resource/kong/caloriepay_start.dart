@@ -3,6 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
+import 'package:myapp/resource/ljh/mainpage.dart';
 
 class caloriepay_start extends StatelessWidget {
   @override
@@ -120,15 +121,22 @@ class caloriepay_start extends StatelessWidget {
                     ],
                   ),
                   child: Center(
-                    child: Text(
-                      '칼로리 페이 시작하기',
-                      style: SafeGoogleFont (
-                        'Roboto',
-                        fontSize: 14*ffem,
-                        fontWeight: FontWeight.w600,
-                        height: 1.4285714286*ffem/fem,
-                        letterSpacing: 0.25*fem,
-                        color: Color(0xffffffff),
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context)=>mainpage()),
+                        );
+                      },
+                      child: Text(
+                        '칼로리 페이 시작하기',
+                        style: TextStyle(
+                          fontSize: 14 * ffem,
+                          fontWeight: FontWeight.w600,
+                          height: 1.4285714286 * ffem / fem,
+                          letterSpacing: 0.25 * fem,
+                          color: Color(0xffffffff),
+                        ),
                       ),
                     ),
                   ),

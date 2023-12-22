@@ -24,7 +24,7 @@ Future<void> registerUser(String name, String password, String email, String pho
       'password': password,
       'email': email,
       'phoneNumber': phoneNumber,
-    });
+    }, SetOptions(merge: true)); // 기존 문서에 merge하는 옵션 추가
 
     print('User registered successfully with ID: $userId');
   } catch (e) {

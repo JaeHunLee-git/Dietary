@@ -4,6 +4,18 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:myapp/main.dart';
+
+Future<void> setUser(String Weight) async {
+  try {
+    await FirebaseFirestore.instance.collection('user').doc(userId).update({
+      'weight':Weight,
+    });
+    print('User data added successfully for user: $userId');
+  } catch (e) {
+    print('Error adding user data: $e');
+  }
+}
 
 
 class weight_modification extends StatefulWidget {
@@ -155,20 +167,8 @@ class _weight_modificationState extends State<weight_modification> {
                 margin: EdgeInsets.fromLTRB(16*fem, 0*fem, 16*fem, 407*fem),
                 child: TextButton(
                   onPressed: () {
-                    FirebaseFirestore.instance.collection('Weight').doc('Weight').set({
-                      'Weight': Weight,
-                    })
-                        .then((value) {
-                      setState(() {
-                        WeightText = '저장돼었습니다';
-                      });
-                    })
-                        .catchError((error) {
-                      setState(() {
-                        WeightText = '저장실패';
-                      });
-                      // 저장에 실패한 경우 처리
-                    });
+                    setUser(Weight);
+
                   },
                   style: TextButton.styleFrom (
                     padding: EdgeInsets.zero,

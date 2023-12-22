@@ -3,8 +3,40 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
+import 'package:myapp/resource/ljh/mainpage.dart';
+import 'package:myapp/main.dart';
 import 'package:myapp/resource/kong/signup.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
+Future<void> signIn(String email, String password, BuildContext context) async {
+  try {
+    UserCredential userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+      email: email,
+      password: password,
+    );
+    // 로그인 성공 후
+    userId = userCredential.user!.uid;
+
+    // user 컬렉션에서 해당 사용자의 정보 가져오기
+    DocumentSnapshot userSnapshot = await FirebaseFirestore.instance.collection('user').doc(userId).get();
+
+    // 사용자 정보가 존재하는지 확인
+    if (userSnapshot.exists) {
+      // 사용자 정보가 있다면 다음 페이지로 이동
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => mainpage()), // 다음 페이지 지정
+      );
+    } else {
+      // 사용자 정보가 없는 경우 처리
+      print('사용자 정보가 없습니다.');
+    }
+  } catch (e) {
+    // 로그인 실패 시 에러 처리
+    print('로그인 실패: $e');
+  }
+}
 
 class signin extends StatefulWidget {
   @override
@@ -12,6 +44,8 @@ class signin extends StatefulWidget {
 }
 
 class _signinState extends State<signin> {
+  String email='';
+  String password='';
   bool isTextHidden = true;
 
   @override
@@ -125,7 +159,7 @@ class _signinState extends State<signin> {
                               child: TextField(
                                 // 텍스트 필드 설정
                                 decoration: InputDecoration(
-                                  hintText: '이름을 입력해주세요',
+                                  hintText: '이메일을 입력해주세요',
                                   hintStyle: TextStyle(
                                     fontSize: 14 * ffem,
                                     fontWeight: FontWeight.w500,
@@ -144,6 +178,9 @@ class _signinState extends State<signin> {
                                   setState(() {
                                     isTextHidden = false;
                                   });
+                                },
+                                onChanged: (value){
+                                  email=value;
                                 },
                                 obscureText: isTextHidden,
                               ),
@@ -205,6 +242,9 @@ class _signinState extends State<signin> {
                                     isTextHidden = false;
                                   });
                                 },
+                                onChanged: (value){
+                                  password=value;
+                                },
                                 obscureText: true,
                               ),
                             ),
@@ -229,10 +269,7 @@ class _signinState extends State<signin> {
                         child: Center(
                           child: TextButton(
                             onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => signup()),
-                              );
+                              signIn(email, password, context);
                             },
                             child: Text(
                               '로그인',

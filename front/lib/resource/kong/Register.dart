@@ -10,7 +10,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 Future<void> setUser(String age, String height, String weight, String gender) async {
   try {
-    await FirebaseFirestore.instance.collection('users').doc(userId).set({
+    await FirebaseFirestore.instance.collection('user').doc(userId).update({
       'age': age,
       'height': height,
       'weight': weight,
@@ -21,7 +21,6 @@ Future<void> setUser(String age, String height, String weight, String gender) as
     print('Error adding user data: $e');
   }
 }
-
 
 class Register extends StatefulWidget {
   @override

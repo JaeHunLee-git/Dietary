@@ -3,7 +3,19 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
+import 'package:myapp/main.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+
+Future<void> setUser(String age) async {
+  try {
+    await FirebaseFirestore.instance.collection('user').doc(userId).update({
+      'age':age,
+    });
+    print('User data added successfully for user: $userId');
+  } catch (e) {
+    print('Error adding user data: $e');
+  }
+}
 
 class age extends StatefulWidget {
   age({super.key});
@@ -154,20 +166,7 @@ class ageState extends State<age> {
                     margin: EdgeInsets.fromLTRB(16*fem, 0*fem, 16*fem, 407*fem),
                     child: TextButton(
                       onPressed: () {
-                        FirebaseFirestore.instance.collection('Age').doc('Age').set({
-                          'Age': age,
-                        })
-                            .then((value) {
-                          setState(() {
-                            _ageText = '저장돼었습니다';
-                          });
-                        })
-                            .catchError((error) {
-                          setState(() {
-                            _ageText = '저장실패';
-                          });
-                          // 저장에 실패한 경우 처리
-                        });
+                       setUser(age);
                       },
                       style: TextButton.styleFrom (
                         padding: EdgeInsets.zero,
