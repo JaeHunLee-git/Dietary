@@ -10,9 +10,60 @@ import 'package:myapp/resource/kong/name.dart';
 import 'package:myapp/resource/kong/gender.dart';
 import 'package:myapp/resource/kong/height.dart';
 import 'package:myapp/resource/kong/age.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:myapp/main.dart';
 
+class more_useredit extends StatefulWidget {
+  const more_useredit({super.key});
 
-class more_useredit extends StatelessWidget {
+  @override
+  State<more_useredit> createState() => _more_usereditState();
+}
+
+class _more_usereditState extends State<more_useredit> {
+
+  String? Ag;
+  String? Na;
+  String? Go;
+  String? Ge;
+  String? He;
+  String? We;
+  String? Gw;
+
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(Duration.zero, () {
+      getUserData().then((userData) {
+        setState(() {
+          Ag = userData?['age'] ?? '';
+          Na = userData?['name'] ?? '';
+          Go = userData?['goal'] ?? '';
+          Ge = userData?['gender'] ?? '';
+          Gw = userData?['Gweight'] ?? '';
+          We = userData?['weight'] ?? '';
+          He = userData?['height'] ?? '';
+        });
+      });
+    });
+  }
+
+  Future<Map<String, dynamic>?> getUserData() async {
+    try {
+      DocumentSnapshot userSnapshot =
+      await FirebaseFirestore.instance.collection('user').doc(userId).get();
+
+      if (userSnapshot.exists) {
+        return userSnapshot.data() as Map<String, dynamic>;
+      } else {
+        return null;
+      }
+    } catch (e) {
+      print('Error fetching user data: $e');
+      return null;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 360;
@@ -50,7 +101,7 @@ class more_useredit extends StatelessWidget {
                   Container(
                     // vector9LR (160:10681)
                     margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 84*fem, 0*fem),
-                      child: Container(
+                    child: Container(
                         width: 22*fem,
                         height: 40*fem,
                         child: TextButton(
@@ -64,7 +115,7 @@ class more_useredit extends StatelessWidget {
                           ),
                         )
 
-                      ),
+                    ),
                   ),
                   Center(
                     // Ecm (160:10682)
@@ -140,7 +191,7 @@ class more_useredit extends StatelessWidget {
                       children: [
                         Container(
                           // frame147ipm (160:10664)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 54.5*fem, 0*fem),
+                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 56.5*fem, 0*fem),
                           height: double.infinity,
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -161,19 +212,17 @@ class more_useredit extends StatelessWidget {
                                 ),
                               ),
                               Center(
-                                // Agm (160:10666)
-                                child: Text(
-                                  '정채원',
-                                  textAlign: TextAlign.center,
-                                  style: SafeGoogleFont (
-                                    'Roboto',
-                                    fontSize: 13*ffem,
+                                child: Na != null
+                                    ? Text(
+                                  Na!,
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle(
+                                    fontSize: 38,
                                     fontWeight: FontWeight.w500,
-                                    height: 1.2307692308*ffem/fem,
-                                    letterSpacing: 0.5*fem,
-                                    color: Color(0xff000000),
+                                    // Add other styles here
                                   ),
-                                ),
+                                )
+                                    : CircularProgressIndicator(),
                               ),
                             ],
                           ),
@@ -211,7 +260,7 @@ class more_useredit extends StatelessWidget {
                       children: [
                         Container(
                           // frame148mAm (160:10667)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 65*fem, 0*fem),
+                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 67*fem, 0*fem),
                           height: double.infinity,
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -220,7 +269,7 @@ class more_useredit extends StatelessWidget {
                                 // 6iq (160:10668)
                                 margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 135.5*fem, 0*fem),
                                 child: Text(
-                                  '성별',//TODO 수정해야함
+                                  '성별',
                                   style: SafeGoogleFont (
                                     'Roboto',
                                     fontSize: 13*ffem,
@@ -233,18 +282,17 @@ class more_useredit extends StatelessWidget {
                               ),
                               Center(
                                 // QzR (160:10669)
-                                child: Text(
-                                  '남성', //TODO 수정해야함
-                                  textAlign: TextAlign.center,
-                                  style: SafeGoogleFont (
-                                    'Roboto',
-                                    fontSize: 13*ffem,
+                                child: Ge != null
+                                    ? Text(
+                                  Ge!,
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle(
+                                    fontSize: 40,
                                     fontWeight: FontWeight.w500,
-                                    height: 1.2307692308*ffem/fem,
-                                    letterSpacing: 0.5*fem,
-                                    color: Color(0xff000000),
+                                    // Add other styles here
                                   ),
-                                ),
+                                )
+                                    : CircularProgressIndicator(),
                               ),
                             ],
                           ),
@@ -282,14 +330,14 @@ class more_useredit extends StatelessWidget {
                       children: [
                         Container(
                           // frame149ECm (160:10670)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 67*fem, 0*fem),
+                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 76*fem, 0*fem),
                           height: double.infinity,
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
                                 // yAM (160:10671)
-                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 129.5*fem, 0*fem),
+                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 137*fem, 0*fem),
                                 child: Text(
                                   '나이',
                                   style: SafeGoogleFont (
@@ -304,18 +352,17 @@ class more_useredit extends StatelessWidget {
                               ),
                               Center(
                                 // tYD (160:10672)
-                                child: Text(
-                                  '25세',//TODO 수정해야함
-                                  textAlign: TextAlign.center,
-                                  style: SafeGoogleFont (
-                                    'Roboto',
-                                    fontSize: 13*ffem,
+                                child: Ag != null
+                                    ? Text(
+                                  Ag!,
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle(
+                                    fontSize: 40,
                                     fontWeight: FontWeight.w500,
-                                    height: 1.2307692308*ffem/fem,
-                                    letterSpacing: 0.5*fem,
-                                    color: Color(0xff000000),
+                                    // Add other styles here
                                   ),
-                                ),
+                                )
+                                    : CircularProgressIndicator(),
                               ),
                             ],
                           ),
@@ -353,14 +400,14 @@ class more_useredit extends StatelessWidget {
                       children: [
                         Container(
                           // frame150VY1 (160:10673)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 49*fem, 0*fem),
+                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 68*fem, 0*fem),
                           height: double.infinity,
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
                                 // qLy (160:10674)
-                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 135.5*fem, 0*fem),
+                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 150*fem, 0*fem),
                                 child: Text(
                                   '키',
                                   style: SafeGoogleFont (
@@ -375,18 +422,17 @@ class more_useredit extends StatelessWidget {
                               ),
                               Center(
                                 // cm9cZ (160:10675)
-                                child: Text(
-                                  '168.0cm',//TODO 수정해야함
-                                  textAlign: TextAlign.center,
-                                  style: SafeGoogleFont (
-                                    'Roboto',
-                                    fontSize: 13*ffem,
+                                child: He != null
+                                    ? Text(
+                                  He!,
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle(
+                                    fontSize: 40,
                                     fontWeight: FontWeight.w500,
-                                    height: 1.2307692308*ffem/fem,
-                                    letterSpacing: 0.5*fem,
-                                    color: Color(0xff000000),
+                                    // Add other styles here
                                   ),
-                                ),
+                                )
+                                    : CircularProgressIndicator(),
                               ),
                             ],
                           ),
@@ -424,14 +470,14 @@ class more_useredit extends StatelessWidget {
                       children: [
                         Container(
                           // frame151Xd7 (160:10676)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 48*fem, 0*fem),
+                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 59*fem, 0*fem),
                           height: double.infinity,
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
                                 // Gah (160:10677)
-                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 135.5*fem, 0*fem),
+                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 140*fem, 0*fem),
                                 child: Text(
                                   '체중',
                                   style: SafeGoogleFont (
@@ -446,42 +492,41 @@ class more_useredit extends StatelessWidget {
                               ),
                               Center(
                                 // kgnow (160:10678)
-                                child: Text(
-                                  '63.0kg',//TODO 수정해야함
-                                  textAlign: TextAlign.center,
-                                  style: SafeGoogleFont (
-                                    'Roboto',
-                                    fontSize: 13*ffem,
+                                child: We != null
+                                    ? Text(
+                                  We!,
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle(
+                                    fontSize: 40,
                                     fontWeight: FontWeight.w500,
-                                    height: 1.2307692308*ffem/fem,
-                                    letterSpacing: 0.5*fem,
-                                    color: Color(0xff000000),
+                                    // Add other styles here
                                   ),
-                                ),
+                                )
+                                    : CircularProgressIndicator(),
                               ),
                             ],
                           ),
                         ),
-                          TextButton(
-                            onPressed: () {
-                               Navigator.push(
-                                 context,
-                                 MaterialPageRoute(builder: (context) => weight_modification()),
-                               );
-                            },
-                            child: Text(
-                              '수정',
-                              textAlign: TextAlign.right,
-                              style: SafeGoogleFont(
-                                'Inter',
-                                fontSize: 12 * ffem,
-                                fontWeight: FontWeight.w700,
-                                height: 1.2125 * ffem / fem,
-                                letterSpacing: 1.2 * fem,
-                                color: Color(0xffa5a5a5),
-                              ),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => weight_modification()),
+                            );
+                          },
+                          child: Text(
+                            '수정',
+                            textAlign: TextAlign.right,
+                            style: SafeGoogleFont(
+                              'Inter',
+                              fontSize: 12 * ffem,
+                              fontWeight: FontWeight.w700,
+                              height: 1.2125 * ffem / fem,
+                              letterSpacing: 1.2 * fem,
+                              color: Color(0xffa5a5a5),
                             ),
                           ),
+                        ),
                       ],
                     ),
                   ),
@@ -517,18 +562,17 @@ class more_useredit extends StatelessWidget {
                               ),
                               Center(
                                 // g29 (160:10660)
-                                child: Text(
-                                  '다이어트',//TODO 수정해야함
-                                  textAlign: TextAlign.center,
-                                  style: SafeGoogleFont (
-                                    'Roboto',
-                                    fontSize: 13*ffem,
+                                child: Go != null
+                                    ? Text(
+                                  Go!,
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle(
+                                    fontSize: 40,
                                     fontWeight: FontWeight.w500,
-                                    height: 1.2307692308*ffem/fem,
-                                    letterSpacing: 0.5*fem,
-                                    color: Color(0xff000000),
+                                    // Add other styles here
                                   ),
-                                ),
+                                )
+                                    : CircularProgressIndicator(),
                               ),
                             ],
                           ),
@@ -566,14 +610,14 @@ class more_useredit extends StatelessWidget {
                       children: [
                         Container(
                           // frame152Tx1 (160:10661)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 55*fem, 0*fem),
+                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 69*fem, 0*fem),
                           height: double.infinity,
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
                                 // DAV (160:10662)
-                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 100.5*fem, 0*fem),
+                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 110*fem, 0*fem),
                                 child: Text(
                                   '목표 체중',
                                   style: SafeGoogleFont (
@@ -588,18 +632,17 @@ class more_useredit extends StatelessWidget {
                               ),
                               Center(
                                 // kg8oF (160:10663)
-                                child: Text(
-                                  '61.5kg',//TODO 수정해야함
-                                  textAlign: TextAlign.center,
-                                  style: SafeGoogleFont (
-                                    'Roboto',
-                                    fontSize: 13*ffem,
+                                child: Gw != null
+                                    ? Text(
+                                  Gw!,
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle(
+                                    fontSize: 40,
                                     fontWeight: FontWeight.w500,
-                                    height: 1.2307692308*ffem/fem,
-                                    letterSpacing: 0.5*fem,
-                                    color: Color(0xff000000),
+                                    // Add other styles here
                                   ),
-                                ),
+                                )
+                                    : CircularProgressIndicator(),
                               ),
                             ],
                           ),
@@ -638,119 +681,9 @@ class more_useredit extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
-              // group172aQM (160:10640)
-              margin: EdgeInsets.fromLTRB(16*fem, 0*fem, 16*fem, 134*fem),
-              child: TextButton(
-                onPressed: () {},
-                style: TextButton.styleFrom (
-                  padding: EdgeInsets.zero,
-                ),
-                child: Container(
-                  width: double.infinity,
-                  height: 50*fem,
-                  decoration: BoxDecoration (
-                    color: Color(0xff18c07a),
-                    borderRadius: BorderRadius.circular(15*fem),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Color(0x3f000000),
-                        offset: Offset(0*fem, 4*fem),
-                        blurRadius: 2*fem,
-                      ),
-                    ],
-                  ),
-                  child: Center(
-                    child: Center(
-                      child: Text(
-                        '저장하기',
-                        textAlign: TextAlign.center,
-                        style: SafeGoogleFont (
-                          'Inter',
-                          fontSize: 15*ffem,
-                          fontWeight: FontWeight.w700,
-                          height: 1.0666666667*ffem/fem,
-                          letterSpacing: 0.5*fem,
-                          color: Color(0xffffffff),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              // tabmenuBuw (160:12407)
-              padding: EdgeInsets.fromLTRB(30*fem, 21*fem, 30*fem, 21*fem),
-              width: double.infinity,
-              height: 108*fem,
-              decoration: BoxDecoration (
-                color: Color(0xffffffff),
-                borderRadius: BorderRadius.only (
-                  topLeft: Radius.circular(15*fem),
-                  topRight: Radius.circular(15*fem),
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0x1e000000),
-                    offset: Offset(0*fem, 2*fem),
-                    blurRadius: 24*fem,
-                  ),
-                ],
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    // home4Tw (160:12410)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 78*fem, 0*fem),
-                    width: 15*fem,
-                    height: 16*fem,
-                    child: Image.asset(
-                      'assets/resource/images/home-T6d.png',
-                      width: 15*fem,
-                      height: 16*fem,
-                    ),
-                  ),
-                  Container(
-                    // socialaBP (160:12413)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0.5*fem, 78*fem, 0*fem),
-                    width: 15*fem,
-                    height: 15*fem,
-                    child: Image.asset(
-                      'assets/resource/images/social-ovu.png',
-                      width: 15*fem,
-                      height: 15*fem,
-                    ),
-                  ),
-                  Container(
-                    // mydataHLh (160:12417)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 78*fem, 0*fem),
-                    width: 15*fem,
-                    height: 16*fem,
-                    child: Image.asset(
-                      'assets/resource/images/mydata-pqj.png',
-                      width: 15*fem,
-                      height: 16*fem,
-                    ),
-                  ),
-                  Container(
-                    // autogroupcv2vCiZ (92BgpCq2WjhDHZ9HVmcV2V)
-                    margin: EdgeInsets.fromLTRB(0*fem, 5.5*fem, 0*fem, 0*fem),
-                    width: 21*fem,
-                    height: 19.5*fem,
-                    child: Image.asset(
-                      'assets/resource/images/auto-group-cv2v.png',
-                      width: 21*fem,
-                      height: 19.5*fem,
-                    ),
-                  ),
-                ],
-              ),
-            ),
           ],
         ),
       ),
-          );
+    );
   }
 }

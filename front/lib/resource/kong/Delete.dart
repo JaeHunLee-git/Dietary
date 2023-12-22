@@ -3,6 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
+import 'package:myapp/resource/kong/first_page.dart';
 
 class Delete extends StatelessWidget {
   @override
@@ -39,7 +40,7 @@ class Delete extends StatelessWidget {
                   // 6ZT (1:141)
                   margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 12*fem, 18*fem),
                   child: Text(
-                    '회원탈퇴 완료',
+                    '회원탈퇴 완료!',
                     style: SafeGoogleFont (
                       'Inter',
                       fontSize: 25*ffem,
@@ -66,7 +67,7 @@ class Delete extends StatelessWidget {
                             width: 121*fem,
                             height: 19*fem,
                             child: Text(
-                              '칼로리 페이와',
+                              '지금까지 칼로리 페이와',
                               style: SafeGoogleFont (
                                 'Inter',
                                 fontSize: 13*ffem,
@@ -88,7 +89,7 @@ class Delete extends StatelessWidget {
                             width: 206*fem,
                             height: 19*fem,
                             child: Text(
-                              '함께 해주셔서 감사합니다 !',
+                              '함께 해주셔서 감사합니다!',
                               style: SafeGoogleFont (
                                 'Inter',
                                 fontSize: 13*ffem,
@@ -102,6 +103,42 @@ class Delete extends StatelessWidget {
                         ),
                       ),
                     ],
+                  ),
+                ),
+                Container(
+                  // group1NSR (1:137)
+                  width: double.infinity,
+                  height: 50*fem,
+                  decoration: BoxDecoration (
+                    color: Color(0xff18c07a),
+                    borderRadius: BorderRadius.circular(10*fem),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color(0x3f000000),
+                        offset: Offset(0*fem, 4*fem),
+                        blurRadius: 2*fem,
+                      ),
+                    ],
+                  ),
+                  child: Center(
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context)=>first_page()),
+                        );
+                      },
+                      child: Text(
+                        '회원가입으로 돌아가기',
+                        style: TextStyle(
+                          fontSize: 14 * ffem,
+                          fontWeight: FontWeight.w600,
+                          height: 1.4285714286 * ffem / fem,
+                          letterSpacing: 0.25 * fem,
+                          color: Color(0xffffffff),
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               ],
