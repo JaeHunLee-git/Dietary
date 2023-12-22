@@ -6,7 +6,14 @@ import 'package:myapp/utils.dart';
 
 import 'mainpage.dart';
 
-class menu_recomendation extends StatelessWidget {
+class menu_recomendation extends StatefulWidget {
+  @override
+  _menu_recomendationState createState() => _menu_recomendationState();
+}
+
+class _menu_recomendationState extends State<menu_recomendation> {
+  TextEditingController _menuCountController = TextEditingController();
+  String _menuCount = '3'; // 초기값
   @override
   Widget build(BuildContext context) {
     double baseWidth = 360;
