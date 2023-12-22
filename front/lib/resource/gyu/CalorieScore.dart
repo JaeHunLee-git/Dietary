@@ -5,22 +5,40 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 import 'package:myapp/resource/gyu/Calendar.dart';
 
-class CalorieScore extends StatelessWidget {
-  final int calculatedScore;
-  // 생성자 내부에서 수식을 사용하여 calculatedScore 초기화
-  const CalorieScore({Key? key})
-      : calculatedScore = 100 + 200, // 예시로 100과 200을 더한 값을 할당
-        super(key: key);
+class CalorieScore extends StatefulWidget {
+  const CalorieScore({Key? key}) : super(key: key);
+
+  @override
+  _CalorieScoreState createState() => _CalorieScoreState();
+}
+
+class _CalorieScoreState extends State<CalorieScore> {
+  late int calculatedScore;
+
+  @override
+  void initState() {
+    super.initState();
+    // 생성자 내부의 수식을 사용하여 calculatedScore 초기화
+    calculatedScore = 100 + 200; // 예시로 100과 200을 더한 값을 할당
+  }
 
   @override
   Widget build(BuildContext context) {
     double baseWidth = 360;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return
-      Scaffold(
-        body: SingleChildScrollView(
-        child: Container(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Calorie Score',
+          style: TextStyle(
+            fontWeight: FontWeight.bold, // 진하게 설정
+            fontSize: 20, // 텍스트 크기 조정
+          ),
+        ),
+        backgroundColor: Colors.white,
+      ),
+      body: Container(
         width: double.infinity,
         child: Container(
           // caloriescore79f (160:10363)
@@ -31,64 +49,7 @@ class CalorieScore extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Container(
-                // group114weV (160:10411)
-                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 14*fem),
-                padding: EdgeInsets.fromLTRB(0*fem, 50*fem, 0*fem, 10*fem),
-                width: double.infinity,
-                decoration: BoxDecoration (
-                  color: Color(0xffffffff),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Color(0x3f000000),
-                      offset: Offset(0*fem, 4*fem),
-                      blurRadius: 2*fem,
-                    ),
-                  ],
-                ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      // vectorQHB (160:10413)
-                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 82*fem, 0*fem),
-                      child: TextButton(
-                        onPressed: () {},
-                        style: TextButton.styleFrom (
-                          padding: EdgeInsets.zero,
-                        ),
-                        child: Container(
-                          width: 11*fem,
-                          height: 20*fem,
-                          child: Image.asset(
-                            'assets/resource/images/vector-69s.png',
-                            width: 11*fem,
-                            height: 20*fem,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Center(
-                      // caloriescoreH65 (160:10414)
-                      child: Container(
-                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 0*fem),
-                        child: Text(
-                          'Calorie Score',
-                          textAlign: TextAlign.center,
-                          style: SafeGoogleFont (
-                            'Inter',
-                            fontSize: 18*ffem,
-                            fontWeight: FontWeight.w700,
-                            height: 1.1111111111*ffem/fem,
-                            letterSpacing: 0.25*fem,
-                            color: Color(0xff000000),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+
               Container(
                 // autogroup2o9fmmw (92BTz5CwH5LUXA1Trf2o9F)
                 margin: EdgeInsets.fromLTRB(16*fem, 0*fem, 16*fem, 17*fem),
@@ -109,7 +70,7 @@ class CalorieScore extends StatelessWidget {
                   children: [
                     Container(
                       // autogrouprfmwTem (92BUDKKsQ3A1roJqeArFmw)
-                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 12.5*fem),
+                      margin: EdgeInsets.fromLTRB(0*fem, 10*fem, 0*fem, 12.5*fem),
                       padding: EdgeInsets.fromLTRB(22.5*fem, 9.5*fem, 22.5*fem, 8.5*fem),
                       width: double.infinity,
                       decoration: BoxDecoration (
@@ -387,7 +348,7 @@ class CalorieScore extends StatelessWidget {
                                           ),
                                           Container(
                                             // ellipse31DWm (160:10390)
-                                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 0*fem),
+                                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 5*fem),
                                             width: 6*fem,
                                             height: 6*fem,
                                             decoration: BoxDecoration (
@@ -427,7 +388,7 @@ class CalorieScore extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont (
                                           'Inter',
-                                          fontSize: 10*ffem,
+                                          fontSize: 9*ffem,
                                           fontWeight: FontWeight.w600,
                                           height: 1.2125*ffem/fem,
                                           color: Color(0xffffffff),
@@ -444,7 +405,7 @@ class CalorieScore extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont (
                                           'Inter',
-                                          fontSize: 9.5*ffem,
+                                          fontSize: 9*ffem,
                                           fontWeight: FontWeight.w600,
                                           height: 1.2125*ffem/fem,
                                           color: Color(0xffffffff),
@@ -461,7 +422,7 @@ class CalorieScore extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont (
                                           'Inter',
-                                          fontSize: 9.5*ffem,
+                                          fontSize: 9*ffem,
                                           fontWeight: FontWeight.w600,
                                           height: 1.2125*ffem/fem,
                                           color: Color(0xffffffff),
@@ -478,7 +439,7 @@ class CalorieScore extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: SafeGoogleFont (
                                           'Inter',
-                                          fontSize: 9.5*ffem,
+                                          fontSize: 9*ffem,
                                           fontWeight: FontWeight.w600,
                                           height: 1.2125*ffem/fem,
                                           color: Color(0xffffffff),
@@ -489,11 +450,11 @@ class CalorieScore extends StatelessWidget {
                                   Center(
                                     // Bdw (160:10379)
                                     child: Text(
-                                      '12.7',
+                                      '12.6',
                                       textAlign: TextAlign.center,
                                       style: SafeGoogleFont (
                                         'Inter',
-                                        fontSize: 9.5*ffem,
+                                        fontSize: 9*ffem,
                                         fontWeight: FontWeight.w600,
                                         height: 1.2125*ffem/fem,
                                         color: Color(0xffffffff),
@@ -514,8 +475,7 @@ class CalorieScore extends StatelessWidget {
             ],
           ),
         ),
-            ),
-        ),
-      );
+      ),
+    );
   }
 }
