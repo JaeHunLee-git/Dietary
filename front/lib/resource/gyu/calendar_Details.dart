@@ -809,7 +809,9 @@ class calendar_Details extends StatelessWidget {
                   width: 11*fem,
                   height: 20*fem,
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                     style: TextButton.styleFrom (
                       padding: EdgeInsets.zero,
                     ),

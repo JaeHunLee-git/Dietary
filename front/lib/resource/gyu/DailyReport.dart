@@ -991,7 +991,9 @@ class DailyReport extends StatelessWidget {
                 ),
                 child: TextButton(
                   // group91x3F (160:9965)
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
                   style: TextButton.styleFrom (
                     padding: EdgeInsets.zero,
                   ),
