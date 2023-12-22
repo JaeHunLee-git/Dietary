@@ -3,8 +3,9 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
+import 'package:myapp/resource/gyu/Calendar.dart';
 
-class monthtier12 extends StatelessWidget {
+class tier extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 360;
@@ -601,9 +602,11 @@ class monthtier12 extends StatelessWidget {
                   children: [
                     Container(
                       // vector2Qm (160:8284)
-                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 105.5*fem, 0*fem),
+                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 60.5*fem, 0*fem),
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
                         style: TextButton.styleFrom (
                           padding: EdgeInsets.zero,
                         ),
@@ -627,7 +630,7 @@ class monthtier12 extends StatelessWidget {
                           textAlign: TextAlign.center,
                           style: SafeGoogleFont (
                             'Inter',
-                            fontSize: 18*ffem,
+                            fontSize: 15*ffem,
                             fontWeight: FontWeight.w700,
                             height: 1.1111111111*ffem/fem,
                             letterSpacing: 0.25*fem,

@@ -4,15 +4,24 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'package:myapp/resource/gyu/tier.dart';
 
 
-class Calendar extends StatelessWidget {
+class Calendar extends StatefulWidget {
+  @override
+  _CalendarState createState() => _CalendarState();
+}
+
+class _CalendarState extends State<Calendar> {
+  DateTime? selectedDate;
   @override
   Widget build(BuildContext context) {
+
     double baseWidth = 360;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return Container(
+    return
+      Container(
       width: double.infinity,
       child: Container(
         // akr1 (160:9406)
@@ -75,12 +84,30 @@ class Calendar extends StatelessWidget {
                             ),
                           ),
                           onDaySelected: (selectedDay, focusedDay) {
-                            print('선택된 날짜: $selectedDay');
+                            setState(() {
+                              selectedDate = selectedDay; // 선택된 날짜 업데이트
+                            });
                             // 선택된 날짜 처리 로직 추가
                           },
                         ),
+
                       ),
+
                     ),
+                    if (selectedDate != null && selectedDate == DateTime(2023, 12, 20))
+                      Container(
+                        width: 200,
+                        height: 200,
+                        color: Colors.white,
+                        child: Center(
+                          child: Text(
+                            'hello',
+                            style: TextStyle(fontSize: 24),
+                          ),
+                        ),
+                      )
+                    else
+                      SizedBox.shrink(),
 
                     Container(
                       // group104y8H (160:9517)
@@ -260,9 +287,7 @@ class Calendar extends StatelessWidget {
                                                 color: Color(0xff18c07a),
                                               ),
                                             ),
-                                            TextSpan(
-                                              text: '   ',
-                                            ),
+
                                           ],
                                         ),
                                       ),
@@ -351,7 +376,9 @@ class Calendar extends StatelessWidget {
                   width: 11*fem,
                   height: 20*fem,
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                     style: TextButton.styleFrom (
                       padding: EdgeInsets.zero,
                     ),
@@ -373,7 +400,12 @@ class Calendar extends StatelessWidget {
                   width: 24*fem,
                   height: 24*fem,
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => tier()),
+                      );
+                    },
                     style: TextButton.styleFrom (
                       padding: EdgeInsets.zero,
                     ),
@@ -387,7 +419,7 @@ class Calendar extends StatelessWidget {
             ),
             Positioned(
               // Ury (160:9535)
-              left: 108*fem,
+              left: 120*fem,
               top: 61*fem,
               child: Align(
                 child: SizedBox(
@@ -397,7 +429,7 @@ class Calendar extends StatelessWidget {
                     '칼로리 소비 캘린더',
                     style: SafeGoogleFont (
                       'Inter',
-                      fontSize: 18*ffem,
+                      fontSize: 15*ffem,
                       fontWeight: FontWeight.w700,
                       height: 1.1111111111*ffem/fem,
                       letterSpacing: 0.25*fem,
