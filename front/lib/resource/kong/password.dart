@@ -3,8 +3,19 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
+import 'package:myapp/main.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+Future<void> setUser(String password) async {
+  try {
+    await FirebaseFirestore.instance.collection('user').doc(userId).update({
+      'password':password,
+    });
+    print('User data added successfully for user: $userId');
+  } catch (e) {
+    print('Error adding user data: $e');
+  }
+}
 
 class password extends StatefulWidget {
   password({super.key});
@@ -156,20 +167,7 @@ class passwordState extends State<password> {
                     margin: EdgeInsets.fromLTRB(16*fem, 0*fem, 16*fem, 407*fem),
                     child: TextButton(
                       onPressed: () {
-                        FirebaseFirestore.instance.collection('Password').doc('Password').set({
-                          'Password': password,
-                        })
-                            .then((value) {
-                          setState(() {
-                            passwordText = '저장돼었습니다';
-                          });
-                        })
-                            .catchError((error) {
-                          setState(() {
-                            passwordText = '저장실패';
-                          });
-                          // 저장에 실패한 경우 처리
-                        });
+                        setUser(password);
                       },
                       style: TextButton.styleFrom (
                         padding: EdgeInsets.zero,

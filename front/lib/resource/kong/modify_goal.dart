@@ -2,7 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/main.dart';
 import 'package:myapp/utils.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+
+Future<void> setUser(String goal) async {
+  try {
+    await FirebaseFirestore.instance.collection('user').doc(userId).update({
+      'goal':goal,
+    });
+    print('User data added successfully for user: $userId');
+  } catch (e) {
+    print('Error adding user data: $e');
+  }
+}
 
 class modify_goal extends StatefulWidget {
   modify_goal({super.key});
@@ -12,6 +26,7 @@ class modify_goal extends StatefulWidget {
 }
 
 class _modify_goalState extends State<modify_goal> {
+  String goal='';
   bool isDietSelected = false;
   bool isMaintenanceSelected = false;
 
@@ -105,6 +120,7 @@ class _modify_goalState extends State<modify_goal> {
                       setState(() {
                         isDietSelected = true;
                         isMaintenanceSelected = false;
+                        goal='다이어트';
                       });
                     },
                     child: Container(
@@ -134,6 +150,7 @@ class _modify_goalState extends State<modify_goal> {
                       setState(() {
                         isMaintenanceSelected = true;
                         isDietSelected = false;
+                        goal='유지어트';
                       });
                     },
                     child: Container(
@@ -164,7 +181,7 @@ class _modify_goalState extends State<modify_goal> {
                 margin: EdgeInsets.fromLTRB(16*fem, 0*fem, 16*fem, 323*fem),
                 child: TextButton(
                   onPressed: () {
-                    //수정한거 데베 저장
+                    setUser(goal);
                   },
                   style: TextButton.styleFrom (
                     padding: EdgeInsets.zero,

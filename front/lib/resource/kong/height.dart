@@ -3,8 +3,19 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
+import 'package:myapp/main.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+Future<void> setUser(String height) async {
+  try {
+    await FirebaseFirestore.instance.collection('user').doc(userId).update({
+      'height':height,
+    });
+    print('User data added successfully for user: $userId');
+  } catch (e) {
+    print('Error adding user data: $e');
+  }
+}
 
 class height extends StatefulWidget {
   height({super.key});
@@ -155,20 +166,7 @@ class heightState extends State<height> {
                     margin: EdgeInsets.fromLTRB(16*fem, 0*fem, 16*fem, 407*fem),
                     child: TextButton(
                       onPressed: () {
-                        FirebaseFirestore.instance.collection('Height').doc('Height').set({
-                          'Height': height,
-                        })
-                            .then((value) {
-                          setState(() {
-                            heightText = '저장돼었습니다';
-                          });
-                        })
-                            .catchError((error) {
-                          setState(() {
-                            heightText = '저장실패';
-                          });
-                          // 저장에 실패한 경우 처리
-                        });
+                        setUser(height);
                       },
                       style: TextButton.styleFrom (
                         padding: EdgeInsets.zero,

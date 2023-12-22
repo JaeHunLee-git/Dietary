@@ -3,7 +3,19 @@ import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
+import 'package:myapp/main.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+
+Future<void> setUser(String gender) async {
+  try {
+    await FirebaseFirestore.instance.collection('user').doc(userId).update({
+      'gender':gender,
+    });
+    print('User data added successfully for user: $userId');
+  } catch (e) {
+    print('Error adding user data: $e');
+  }
+}
 
 
 class gender extends StatefulWidget {
@@ -14,6 +26,7 @@ class gender extends StatefulWidget {
 }
 
 class genderState extends State<gender> {
+  String gender='';
   bool isDietSelected = false;
   bool isMaintenanceSelected = false;
 
@@ -101,6 +114,7 @@ class genderState extends State<gender> {
                           setState(() {
                             isDietSelected = true;
                             isMaintenanceSelected = false;
+                            gender='남성';
                           });
                         },
                         child: Container(
@@ -130,6 +144,7 @@ class genderState extends State<gender> {
                           setState(() {
                             isMaintenanceSelected = true;
                             isDietSelected = false;
+                            gender='여성';
                           });
                         },
                         child: Container(
@@ -160,7 +175,7 @@ class genderState extends State<gender> {
                     margin: EdgeInsets.fromLTRB(16*fem, 0*fem, 16*fem, 323*fem),
                     child: TextButton(
                       onPressed: () {
-                        // TODO 수정한거 데베 저장
+                        setUser(gender);
                       },
                       style: TextButton.styleFrom (
                         padding: EdgeInsets.zero,

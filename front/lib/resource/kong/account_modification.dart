@@ -6,13 +6,55 @@ import 'package:myapp/resource/kong/password.dart';
 import 'package:myapp/resource/kong/phonenumber_change.dart';
 import 'package:myapp/resource/kong/email.dart';
 import 'package:myapp/utils.dart';
+import 'package:myapp/main.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:myapp/resource/kong/Delete.dart';
 
 
-class account_modification extends StatelessWidget {
+class account_modification extends StatefulWidget {
+  account_modification({super.key});
+
+  @override
+  State<account_modification> createState() => _account_modificationState();
+}
+
+class _account_modificationState extends State<account_modification> {
+  String? mail;
+  String pNumber = '';
+  String pass = '';
+
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(Duration.zero, () {
+      getEmail().then((value) {
+        setState(() {
+          mail = value;
+        });
+      });
+    });
+  }
+
+  Future<String?> getEmail() async {
+    try {
+      DocumentSnapshot userSnapshot =
+      await FirebaseFirestore.instance.collection('user').doc(userId).get();
+
+      if (userSnapshot.exists) {
+        return userSnapshot.get('email') as String?;
+      } else {
+        return null;
+      }
+    } catch (e) {
+      print('Error fetching email: $e');
+      return null;
+    }
+  }
+
+
   @override
   Widget build(BuildContext context) {
+
     double baseWidth = 360;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
@@ -48,7 +90,7 @@ class account_modification extends StatelessWidget {
                   Container(
                     // vectorFUq (160:10806)
                     margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 89*fem, 0*fem),
-                      child: Container(
+                    child: Container(
                         width: 22*fem,
                         height: 40*fem,
                         child: TextButton(
@@ -61,7 +103,7 @@ class account_modification extends StatelessWidget {
                             height: 40 * fem,
                           ),
                         )
-                      ),
+                    ),
                   ),
                   Center(
                     // 9aD (160:10807)
@@ -127,6 +169,7 @@ class account_modification extends StatelessWidget {
                       color: Color(0xff182127),
                     ),
                   ),
+
                   Container(
                     // group174aJ9 (160:10789)
                     margin: EdgeInsets.fromLTRB(8*fem, 0*fem, 8*fem, 19*fem),
@@ -136,7 +179,7 @@ class account_modification extends StatelessWidget {
                       children: [
                         Container(
                           // WBo (160:10790)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 70*fem, 0*fem),
+                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 110*fem, 0*fem),
                           child: Text(
                             '이메일',
                             style: SafeGoogleFont (
@@ -150,20 +193,17 @@ class account_modification extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          // jeongchaewonnavercom2R3 (160:10791)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 10*fem, 0*fem),
-                          child: Text(
-                            'jeongchaewon@naver.com',
+                          child: mail != null
+                              ? Text(
+                            mail!,
                             textAlign: TextAlign.right,
-                            style: SafeGoogleFont (
-                              'Inter',
-                              fontSize: 10*ffem,
+                            style: TextStyle(
+                              fontSize: 40,
                               fontWeight: FontWeight.w500,
-                              height: 1.6*ffem/fem,
-                              letterSpacing: 0.5*fem,
-                              color: Color(0xff000000),
+                              // Add other styles here
                             ),
-                          ),
+                          )
+                              : CircularProgressIndicator(),
                         ),
                         TextButton(
                           onPressed: () {
@@ -307,7 +347,6 @@ class account_modification extends StatelessWidget {
                             ),
                           ),
                         ),
-
                       ],
                     ),
                   ),
@@ -372,25 +411,19 @@ class account_modification extends StatelessWidget {
             Container(
               // group172t1K (160:10801)
               margin: EdgeInsets.fromLTRB(16*fem, 0*fem, 16*fem, 134*fem),
-              child: TextButton(
-                onPressed: () {},
-                style: TextButton.styleFrom (
-                  padding: EdgeInsets.zero,
-                ),
-                child: Container(
-                  width: double.infinity,
-                  height: 50*fem,
-                  decoration: BoxDecoration (
-                    color: Color(0xff18c07a),
-                    borderRadius: BorderRadius.circular(15*fem),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Color(0x3f000000),
-                        offset: Offset(0*fem, 4*fem),
-                        blurRadius: 2*fem,
-                      ),
-                    ],
-                  ),
+              child: Container(
+                width: double.infinity,
+                height: 50*fem,
+                decoration: BoxDecoration (
+                  color: Color(0xff18c07a),
+                  borderRadius: BorderRadius.circular(15*fem),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color(0x3f000000),
+                      offset: Offset(0*fem, 4*fem),
+                      blurRadius: 2*fem,
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -466,6 +499,6 @@ class account_modification extends StatelessWidget {
           ],
         ),
       ),
-          );
+    );
   }
 }

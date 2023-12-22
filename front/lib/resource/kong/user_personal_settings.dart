@@ -9,10 +9,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 Future<void> setUser(String goal, String activity) async {
   try {
-    await FirebaseFirestore.instance.collection('users').doc(userId).set({
+    await FirebaseFirestore.instance.collection('user').doc(userId).update({
       'goal': goal,
       'activity': activity,
-
     });
     print('User data added successfully for user: $userId');
   } catch (e) {
