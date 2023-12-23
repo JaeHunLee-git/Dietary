@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:myapp/resource/sungjin/rank_usercalinder.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class User {
   final String name;
@@ -16,7 +18,7 @@ class SocialPage extends StatefulWidget {
 class _SocialPageState extends State<SocialPage> {
   bool isOverallRankingSelected = true;
   bool isFriendRankingSelected = false;
-  bool isCalorieScoreSelected = false;
+  bool isCalorieScoreSelected = true;
   bool isAccumulatedCalorieSelected = false;
 
   @override
@@ -25,7 +27,13 @@ class _SocialPageState extends State<SocialPage> {
       appBar: AppBar(
         title: Align(
           alignment: Alignment.center,
-          child: Text('소셜'),
+          child: Text(
+            '소셜',
+            style: GoogleFonts.inter(
+              fontSize: 23,
+              color: Color(0xff000000),
+            ),
+          ),
         ),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
@@ -33,7 +41,9 @@ class _SocialPageState extends State<SocialPage> {
             Navigator.pop(context);
           },
         ),
+        backgroundColor: Colors.white, // AppBar 색상 설정
       ),
+      backgroundColor: Color(0xffededed), // 전체 배경색 설정
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -41,7 +51,7 @@ class _SocialPageState extends State<SocialPage> {
             buildButtonRow('CalorieScore', '적립 칼로리'),
             SizedBox(height: 16.0),
             buildButtonRow('전체 랭킹', '친구 랭킹'),
-            SizedBox(height: 16.0),
+            SizedBox(height: 0.0),
             buildRankingList(),
           ],
         ),
@@ -56,19 +66,19 @@ class _SocialPageState extends State<SocialPage> {
           child: ElevatedButton(
             onPressed: () {
               setState(() {
-                isCalorieScoreSelected = false;
+                isCalorieScoreSelected = true;
                 isAccumulatedCalorieSelected = false;
-                isOverallRankingSelected = !isOverallRankingSelected;
-                isFriendRankingSelected = !isOverallRankingSelected;
+                isOverallRankingSelected = false;
+                isFriendRankingSelected = false;
               });
             },
             style: ElevatedButton.styleFrom(
-              primary: isOverallRankingSelected ? Color(0xff18c07a) : Color(0xffd9d9d9),
+              primary: isCalorieScoreSelected ? Color(0xff18c07a) : Color(0xffd9d9d9),
             ),
             child: Text(
               button1Text,
               style: TextStyle(
-                color: isOverallRankingSelected ? Colors.white : Colors.black,
+                color: isCalorieScoreSelected ? Colors.white : Color(0xff868686),
               ),
             ),
           ),
@@ -79,18 +89,18 @@ class _SocialPageState extends State<SocialPage> {
             onPressed: () {
               setState(() {
                 isCalorieScoreSelected = false;
-                isAccumulatedCalorieSelected = false;
-                isFriendRankingSelected = !isFriendRankingSelected;
-                isOverallRankingSelected = !isFriendRankingSelected;
+                isAccumulatedCalorieSelected = true;
+                isOverallRankingSelected = false;
+                isFriendRankingSelected = true;
               });
             },
             style: ElevatedButton.styleFrom(
-              primary: isFriendRankingSelected ? Color(0xff18c07a) : Color(0xffd9d9d9),
+              primary: isAccumulatedCalorieSelected ? Color(0xff18c07a) : Color(0xffd9d9d9),
             ),
             child: Text(
               button2Text,
               style: TextStyle(
-                color: isFriendRankingSelected ? Colors.white : Colors.black,
+                color: isAccumulatedCalorieSelected ? Colors.white : Colors.black,
               ),
             ),
           ),
@@ -116,45 +126,90 @@ class _SocialPageState extends State<SocialPage> {
           return SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: DataTable(
-              columnSpacing: 40.0,
+              columnSpacing: 35.0,
               columns: [
-                DataColumn(label: Text('순위')),
-                DataColumn(label: Text('이름')),
-                DataColumn(label: Text('CalorieScore')),
-                DataColumn(label: Text('상세보기')),
+                for (String header in ['', '', '', ''])
+                  DataColumn(
+                    label: Container(
+                      height: 0,
+                    ),
+                  ),
               ],
-              rows: users.map(
-                    (user) => DataRow(
+              rows: [
+                DataRow(
                   cells: [
-                    DataCell(
-                      Text(
-                        '${users.indexOf(user) + 1}',
-                        style: TextStyle(
-                          color: (users.indexOf(user) + 1 <= 3) ? Colors.red : null,
-                          fontWeight: (users.indexOf(user) + 1 <= 3) ? FontWeight.bold : null,
-                          fontSize: (users.indexOf(user) + 1 <= 3) ? 18.0 : null,
+                    for (String header in ['순위', '이름', 'CalorieScore', '상세보기'])
+                      DataCell(
+                        Container(
+                          color: Colors.white,
+                          child: Text(
+                            header,
+                            style: GoogleFonts.inter(
+                              fontSize: 15,
+                              color: Color(0xff000000),
+                            ),
+                          ),
                         ),
                       ),
-                    ),
-                    DataCell(Text('${user.name}')),
-                    DataCell(Text('${user.caloriescore}'" 점")),
-                    DataCell(
-                      IconButton(
-                        onPressed: () {
-                          // 상세보기 버튼을 눌렀을 때의 동작을 추가하세요.
-                        },
-                        icon: Icon(Icons.more_vert),
-                      ),
-                    ),
                   ],
+                  color: MaterialStateProperty.resolveWith<Color>(
+                        (Set<MaterialState> states) {
+                      return Colors.white; // 헤더 행의 배경색을 하얀색으로 지정
+                    },
+                  ),
                 ),
-              ).toList(),
+                // Data rows
+                ...users.map(
+                      (user) => DataRow(
+                    color: MaterialStateProperty.resolveWith<Color>(
+                          (Set<MaterialState> states) {
+                        return (states.contains(MaterialState.selected))
+                            ? Theme.of(context).colorScheme.primary.withOpacity(0.08)
+                            : Colors.white;
+                      },
+                    ),
+                    cells: [
+                      DataCell(
+                        Text(
+                          '${users.indexOf(user) + 1}',
+                          style: TextStyle(
+                            color: (users.indexOf(user) + 1 <= 3) ? Colors.red : null,
+                            fontWeight: (users.indexOf(user) + 1 <= 3) ? FontWeight.bold : null,
+                            fontSize: (users.indexOf(user) + 1 <= 3) ? 18.0 : null,
+                          ),
+                        ),
+                      ),
+                      DataCell(Text('${user.name}')),
+                      DataCell(Text('${user.caloriescore}'" 점")),
+                      DataCell(
+                        IconButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => rank_usercalinder(),
+                              ),
+                            );
+                          },
+                          icon: Icon(Icons.more_vert),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
           );
         }
       },
     );
   }
+
+
+
+
+
+
 
   Future<List<User>> fetchUsersFromFirestore() async {
     QuerySnapshot<Map<String, dynamic>> querySnapshot =
