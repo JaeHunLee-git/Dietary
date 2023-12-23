@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/resource/ljh/menu_recommendations.dart';
 import 'package:myapp/utils.dart';
 
 import 'mainpage.dart';
@@ -340,7 +341,12 @@ class _menu_recomendationState extends State<menu_recomendation> {
               left: 16 * fem,
               top: 285 * fem,
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => menu_recommendations()),
+                  );
+                },
                 style: TextButton.styleFrom(
                   padding: EdgeInsets.zero,
                 ),
