@@ -5,6 +5,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/resource/kong/account_modification.dart';
 import 'package:myapp/utils.dart';
 import 'package:myapp/resource/kong/more_useredit.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:myapp/resource/kong/first_page.dart';
+import 'package:myapp/main.dart';
 
 class see_more_page extends StatefulWidget {
   see_more_page({super.key});
@@ -14,6 +17,54 @@ class see_more_page extends StatefulWidget {
 }
 
 class _see_more_pageState extends State<see_more_page> {
+
+  String? mail;
+  String? Pnumber;
+  String? Ag;
+  String? Na;
+  String? Go;
+  String? Ge;
+  String? He;
+  String? We;
+  String? Gw;
+
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(Duration.zero, () {
+      getUserData().then((userData) {
+        setState(() {
+          Ag = userData?['age'] ?? '';
+          Na = userData?['name'] ?? '';
+          Go = userData?['goal'] ?? '';
+          Ge = userData?['gender'] ?? '';
+          Gw = userData?['Gweight'] ?? '';
+          We = userData?['weight'] ?? '';
+          He = userData?['height'] ?? '';
+          mail = userData?['email'] ?? '';
+          Pnumber = userData?['phoneNumber'] ?? '';
+        });
+      });
+    });
+  }
+
+  Future<Map<String, dynamic>?> getUserData() async {
+    try {
+      DocumentSnapshot userSnapshot =
+      await FirebaseFirestore.instance.collection('user').doc(userId).get();
+
+      if (userSnapshot.exists) {
+        return userSnapshot.data() as Map<String, dynamic>;
+      } else {
+        return null;
+      }
+    } catch (e) {
+      print('Error fetching user data: $e');
+      return null;
+    }
+  }
+
+
   @override
   Widget build(BuildContext context) {
     double baseWidth = 360;
@@ -134,18 +185,17 @@ class _see_more_pageState extends State<see_more_page> {
                               ),
                               Center(
                                 // g53 (160:10583)
-                                child: Text(
-                                  '정채원',
-                                  textAlign: TextAlign.center,
-                                  style: SafeGoogleFont (
-                                    'Roboto',
-                                    fontSize: 13*ffem,
+                                child:  Na != null
+                                    ? Text(
+                                  Na!,
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle(
+                                    fontSize: 38,
                                     fontWeight: FontWeight.w500,
-                                    height: 1.2307692308*ffem/fem,
-                                    letterSpacing: 0.5*fem,
-                                    color: Color(0xff000000),
+                                    // Add other styles here
                                   ),
-                                ),
+                                )
+                                    : CircularProgressIndicator(),
                               ),
                             ],
                           ),
@@ -174,18 +224,17 @@ class _see_more_pageState extends State<see_more_page> {
                               ),
                               Center(
                                 // 2o7 (160:10586)
-                                child: Text(
-                                  '남성',
-                                  textAlign: TextAlign.center,
-                                  style: SafeGoogleFont (
-                                    'Roboto',
-                                    fontSize: 13*ffem,
+                                child:  Ge != null
+                                    ? Text(
+                                  Ge!,
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle(
+                                    fontSize: 38,
                                     fontWeight: FontWeight.w500,
-                                    height: 1.2307692308*ffem/fem,
-                                    letterSpacing: 0.5*fem,
-                                    color: Color(0xff000000),
+                                    // Add other styles here
                                   ),
-                                ),
+                                )
+                                    : CircularProgressIndicator(),
                               ),
                             ],
                           ),
@@ -214,18 +263,17 @@ class _see_more_pageState extends State<see_more_page> {
                               ),
                               Center(
                                 // oxH (160:10589)
-                                child: Text(
-                                  '25세',
-                                  textAlign: TextAlign.center,
-                                  style: SafeGoogleFont (
-                                    'Roboto',
-                                    fontSize: 13*ffem,
+                                child:  Ag != null
+                                    ? Text(
+                                  Ag!,
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle(
+                                    fontSize: 38,
                                     fontWeight: FontWeight.w500,
-                                    height: 1.2307692308*ffem/fem,
-                                    letterSpacing: 0.5*fem,
-                                    color: Color(0xff000000),
+                                    // Add other styles here
                                   ),
-                                ),
+                                )
+                                    : CircularProgressIndicator(),
                               ),
                             ],
                           ),
@@ -254,18 +302,17 @@ class _see_more_pageState extends State<see_more_page> {
                               ),
                               Center(
                                 // cmQhB (160:10592)
-                                child: Text(
-                                  '168.0cm',
-                                  textAlign: TextAlign.center,
-                                  style: SafeGoogleFont (
-                                    'Roboto',
-                                    fontSize: 13*ffem,
+                                child:  He != null
+                                    ? Text(
+                                  He!,
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle(
+                                    fontSize: 38,
                                     fontWeight: FontWeight.w500,
-                                    height: 1.2307692308*ffem/fem,
-                                    letterSpacing: 0.5*fem,
-                                    color: Color(0xff000000),
+                                    // Add other styles here
                                   ),
-                                ),
+                                )
+                                    : CircularProgressIndicator(),
                               ),
                             ],
                           ),
@@ -294,18 +341,17 @@ class _see_more_pageState extends State<see_more_page> {
                               ),
                               Center(
                                 // kgcYM (160:10595)
-                                child: Text(
-                                  '63.0kg',
-                                  textAlign: TextAlign.center,
-                                  style: SafeGoogleFont (
-                                    'Roboto',
-                                    fontSize: 13*ffem,
+                                child:  We != null
+                                    ? Text(
+                                  We!,
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle(
+                                    fontSize: 38,
                                     fontWeight: FontWeight.w500,
-                                    height: 1.2307692308*ffem/fem,
-                                    letterSpacing: 0.5*fem,
-                                    color: Color(0xff000000),
+                                    // Add other styles here
                                   ),
-                                ),
+                                )
+                                    : CircularProgressIndicator(),
                               ),
                             ],
                           ),
@@ -334,18 +380,17 @@ class _see_more_pageState extends State<see_more_page> {
                               ),
                               Center(
                                 // bv5 (160:10577)
-                                child: Text(
-                                  '다이어트',
-                                  textAlign: TextAlign.center,
-                                  style: SafeGoogleFont (
-                                    'Roboto',
-                                    fontSize: 13*ffem,
+                                child:  Go != null
+                                    ? Text(
+                                  Go!,
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle(
+                                    fontSize: 38,
                                     fontWeight: FontWeight.w500,
-                                    height: 1.2307692308*ffem/fem,
-                                    letterSpacing: 0.5*fem,
-                                    color: Color(0xff000000),
+                                    // Add other styles here
                                   ),
-                                ),
+                                )
+                                    : CircularProgressIndicator(),
                               ),
                             ],
                           ),
@@ -374,18 +419,17 @@ class _see_more_pageState extends State<see_more_page> {
                               ),
                               Center(
                                 // kgzhK (160:10580)
-                                child: Text(
-                                  '61.5kg',
-                                  textAlign: TextAlign.center,
-                                  style: SafeGoogleFont (
-                                    'Roboto',
-                                    fontSize: 13*ffem,
+                                child:  Gw != null
+                                    ? Text(
+                                  Gw!,
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle(
+                                    fontSize: 38,
                                     fontWeight: FontWeight.w500,
-                                    height: 1.2307692308*ffem/fem,
-                                    letterSpacing: 0.5*fem,
-                                    color: Color(0xff000000),
+                                    // Add other styles here
                                   ),
-                                ),
+                                )
+                                    : CircularProgressIndicator(),
                               ),
                             ],
                           ),
@@ -504,19 +548,18 @@ class _see_more_pageState extends State<see_more_page> {
                                   ),
                                 ),
                               ),
-                              Text(
-                                // jeongchaewonnavercomfU1 (160:10605)
-                                'jeongchaewon@naver.com',
+                              mail != null
+                                  ? Text(
+                                mail!,
                                 textAlign: TextAlign.right,
-                                style: SafeGoogleFont (
-                                  'Inter',
-                                  fontSize: 10*ffem,
+                                style: TextStyle(
+                                  fontSize: 38,
                                   fontWeight: FontWeight.w500,
-                                  height: 1.6*ffem/fem,
-                                  letterSpacing: 0.5*fem,
-                                  color: Color(0xff000000),
+                                  // Add other styles here
                                 ),
-                              ),
+                              )
+                                  : CircularProgressIndicator(),
+
                             ],
                           ),
                         ),
@@ -580,19 +623,18 @@ class _see_more_pageState extends State<see_more_page> {
                                   ),
                                 ),
                               ),
-                              Text(
-                                // 4uT (160:10611)
-                                '010-7487-0519',
+                              Pnumber != null
+                                  ? Text(
+                                Pnumber!,
                                 textAlign: TextAlign.right,
-                                style: SafeGoogleFont (
-                                  'Inter',
-                                  fontSize: 10*ffem,
+                                style: TextStyle(
+                                  fontSize: 38,
                                   fontWeight: FontWeight.w500,
-                                  height: 1.6*ffem/fem,
-                                  letterSpacing: 0.5*fem,
-                                  color: Color(0xff000000),
+                                  // Add other styles here
                                 ),
-                              ),
+                              )
+                                  : CircularProgressIndicator(),
+
                             ],
                           ),
                         ),
@@ -633,18 +675,27 @@ class _see_more_pageState extends State<see_more_page> {
                       ),
                       child: Center(
                         child: Center(
-                          child: Text(
-                            '로그아웃',
-                            textAlign: TextAlign.center,
-                            style: SafeGoogleFont (
-                              'Inter',
-                              fontSize: 15*ffem,
-                              fontWeight: FontWeight.w700,
-                              height: 1.0666666667*ffem/fem,
-                              letterSpacing: 0.5*fem,
-                              color: Color(0xff000000),
+                          child: TextButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context)=>first_page()),
+                              );
+
+                            },
+                            child: Text(
+                              '로그아웃',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 15*ffem,
+                                fontWeight: FontWeight.w700,
+                                height: 1.0666666667*ffem/fem,
+                                letterSpacing: 0.5*fem,
+                                color: Color(0xff000000),
+                              ),
                             ),
-                          ),
+                          )
+
                         ),
                       ),
                     ),

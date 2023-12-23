@@ -166,7 +166,7 @@ class _WeightState extends State<Weight> {
                   child: Container(
                     margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 9*fem),
                     child: Text(
-                      '내 키의 정상 체중 범위',
+                      '칼로리페이와',
                       textAlign: TextAlign.center,
                       style: SafeGoogleFont (
                         'Inter',
@@ -183,7 +183,7 @@ class _WeightState extends State<Weight> {
                   child: Container(
                     margin: EdgeInsets.fromLTRB(1*fem, 0*fem, 0*fem, 38.5*fem),
                     child: Text(
-                      '숫자 ~ 숫자', // 앞에 썻던 키로 계산
+                      '건강한 다이어트 !', // 앞에 썻던 키로 계산
                       textAlign: TextAlign.center,
                       style: SafeGoogleFont (
                         'Inter',

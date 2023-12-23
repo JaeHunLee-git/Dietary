@@ -19,38 +19,38 @@ class account_modification extends StatefulWidget {
 }
 
 class _account_modificationState extends State<account_modification> {
+
   String? mail;
-  String pNumber = '';
-  String pass = '';
+  String? Pnumber;
 
   @override
   void initState() {
     super.initState();
     Future.delayed(Duration.zero, () {
-      getEmail().then((value) {
+      getUserData().then((userData) {
         setState(() {
-          mail = value;
+          mail = userData?['email'] ?? '';
+          Pnumber = userData?['phoneNumber'] ?? '';
         });
       });
     });
   }
 
-  Future<String?> getEmail() async {
+  Future<Map<String, dynamic>?> getUserData() async {
     try {
       DocumentSnapshot userSnapshot =
       await FirebaseFirestore.instance.collection('user').doc(userId).get();
 
       if (userSnapshot.exists) {
-        return userSnapshot.get('email') as String?;
+        return userSnapshot.data() as Map<String, dynamic>;
       } else {
         return null;
       }
     } catch (e) {
-      print('Error fetching email: $e');
+      print('Error fetching user data: $e');
       return null;
     }
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -237,7 +237,7 @@ class _account_modificationState extends State<account_modification> {
                       children: [
                         Container(
                           // 1Xs (160:10794)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 170*fem, 0*fem),
+                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 172*fem, 0*fem),
                           child: Text(
                             '비밀번호',
                             style: SafeGoogleFont (
@@ -298,7 +298,7 @@ class _account_modificationState extends State<account_modification> {
                       children: [
                         Container(
                           // X8q (160:10798)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 113*fem, 0*fem),
+                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 107*fem, 0*fem),
                           child: Text(
                             '전화번호',
                             style: SafeGoogleFont (
@@ -314,18 +314,17 @@ class _account_modificationState extends State<account_modification> {
                         Container(
                           // F4q (160:10799)
                           margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 13*fem, 0*fem),
-                          child: Text(
-                            '010-7487-0519',
+                          child: Pnumber != null
+                              ? Text(
+                            Pnumber!,
                             textAlign: TextAlign.right,
-                            style: SafeGoogleFont (
-                              'Inter',
-                              fontSize: 10*ffem,
+                            style: TextStyle(
+                              fontSize: 40,
                               fontWeight: FontWeight.w500,
-                              height: 1.6*ffem/fem,
-                              letterSpacing: 0.5*fem,
-                              color: Color(0xff000000),
+                              // Add other styles here
                             ),
-                          ),
+                          )
+                              : CircularProgressIndicator(),
                         ),
                         TextButton(
                           onPressed: () {
@@ -382,14 +381,12 @@ class _account_modificationState extends State<account_modification> {
                   child: TextButton(
                     onPressed: () async {
                       try {
-                        await FirebaseFirestore.instance.collection('users').doc('사용자ID').delete();//TODO 사용자고유 ID 부분 변수 만들기
-                        // 사용자 정보가 성공적으로 삭제되었습니다.
+                        await FirebaseFirestore.instance.collection('user').doc(userId).delete();
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => Delete()),
                         );
                       } catch (e) {
-                        // 삭제 중에 오류가 발생했습니다. 처리해야 할 내용을 여기에 추가하세요.
                       }
                     },
                     child: Text(
@@ -425,75 +422,6 @@ class _account_modificationState extends State<account_modification> {
                     ),
                   ],
                 ),
-              ),
-            ),
-            Container(
-              // tabmenu6t5 (160:10808)
-              padding: EdgeInsets.fromLTRB(30*fem, 21*fem, 30*fem, 21*fem),
-              width: double.infinity,
-              height: 108*fem,
-              decoration: BoxDecoration (
-                color: Color(0xffffffff),
-                borderRadius: BorderRadius.only (
-                  topLeft: Radius.circular(15*fem),
-                  topRight: Radius.circular(15*fem),
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0x1e000000),
-                    offset: Offset(0*fem, 2*fem),
-                    blurRadius: 24*fem,
-                  ),
-                ],
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    // homeBPj (160:10811)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 78*fem, 0*fem),
-                    width: 15*fem,
-                    height: 16*fem,
-                    child: Image.asset(
-                      'assets/resource/images/home-RRP.png',
-                      width: 15*fem,
-                      height: 16*fem,
-                    ),
-                  ),
-                  Container(
-                    // socialJDT (160:10814)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0.5*fem, 78*fem, 0*fem),
-                    width: 15*fem,
-                    height: 15*fem,
-                    child: Image.asset(
-                      'assets/resource/images/social-VAu.png',
-                      width: 15*fem,
-                      height: 15*fem,
-                    ),
-                  ),
-                  Container(
-                    // mydata1tZ (160:10818)
-                    margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 78*fem, 0*fem),
-                    width: 15*fem,
-                    height: 16*fem,
-                    child: Image.asset(
-                      'assets/resource/images/mydata-gwP.png',
-                      width: 15*fem,
-                      height: 16*fem,
-                    ),
-                  ),
-                  Container(
-                    // autogrouplk7kLA9 (92Bj398Bo63wkeSLa4LK7K)
-                    margin: EdgeInsets.fromLTRB(0*fem, 5.5*fem, 0*fem, 0*fem),
-                    width: 21*fem,
-                    height: 19.5*fem,
-                    child: Image.asset(
-                      'assets/resource/images/auto-group-lk7k.png',
-                      width: 21*fem,
-                      height: 19.5*fem,
-                    ),
-                  ),
-                ],
               ),
             ),
           ],
