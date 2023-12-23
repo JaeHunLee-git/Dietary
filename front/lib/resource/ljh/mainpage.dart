@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:myapp/main.dart';
@@ -10,6 +11,7 @@ import 'package:myapp/resource/ljh/use_update.dart';
 import 'dart:ui';
 import 'package:myapp/utils.dart';
 import 'package:table_calendar/table_calendar.dart';
+import '../sungjin/test.dart';
 
 class mainpage extends StatelessWidget {
   @override
@@ -350,12 +352,12 @@ class mainpage extends StatelessWidget {
                                 ),
                                 TextButton(
                                   // group906WZ (160:10892)
-                                  onPressed: () async {
-                                    // Navigate to MyApp page
-                                    Navigator.pushReplacement(
+                                  onPressed: () {
+                                    Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => CalorieScore()),
+                                          builder: (context) =>
+                                              menu_recomendation()),
                                     );
                                   },
                                   style: TextButton.styleFrom(
@@ -418,7 +420,7 @@ class mainpage extends StatelessWidget {
                           0 * fem, 0 * fem, 0 * fem, 5 * fem),
                       child: TextButton(
                         onPressed: () {
-                          Navigator.pushReplacement(
+                          Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => menu_recomendation()),
@@ -485,7 +487,7 @@ class mainpage extends StatelessWidget {
                             ),
                           ),
                           onDaySelected: (selectedDay, focusedDay) {
-                            Navigator.pushReplacement(
+                            Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => Calendar()),
@@ -508,8 +510,8 @@ class mainpage extends StatelessWidget {
                         children: [
                           TextButton(
                             // aHs (160:10862)
-                            onPressed: () {
-                              Navigator.pushReplacement(
+                            onPressed: () async {
+                              Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => use_update()),
@@ -580,7 +582,7 @@ class mainpage extends StatelessWidget {
                           TextButton(
                             // aHs (160:10862)
                             onPressed: () {
-                              Navigator.pushReplacement(
+                              Navigator.push(
                                 context,
                                 MaterialPageRoute(builder: (context) => Pe5()),
                               );
@@ -707,7 +709,7 @@ class mainpage extends StatelessWidget {
                   // group91zuK (160:10867)
                   onPressed: () async {
                     // Navigate to MyApp page
-                    Navigator.pushReplacement(
+                    Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => DailyReport()),
                     );
@@ -842,7 +844,13 @@ class mainpage extends StatelessWidget {
                       margin: EdgeInsets.fromLTRB(
                           22 * fem, 0.5 * fem, 10 * fem, 0 * fem), // 수정된 부분
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () async {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => RankingPage()),
+                          );
+                        },
                         style: TextButton.styleFrom(
                           padding: EdgeInsets.zero,
                         ),

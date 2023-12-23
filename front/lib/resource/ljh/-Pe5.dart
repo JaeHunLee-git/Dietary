@@ -356,7 +356,7 @@ class Pe5 extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(10 * fem),
                               ),
                               child: Text(
-                                '2023년 11월 20일 운동!',
+                                formattedDate+' 운동!',
                                 style: SafeGoogleFont(
                                   'Inter',
                                   fontSize: 14 * ffem,
@@ -381,7 +381,7 @@ class Pe5 extends StatelessWidget {
                                     // group37U1s (160:10251)
                                     margin: EdgeInsets.fromLTRB(
                                         0 * fem, 0 * fem, 44 * fem, 0 * fem),
-                                    width: 122 * fem,
+                                    width: 270 * fem,
                                     height: double.infinity,
                                     decoration: BoxDecoration(
                                       color: Color(0xffd9d9d9),
@@ -391,52 +391,6 @@ class Pe5 extends StatelessWidget {
                                     child: Center(
                                       child: Text(
                                         '오후  07:08',
-                                        style: SafeGoogleFont(
-                                          'Inter',
-                                          fontSize: 14 * ffem,
-                                          fontWeight: FontWeight.w400,
-                                          height: 1.2125 * ffem / fem,
-                                          color: Color(0xff434141),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  Container(
-                                    // group389do (160:10254)
-                                    margin: EdgeInsets.fromLTRB(
-                                        0 * fem, 0 * fem, 6 * fem, 0 * fem),
-                                    width: 68 * fem,
-                                    height: double.infinity,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xffd9d9d9),
-                                      borderRadius:
-                                          BorderRadius.circular(10 * fem),
-                                    ),
-                                    child: Center(
-                                      child: Text(
-                                        '- 10 분',
-                                        style: SafeGoogleFont(
-                                          'Inter',
-                                          fontSize: 14 * ffem,
-                                          fontWeight: FontWeight.w400,
-                                          height: 1.2125 * ffem / fem,
-                                          color: Color(0xff434141),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  Container(
-                                    // group39pjw (160:10260)
-                                    width: 68 * fem,
-                                    height: double.infinity,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xffd9d9d9),
-                                      borderRadius:
-                                          BorderRadius.circular(10 * fem),
-                                    ),
-                                    child: Center(
-                                      child: Text(
-                                        '+ 10분',
                                         style: SafeGoogleFont(
                                           'Inter',
                                           fontSize: 14 * ffem,
@@ -577,10 +531,7 @@ class Pe5 extends StatelessWidget {
                   child: TextButton(
                     onPressed: () async {
                       // Navigate to MyApp page
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(builder: (context) => mainpage()),
-                      );
+                      Navigator.pop(context);
                     },
                     style: TextButton.styleFrom(
                       padding: EdgeInsets.zero,
