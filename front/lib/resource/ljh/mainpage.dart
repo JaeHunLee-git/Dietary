@@ -11,7 +11,7 @@ import 'package:myapp/resource/ljh/use_update.dart';
 import 'dart:ui';
 import 'package:myapp/utils.dart';
 import 'package:table_calendar/table_calendar.dart';
-import '../sungjin/test.dart';
+import '../sungjin/social_page.dart';
 
 class mainpage extends StatelessWidget {
   @override
@@ -36,7 +36,7 @@ class mainpage extends StatelessWidget {
               top: 0 * fem,
               child: Container(
                 padding:
-                    EdgeInsets.fromLTRB(16 * fem, 61 * fem, 16 * fem, 17 * fem),
+                EdgeInsets.fromLTRB(16 * fem, 61 * fem, 16 * fem, 17 * fem),
                 width: 360 * fem,
                 height: 625 * fem,
                 child: Column(
@@ -98,7 +98,7 @@ class mainpage extends StatelessWidget {
                                       decoration: BoxDecoration(
                                         color: Color(0xff17a0f9),
                                         borderRadius:
-                                            BorderRadius.circular(8 * fem),
+                                        BorderRadius.circular(8 * fem),
                                       ),
                                       child: Center(
                                         child: Center(
@@ -132,7 +132,7 @@ class mainpage extends StatelessWidget {
                                           ),
                                           children: [
                                             TextSpan(
-                                              text: '$userId ',
+                                              text: '정채원 ',
                                               style: SafeGoogleFont(
                                                 'Inter',
                                                 fontSize: 18 * ffem,
@@ -265,7 +265,7 @@ class mainpage extends StatelessWidget {
                                       child: Container(
                                         decoration: BoxDecoration(
                                           borderRadius:
-                                              BorderRadius.circular(6 * fem),
+                                          BorderRadius.circular(6 * fem),
                                           border: Border.all(
                                               color: Color(0xff9d9d9d)),
                                           color: Color(0xfff5f5f5),
@@ -285,7 +285,7 @@ class mainpage extends StatelessWidget {
                                       child: Container(
                                         decoration: BoxDecoration(
                                           borderRadius:
-                                              BorderRadius.circular(6 * fem),
+                                          BorderRadius.circular(6 * fem),
                                           color: Color(0xff2b2f39),
                                         ),
                                       ),
@@ -357,7 +357,7 @@ class mainpage extends StatelessWidget {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              menu_recomendation()),
+                                              CalorieScore()),
                                     );
                                   },
                                   style: TextButton.styleFrom(
@@ -370,11 +370,11 @@ class mainpage extends StatelessWidget {
                                     decoration: BoxDecoration(
                                       color: Color(0xff676f85),
                                       borderRadius:
-                                          BorderRadius.circular(8 * fem),
+                                      BorderRadius.circular(8 * fem),
                                     ),
                                     child: Row(
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.center,
+                                      CrossAxisAlignment.center,
                                       children: [
                                         Container(
                                           // cE1 (160:10895)
@@ -695,7 +695,7 @@ class mainpage extends StatelessWidget {
               top: 625 * fem,
               child: Container(
                 padding:
-                    EdgeInsets.fromLTRB(98 * fem, 11 * fem, 98 * fem, 11 * fem),
+                EdgeInsets.fromLTRB(98 * fem, 11 * fem, 98 * fem, 11 * fem),
                 width: 360 * fem,
                 height: 50 * fem,
                 decoration: BoxDecoration(
@@ -802,12 +802,12 @@ class mainpage extends StatelessWidget {
               ),
             ),
             Positioned(
-              // tabmenuBsK (160:10905)
+              // tabmenuzTP (160:10272)
               left: 0 * fem,
               top: 673 * fem,
               child: Container(
-                padding:
-                    EdgeInsets.fromLTRB(30 * fem, 21 * fem, 30 * fem, 21 * fem),
+                padding: EdgeInsets.fromLTRB(
+                    31.3 * fem, 22.29 * fem, 32.17 * fem, 22.29 * fem),
                 width: 360 * fem,
                 height: 108 * fem,
                 decoration: BoxDecoration(
@@ -828,81 +828,57 @@ class mainpage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      // autogroup5slreW1 (92Bo12X91c43L7QpXp5sLR)
+                      // homeSaH (160:10274)
                       margin: EdgeInsets.fromLTRB(
-                          10 * fem, 0 * fem, 10 * fem, 0 * fem), // 수정된 부분
-                      width: 15 * fem,
-                      height: 25 * fem,
+                          0 * fem, 0 * fem, 80 * fem, 0 * fem),
+                      width: 13.91 * fem,
+                      height: 25.71 * fem,
                       child: Image.asset(
-                        'assets/resource/images/auto-group-5slr.png',
-                        width: 15 * fem,
-                        height: 25 * fem,
+                        'assets/resource/images/home-oSV.png',
+                        width: 13.91 * fem,
+                        height: 25.71 * fem,
                       ),
                     ),
-                    Container(
-                      // socialMvD (160:10911)
-                      margin: EdgeInsets.fromLTRB(
-                          22 * fem, 0.5 * fem, 10 * fem, 0 * fem), // 수정된 부분
-                      child: TextButton(
-                        onPressed: () async {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => RankingPage()),
-                          );
-                        },
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.zero,
-                        ),
-                        child: Container(
-                          width: 15 * fem,
-                          height: 15 * fem,
-                          child: Image.asset(
-                            'assets/resource/images/social-wfs.png',
-                            width: 15 * fem,
-                            height: 15 * fem,
-                          ),
+                    GestureDetector(
+                      onTap: () {
+                        // 이미지를 눌렀을 때 실행할 코드
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => SocialPage()),
+                        );
+                      },
+                      child: Container(
+                        // iconxYd (160:10280)
+                        margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 80 * fem, 0 * fem),
+                        width: 11.3 * fem,
+                        height: 15.43 * fem,
+                        child: Image.asset(
+                          'assets/resource/images/icon-Z9F.png',
+                          width: 11.3 * fem,
+                          height: 15.43 * fem,
                         ),
                       ),
                     ),
                     Container(
-                      // mydataqaV (160:10915)
+                      // icongDj (160:10284)
                       margin: EdgeInsets.fromLTRB(
-                          22 * fem, 0 * fem, 10 * fem, 0 * fem), // 수정된 부분
-                      child: TextButton(
-                        onPressed: () {},
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.zero,
-                        ),
-                        child: Container(
-                          width: 15 * fem,
-                          height: 16 * fem,
-                          child: Image.asset(
-                            'assets/resource/images/mydata-UFw.png',
-                            width: 15 * fem,
-                            height: 16 * fem,
-                          ),
-                        ),
+                          0 * fem, 0 * fem, 80 * fem, 0 * fem),
+                      width: 13.91 * fem,
+                      height: 15.43 * fem,
+                      child: Image.asset(
+                        'assets/resource/images/icon-tqT.png',
+                        width: 13.91 * fem,
+                        height: 15.43 * fem,
                       ),
                     ),
                     Container(
-                      // 8pV (160:10918)
-                      margin: EdgeInsets.fromLTRB(
-                          22 * fem, 5.5 * fem, 0 * fem, 0 * fem),
-                      child: TextButton(
-                        onPressed: () {},
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.zero,
-                        ),
-                        child: Container(
-                          width: 21 * fem,
-                          height: 5 * fem,
-                          child: Image.asset(
-                            'assets/resource/images/-xZs.png',
-                            width: 21 * fem,
-                            height: 5 * fem,
-                          ),
-                        ),
+                      // iconbLh (160:10279)
+                      width: 17.39 * fem,
+                      height: 15.43 * fem,
+                      child: Image.asset(
+                        'assets/resource/images/icon-hj3.png',
+                        width: 17.39 * fem,
+                        height: 15.43 * fem,
                       ),
                     ),
                   ],
