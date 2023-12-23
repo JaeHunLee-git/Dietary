@@ -411,10 +411,7 @@ class _menu_recomendationState extends State<menu_recomendation> {
                   child: TextButton(
                     onPressed: () async {
                       // Navigate to MyApp page
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(builder: (context) => mainpage()),
-                      );
+                      Navigator.pop(context);
                     },
                     style: TextButton.styleFrom(
                       padding: EdgeInsets.zero,

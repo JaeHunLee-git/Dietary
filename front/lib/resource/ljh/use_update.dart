@@ -391,10 +391,7 @@ class use_update extends StatelessWidget {
                   child: TextButton(
                     onPressed: () async {
                       // Navigate to MyApp page
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(builder: (context) => mainpage()),
-                      );
+                      Navigator.pop(context);
                     },
                     style: TextButton.styleFrom (
                       padding: EdgeInsets.zero,
