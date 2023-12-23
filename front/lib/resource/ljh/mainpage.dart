@@ -36,7 +36,7 @@ class mainpage extends StatelessWidget {
               top: 0 * fem,
               child: Container(
                 padding:
-                    EdgeInsets.fromLTRB(16 * fem, 61 * fem, 16 * fem, 17 * fem),
+                EdgeInsets.fromLTRB(16 * fem, 61 * fem, 16 * fem, 17 * fem),
                 width: 360 * fem,
                 height: 625 * fem,
                 child: Column(
@@ -98,7 +98,7 @@ class mainpage extends StatelessWidget {
                                       decoration: BoxDecoration(
                                         color: Color(0xff17a0f9),
                                         borderRadius:
-                                            BorderRadius.circular(8 * fem),
+                                        BorderRadius.circular(8 * fem),
                                       ),
                                       child: Center(
                                         child: Center(
@@ -265,7 +265,7 @@ class mainpage extends StatelessWidget {
                                       child: Container(
                                         decoration: BoxDecoration(
                                           borderRadius:
-                                              BorderRadius.circular(6 * fem),
+                                          BorderRadius.circular(6 * fem),
                                           border: Border.all(
                                               color: Color(0xff9d9d9d)),
                                           color: Color(0xfff5f5f5),
@@ -285,7 +285,7 @@ class mainpage extends StatelessWidget {
                                       child: Container(
                                         decoration: BoxDecoration(
                                           borderRadius:
-                                              BorderRadius.circular(6 * fem),
+                                          BorderRadius.circular(6 * fem),
                                           color: Color(0xff2b2f39),
                                         ),
                                       ),
@@ -370,11 +370,11 @@ class mainpage extends StatelessWidget {
                                     decoration: BoxDecoration(
                                       color: Color(0xff676f85),
                                       borderRadius:
-                                          BorderRadius.circular(8 * fem),
+                                      BorderRadius.circular(8 * fem),
                                     ),
                                     child: Row(
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.center,
+                                      CrossAxisAlignment.center,
                                       children: [
                                         Container(
                                           // cE1 (160:10895)
@@ -695,7 +695,7 @@ class mainpage extends StatelessWidget {
               top: 625 * fem,
               child: Container(
                 padding:
-                    EdgeInsets.fromLTRB(98 * fem, 11 * fem, 98 * fem, 11 * fem),
+                EdgeInsets.fromLTRB(98 * fem, 11 * fem, 98 * fem, 11 * fem),
                 width: 360 * fem,
                 height: 50 * fem,
                 decoration: BoxDecoration(
@@ -807,7 +807,7 @@ class mainpage extends StatelessWidget {
               top: 673 * fem,
               child: Container(
                 padding:
-                    EdgeInsets.fromLTRB(30 * fem, 21 * fem, 30 * fem, 21 * fem),
+                EdgeInsets.fromLTRB(30 * fem, 21 * fem, 30 * fem, 21 * fem),
                 width: 360 * fem,
                 height: 108 * fem,
                 decoration: BoxDecoration(
