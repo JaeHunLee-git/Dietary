@@ -4,6 +4,7 @@ import 'package:flutter/gestures.dart';
 import 'package:myapp/main.dart';
 import 'package:myapp/resource/gyu/Calendar.dart';
 import 'package:myapp/resource/gyu/CalorieScore.dart';
+import 'package:myapp/resource/gyu/CameraScreen.dart';
 import 'package:myapp/resource/gyu/DailyReport.dart';
 import 'package:myapp/resource/ljh/-Pe5.dart';
 import 'package:myapp/resource/ljh/menu_recomendation.dart';
@@ -514,7 +515,7 @@ class mainpage extends StatelessWidget {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => use_update()),
+                                    builder: (context) => Cams()),
                               );
                             },
                             style: TextButton.styleFrom(
