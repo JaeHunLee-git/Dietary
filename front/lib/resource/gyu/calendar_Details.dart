@@ -63,7 +63,9 @@ class calendar_Details extends StatelessWidget {
                             ),
                             child: TextButton(
                               // group101vEq (160:7970)
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
                               style: TextButton.styleFrom (
                                 padding: EdgeInsets.zero,
                               ),
@@ -75,7 +77,7 @@ class calendar_Details extends StatelessWidget {
                                   children: [
                                     Container(
                                       // fCR (160:7972)
-                                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 27*fem, 0*fem),
+                                      margin: EdgeInsets.fromLTRB(3*fem, 0*fem, 27*fem, 0*fem),
                                       child: Text(
                                         '상세보기',
                                         style: SafeGoogleFont (
@@ -88,17 +90,7 @@ class calendar_Details extends StatelessWidget {
                                         ),
                                       ),
                                     ),
-                                    Container(
-                                      // vectorAus (160:7973)
-                                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 3.22*fem),
-                                      width: 20*fem,
-                                      height: 10.99*fem,
-                                      child: Image.asset(
-                                        'assets/resource/images/vector-h81.png',
-                                        width: 20*fem,
-                                        height: 10.99*fem,
-                                      ),
-                                    ),
+
                                   ],
                                 ),
                               ),
@@ -774,148 +766,6 @@ class calendar_Details extends StatelessWidget {
                       ),
                     ),
                   ),
-                ),
-              ),
-            ),
-            Positioned(
-              // rectangle171Z7K (160:8016)
-              left: 0*fem,
-              top: 0*fem,
-              child: Align(
-                child: SizedBox(
-                  width: 360*fem,
-                  height: 102*fem,
-                  child: Container(
-                    decoration: BoxDecoration (
-                      color: Color(0xffffffff),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color(0x3f000000),
-                          offset: Offset(0*fem, 4*fem),
-                          blurRadius: 2*fem,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Positioned(
-              // vectore8m (160:8017)
-              left: 25*fem,
-              top: 60.9999980927*fem,
-              child: Align(
-                child: SizedBox(
-                  width: 11*fem,
-                  height: 20*fem,
-                  child: TextButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    style: TextButton.styleFrom (
-                      padding: EdgeInsets.zero,
-                    ),
-                    child: Image.asset(
-                      'assets/resource/images/vector-hoj.png',
-                      width: 11*fem,
-                      height: 20*fem,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Positioned(
-              // YE9 (160:8018)
-              left: 108*fem,
-              top: 61*fem,
-              child: Align(
-                child: SizedBox(
-                  width: 130*fem,
-                  height: 20*fem,
-                  child: Text(
-                    '칼로리 소비 캘린더',
-                    style: SafeGoogleFont (
-                      'Inter',
-                      fontSize: 18*ffem,
-                      fontWeight: FontWeight.w700,
-                      height: 1.1111111111*ffem/fem,
-                      letterSpacing: 0.25*fem,
-                      color: Color(0xff000000),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Positioned(
-              // tabmenuCpV (160:8019)
-              left: 0*fem,
-              top: 673*fem,
-              child: Container(
-                padding: EdgeInsets.fromLTRB(30*fem, 21*fem, 30*fem, 21*fem),
-                width: 360*fem,
-                height: 108*fem,
-                decoration: BoxDecoration (
-                  color: Color(0xffffffff),
-                  borderRadius: BorderRadius.only (
-                    topLeft: Radius.circular(15*fem),
-                    topRight: Radius.circular(15*fem),
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Color(0x1e000000),
-                      offset: Offset(0*fem, 2*fem),
-                      blurRadius: 24*fem,
-                    ),
-                  ],
-                ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      // autogroupydeu3KK (92A8RtGP56VK1D9CpnYdEu)
-                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 78*fem, 0*fem),
-                      width: 15*fem,
-                      height: 25*fem,
-                      child: Image.asset(
-                        'assets/resource/images/auto-group-ydeu.png',
-                        width: 15*fem,
-                        height: 25*fem,
-                      ),
-                    ),
-                    Container(
-                      // social9dF (160:8025)
-                      margin: EdgeInsets.fromLTRB(0*fem, 0.5*fem, 78*fem, 0*fem),
-                      width: 15*fem,
-                      height: 15*fem,
-                      child: Image.asset(
-                        'assets/resource/images/social-W5b.png',
-                        width: 15*fem,
-                        height: 15*fem,
-                      ),
-                    ),
-                    Container(
-                      // mydata4VK (160:8029)
-                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 78*fem, 0*fem),
-                      width: 15*fem,
-                      height: 16*fem,
-                      child: Image.asset(
-                        'assets/resource/images/mydata-wRo.png',
-                        width: 15*fem,
-                        height: 16*fem,
-                      ),
-                    ),
-                    Container(
-                      // aCm (160:8032)
-                      margin: EdgeInsets.fromLTRB(0*fem, 5.5*fem, 0*fem, 0*fem),
-                      width: 21*fem,
-                      height: 5*fem,
-                      child: Image.asset(
-                        'assets/resource/images/-gG5.png',
-                        width: 21*fem,
-                        height: 5*fem,
-                      ),
-                    ),
-                  ],
                 ),
               ),
             ),
