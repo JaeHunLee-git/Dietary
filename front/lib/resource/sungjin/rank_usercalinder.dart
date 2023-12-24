@@ -74,7 +74,7 @@ class rank_usercalinder extends StatelessWidget {
                               children: [
                                 Container(
                                   // frame828f7 (160:9657)
-                                  margin: EdgeInsets.fromLTRB(8*fem, 0*fem, 11*fem, 3.67*fem),
+                                  margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 3.67*fem),
                                   width: double.infinity,
                                   child: Row(
                                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -1053,7 +1053,7 @@ class rank_usercalinder extends StatelessWidget {
                                   children: [
                                     Container(
                                       // Mw3 (160:9672)
-                                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 27*fem, 0*fem),
+                                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 15*fem, 0*fem),
                                       child: Text(
                                         '상세보기',
                                         style: SafeGoogleFont (
@@ -1069,11 +1069,11 @@ class rank_usercalinder extends StatelessWidget {
                                     Container(
                                       // vector5c9 (160:9673)
                                       margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 3.22*fem),
-                                      width: 20*fem,
+                                      width: 15*fem,
                                       height: 10.99*fem,
                                       child: Image.asset(
                                         'assets/resource/images/vector-Jv1.png',
-                                        width: 20*fem,
+                                        width: 15*fem,
                                         height: 10.99*fem,
                                       ),
                                     ),
@@ -1280,7 +1280,9 @@ class rank_usercalinder extends StatelessWidget {
                   width: 11*fem,
                   height: 20*fem,
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                     style: TextButton.styleFrom (
                       padding: EdgeInsets.zero,
                     ),
@@ -1321,7 +1323,7 @@ class rank_usercalinder extends StatelessWidget {
               child: Center(
                 child: Align(
                   child: SizedBox(
-                    width: 110*fem,
+                    width: 150*fem,
                     height: 20*fem,
                     child: Text(
                       '정채원님의 캘린더',
@@ -1415,6 +1417,6 @@ class rank_usercalinder extends StatelessWidget {
           ],
         ),
       ),
-          );
+    );
   }
 }
