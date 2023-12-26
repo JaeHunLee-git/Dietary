@@ -102,7 +102,7 @@ class _CalorieScoreState extends State<CalorieScore> {
                     Center(
                       // hZ7 (160:10393)
                       child: Text(
-                        '2023년 12월 7일',
+                        '2023년 12월 27일',
                         textAlign: TextAlign.center,
                         style: SafeGoogleFont (
                           'Inter',
