@@ -6,6 +6,7 @@ import 'package:myapp/utils.dart';
 
 import '../ljh/mainpage.dart';
 import 'CalorieScore.dart';
+import 'DailyReportDetails.dart';
 import 'daily_report_exe.dart';
 
 class DailyReport extends StatefulWidget {
@@ -539,7 +540,12 @@ class _DailyReportState extends State<DailyReport> {
                                         // group124ERT (160:9971)
                                         margin: EdgeInsets.fromLTRB(0*fem, 10*fem, 0*fem, 0*fem),
                                         child: TextButton(
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(builder: (context) => DailyReportDetails()),
+                                            );
+                                          },
                                           style: TextButton.styleFrom (
                                             padding: EdgeInsets.zero,
                                           ),
