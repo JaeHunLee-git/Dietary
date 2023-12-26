@@ -13,7 +13,7 @@ import 'package:myapp/resource/ljh/use_update.dart';
 import 'dart:ui';
 import 'package:myapp/utils.dart';
 import 'package:table_calendar/table_calendar.dart';
-import '../sungjin/social_page.dart';
+import '../sungjin/Calorie-Score_2.dart';
 
 class mainpage extends StatelessWidget {
   @override
@@ -848,7 +848,7 @@ class mainpage extends StatelessWidget {
                             // 이미지를 눌렀을 때 실행할 코드
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => SocialPage()),
+                              MaterialPageRoute(builder: (context) => Calorie_Score_2()),
                             );
                           },
                           child: Container(
