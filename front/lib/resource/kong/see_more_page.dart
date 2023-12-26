@@ -70,7 +70,9 @@ class _see_more_pageState extends State<see_more_page> {
     double baseWidth = 360;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.97;
-    return Container(
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Container(
           width: double.infinity,
           child: Container(
             // UJR (160:10569)
@@ -86,7 +88,7 @@ class _see_more_pageState extends State<see_more_page> {
                   left: 16*fem,
                   top: 116*fem,
                   child: Container(
-                    padding: EdgeInsets.fromLTRB(10*fem, 18*fem, 10*fem, 20*fem),
+                    padding: EdgeInsets.fromLTRB(10*fem, 18*fem, 10*fem, 2*fem),
                     width: 328*fem,
                     height: 356*fem,
                     decoration: BoxDecoration (
@@ -105,14 +107,14 @@ class _see_more_pageState extends State<see_more_page> {
                       children: [
                         Container(
                           // autogroupt6c5bGZ (92BcuuASVx9UDqpLEQt6C5)
-                          margin: EdgeInsets.fromLTRB(8*fem, 0*fem, 8*fem, 12*fem),
+                          margin: EdgeInsets.fromLTRB(8*fem, 0*fem, 8*fem, 0*fem),
                           width: double.infinity,
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
                                 // XR7 (160:10572)
-                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 140*fem, 0*fem),
+                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 127*fem, 15*fem),
                                 child: Text(
                                   '사용자 정보',
                                   style: SafeGoogleFont (
@@ -127,34 +129,34 @@ class _see_more_pageState extends State<see_more_page> {
                               ),
                               Container(
                                 // RWV (160:10571)
-                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 2*fem),
-                                  child: TextButton(
-                                    onPressed: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(builder: (context) => more_useredit()),
-                                      );
-                                    },
-                                    child: Text(
-                                      '수정',
-                                      textAlign: TextAlign.right,
-                                      style: SafeGoogleFont(
-                                        'Inter',
-                                        fontSize: 12 * ffem,
-                                        fontWeight: FontWeight.w700,
-                                        height: 1.2125 * ffem / fem,
-                                        letterSpacing: 1.2 * fem,
-                                        color: Color(0xffa5a5a5),
-                                      ),
+                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 0*fem),
+                                child: TextButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => more_useredit()),
+                                    );
+                                  },
+                                  child: Text(
+                                    '수정',
+                                    textAlign: TextAlign.right,
+                                    style: SafeGoogleFont(
+                                      'Inter',
+                                      fontSize: 12 * ffem,
+                                      fontWeight: FontWeight.w700,
+                                      height: 1.2125 * ffem / fem,
+                                      letterSpacing: 1.2 * fem,
+                                      color: Color(0xffa5a5a5),
                                     ),
                                   ),
+                                ),
                               ),
                             ],
                           ),
                         ),
                         Container(
                           // line11uRf (160:10573)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 11*fem),
+                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 15*fem),
                           width: double.infinity,
                           height: 1*fem,
                           decoration: BoxDecoration (
@@ -163,7 +165,7 @@ class _see_more_pageState extends State<see_more_page> {
                         ),
                         Container(
                           // frame147qq7 (160:10581)
-                          margin: EdgeInsets.fromLTRB(8*fem, 0*fem, 79.5*fem, 23*fem),
+                          margin: EdgeInsets.fromLTRB(8*fem, 0*fem, 79.5*fem, 10*fem),
                           width: double.infinity,
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -190,7 +192,7 @@ class _see_more_pageState extends State<see_more_page> {
                                   Na!,
                                   textAlign: TextAlign.right,
                                   style: TextStyle(
-                                    fontSize: 38,
+                                    fontSize: 13*ffem,
                                     fontWeight: FontWeight.w500,
                                     // Add other styles here
                                   ),
@@ -202,7 +204,7 @@ class _see_more_pageState extends State<see_more_page> {
                         ),
                         Container(
                           // frame148aw7 (160:10584)
-                          margin: EdgeInsets.fromLTRB(8*fem, 0*fem, 83.5*fem, 23*fem),
+                          margin: EdgeInsets.fromLTRB(8*fem, 0*fem, 83.5*fem, 15*fem),
                           width: double.infinity,
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -229,7 +231,7 @@ class _see_more_pageState extends State<see_more_page> {
                                   Ge!,
                                   textAlign: TextAlign.right,
                                   style: TextStyle(
-                                    fontSize: 38,
+                                    fontSize: 13*ffem,
                                     fontWeight: FontWeight.w500,
                                     // Add other styles here
                                   ),
@@ -241,7 +243,7 @@ class _see_more_pageState extends State<see_more_page> {
                         ),
                         Container(
                           // frame149xgm (160:10587)
-                          margin: EdgeInsets.fromLTRB(8*fem, 0*fem, 80.5*fem, 23*fem),
+                          margin: EdgeInsets.fromLTRB(8*fem, 0*fem, 80.5*fem, 15*fem),
                           width: double.infinity,
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -268,7 +270,7 @@ class _see_more_pageState extends State<see_more_page> {
                                   Ag!,
                                   textAlign: TextAlign.right,
                                   style: TextStyle(
-                                    fontSize: 38,
+                                    fontSize: 13*ffem,
                                     fontWeight: FontWeight.w500,
                                     // Add other styles here
                                   ),
@@ -280,7 +282,7 @@ class _see_more_pageState extends State<see_more_page> {
                         ),
                         Container(
                           // frame150x4V (160:10590)
-                          margin: EdgeInsets.fromLTRB(8*fem, 0*fem, 64.5*fem, 23*fem),
+                          margin: EdgeInsets.fromLTRB(8*fem, 0*fem, 64.5*fem, 15*fem),
                           width: double.infinity,
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -307,7 +309,7 @@ class _see_more_pageState extends State<see_more_page> {
                                   He!,
                                   textAlign: TextAlign.right,
                                   style: TextStyle(
-                                    fontSize: 38,
+                                    fontSize: 13*ffem,
                                     fontWeight: FontWeight.w500,
                                     // Add other styles here
                                   ),
@@ -319,7 +321,7 @@ class _see_more_pageState extends State<see_more_page> {
                         ),
                         Container(
                           // frame151kFF (160:10593)
-                          margin: EdgeInsets.fromLTRB(8*fem, 0*fem, 70.5*fem, 23*fem),
+                          margin: EdgeInsets.fromLTRB(8*fem, 0*fem, 70.5*fem, 15*fem),
                           width: double.infinity,
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -346,7 +348,7 @@ class _see_more_pageState extends State<see_more_page> {
                                   We!,
                                   textAlign: TextAlign.right,
                                   style: TextStyle(
-                                    fontSize: 38,
+                                    fontSize: 13*ffem,
                                     fontWeight: FontWeight.w500,
                                     // Add other styles here
                                   ),
@@ -358,7 +360,7 @@ class _see_more_pageState extends State<see_more_page> {
                         ),
                         Container(
                           // frame146Lz9 (160:10575)
-                          margin: EdgeInsets.fromLTRB(8*fem, 0*fem, 75*fem, 23*fem),
+                          margin: EdgeInsets.fromLTRB(8*fem, 0*fem, 75*fem, 15*fem),
                           width: double.infinity,
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -385,7 +387,7 @@ class _see_more_pageState extends State<see_more_page> {
                                   Go!,
                                   textAlign: TextAlign.right,
                                   style: TextStyle(
-                                    fontSize: 38,
+                                    fontSize: 13*ffem,
                                     fontWeight: FontWeight.w500,
                                     // Add other styles here
                                   ),
@@ -397,7 +399,7 @@ class _see_more_pageState extends State<see_more_page> {
                         ),
                         Container(
                           // frame152wDF (160:10578)
-                          margin: EdgeInsets.fromLTRB(8*fem, 0*fem, 70.5*fem, 18*fem),
+                          margin: EdgeInsets.fromLTRB(8*fem, 0*fem, 70.5*fem, 15*fem),
                           width: double.infinity,
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -424,7 +426,7 @@ class _see_more_pageState extends State<see_more_page> {
                                   Gw!,
                                   textAlign: TextAlign.right,
                                   style: TextStyle(
-                                    fontSize: 38,
+                                    fontSize: 13*ffem,
                                     fontWeight: FontWeight.w500,
                                     // Add other styles here
                                   ),
@@ -451,7 +453,7 @@ class _see_more_pageState extends State<see_more_page> {
                   left: 16*fem,
                   top: 486*fem,
                   child: Container(
-                    padding: EdgeInsets.fromLTRB(10*fem, 15*fem, 10*fem, 33*fem),
+                    padding: EdgeInsets.fromLTRB(10*fem, 15*fem, 10*fem, 0*fem),
                     width: 328*fem,
                     height: 201*fem,
                     decoration: BoxDecoration (
@@ -470,14 +472,14 @@ class _see_more_pageState extends State<see_more_page> {
                       children: [
                         Container(
                           // autogroup6svf8S9 (92BdbJCTj19Ms7w9tn6sVf)
-                          margin: EdgeInsets.fromLTRB(8*fem, 0*fem, 8*fem, 12*fem),
+                          margin: EdgeInsets.fromLTRB(8*fem, 0*fem, 8*fem, 10*fem),
                           width: double.infinity,
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
                                 // TDX (160:10600)
-                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 160*fem, 0*fem),
+                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 147*fem, 0*fem),
                                 child: Text(
                                   '계정 정보',
                                   style: SafeGoogleFont (
@@ -493,33 +495,33 @@ class _see_more_pageState extends State<see_more_page> {
                               Container(
                                 // xvy (160:10615)
                                 margin: EdgeInsets.fromLTRB(0*fem, 4*fem, 0*fem, 0*fem),
-                                  child: TextButton(
-                                    onPressed: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(builder: (context) => account_modification()),
-                                      );
-                                    },
-                                    child: Text(
-                                      '수정',
-                                      textAlign: TextAlign.right,
-                                      style: SafeGoogleFont(
-                                        'Inter',
-                                        fontSize: 12 * ffem,
-                                        fontWeight: FontWeight.w700,
-                                        height: 1.2125 * ffem / fem,
-                                        letterSpacing: 1.2 * fem,
-                                        color: Color(0xffa5a5a5),
-                                      ),
+                                child: TextButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => account_modification()),
+                                    );
+                                  },
+                                  child: Text(
+                                    '수정',
+                                    textAlign: TextAlign.right,
+                                    style: SafeGoogleFont(
+                                      'Inter',
+                                      fontSize: 12 * ffem,
+                                      fontWeight: FontWeight.w700,
+                                      height: 1.2125 * ffem / fem,
+                                      letterSpacing: 1.2 * fem,
+                                      color: Color(0xffa5a5a5),
                                     ),
                                   ),
+                                ),
                               ),
                             ],
                           ),
                         ),
                         Container(
                           // line11GRs (160:10601)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 11*fem),
+                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 10*fem),
                           width: double.infinity,
                           height: 1*fem,
                           decoration: BoxDecoration (
@@ -528,14 +530,14 @@ class _see_more_pageState extends State<see_more_page> {
                         ),
                         Container(
                           // frame146QHB (160:10603)
-                          margin: EdgeInsets.fromLTRB(8*fem, 0*fem, 1*fem, 17*fem),
+                          margin: EdgeInsets.fromLTRB(8*fem, 0*fem, 1*fem, 1*fem),
                           width: double.infinity,
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
                                 // Lgd (160:10604)
-                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 120*fem, 0*fem),
+                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 150*fem, 15*fem),
                                 child: Text(
                                   '이메일',
                                   style: SafeGoogleFont (
@@ -553,26 +555,25 @@ class _see_more_pageState extends State<see_more_page> {
                                 mail!,
                                 textAlign: TextAlign.right,
                                 style: TextStyle(
-                                  fontSize: 38,
+                                  fontSize: 13*ffem,
                                   fontWeight: FontWeight.w500,
                                   // Add other styles here
                                 ),
                               )
                                   : CircularProgressIndicator(),
-
                             ],
                           ),
                         ),
                         Container(
                           // frame153125 (160:10606)
-                          margin: EdgeInsets.fromLTRB(8*fem, 0*fem, 1*fem, 20*fem),
+                          margin: EdgeInsets.fromLTRB(8*fem, 0*fem, 1*fem, 15*fem),
                           width: double.infinity,
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
                                 // M5w (160:10607)
-                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 222*fem, 0*fem),
+                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 214*fem, 0*fem),
                                 child: Text(
                                   '비밀번호',
                                   style: SafeGoogleFont (
@@ -603,14 +604,14 @@ class _see_more_pageState extends State<see_more_page> {
                         ),
                         Container(
                           // frame147oyX (160:10609)
-                          margin: EdgeInsets.fromLTRB(8*fem, 0*fem, 1*fem, 18*fem),
+                          margin: EdgeInsets.fromLTRB(8*fem, 0*fem, 1*fem, 15*fem),
                           width: double.infinity,
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
                                 // YgD (160:10610)
-                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 170*fem, 0*fem),
+                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 156*fem, 0*fem),
                                 child: Text(
                                   '전화번호',
                                   style: SafeGoogleFont (
@@ -628,7 +629,7 @@ class _see_more_pageState extends State<see_more_page> {
                                 Pnumber!,
                                 textAlign: TextAlign.right,
                                 style: TextStyle(
-                                  fontSize: 38,
+                                  fontSize: 13*ffem,
                                   fontWeight: FontWeight.w500,
                                   // Add other styles here
                                 ),
@@ -675,26 +676,26 @@ class _see_more_pageState extends State<see_more_page> {
                       ),
                       child: Center(
                         child: Center(
-                          child: TextButton(
-                            onPressed: () {
-                              Navigator.push(
+                            child: TextButton(
+                              onPressed: () {
+                                Navigator.push(
                                   context,
                                   MaterialPageRoute(builder: (context)=>first_page()),
-                              );
+                                );
 
-                            },
-                            child: Text(
-                              '로그아웃',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontSize: 15*ffem,
-                                fontWeight: FontWeight.w700,
-                                height: 1.0666666667*ffem/fem,
-                                letterSpacing: 0.5*fem,
-                                color: Color(0xff000000),
+                              },
+                              child: Text(
+                                '로그아웃',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 15*ffem,
+                                  fontWeight: FontWeight.w700,
+                                  height: 1.0666666667*ffem/fem,
+                                  letterSpacing: 0.5*fem,
+                                  color: Color(0xff000000),
+                                ),
                               ),
-                            ),
-                          )
+                            )
 
                         ),
                       ),
@@ -748,17 +749,21 @@ class _see_more_pageState extends State<see_more_page> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
-                          // vectoruSD (160:10618)
                           margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 126.5*fem, 0*fem),
-                            child: Container(
-                              width: 11*fem,
-                              height: 20*fem,
+                          child: Container(
+                            width: 11*fem,
+                            height: 20*fem,
+                            child: TextButton(
+                              onPressed: () {
+                                Navigator.pop(context); // 전 페이지로 이동하는 코드
+                              },
                               child: Image.asset(
-                                'assets/resource/images/vector-vKw.png',
-                                width: 11*fem,
-                                height: 20*fem,
+                                'assets/resource/images/vector-s3b.png',
+                                width: 11 * fem,
+                                height: 20 * fem,
                               ),
                             ),
+                          ),
                         ),
                         Center(
                           // o1o (160:10619)
@@ -782,107 +787,11 @@ class _see_more_pageState extends State<see_more_page> {
                     ),
                   ),
                 ),
-                Positioned(
-                  // tabmenuuKj (160:10620)
-                  left: 0*fem,
-                  top: 673*fem,
-                  child: Container(
-                    padding: EdgeInsets.fromLTRB(30*fem, 21*fem, 30*fem, 21*fem),
-                    width: 360*fem,
-                    height: 108*fem,
-                    decoration: BoxDecoration (
-                      color: Color(0xffffffff),
-                      borderRadius: BorderRadius.only (
-                        topLeft: Radius.circular(15*fem),
-                        topRight: Radius.circular(15*fem),
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color(0x1e000000),
-                          offset: Offset(0*fem, 2*fem),
-                          blurRadius: 24*fem,
-                        ),
-                      ],
-                    ),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          // homeZfB (160:10623)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 78*fem, 0*fem),
-                          child: TextButton(
-                            onPressed: () {},
-                            style: TextButton.styleFrom (
-                              padding: EdgeInsets.zero,
-                            ),
-                            child: Container(
-                              width: 15*fem,
-                              height: 16*fem,
-                              child: Image.asset(
-                                'assets/resource/images/home-Evh.png',
-                                width: 15*fem,
-                                height: 16*fem,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          // socialFY1 (160:10626)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0.5*fem, 78*fem, 0*fem),
-                          child: TextButton(
-                            onPressed: () {},
-                            style: TextButton.styleFrom (
-                              padding: EdgeInsets.zero,
-                            ),
-                            child: Container(
-                              width: 15*fem,
-                              height: 15*fem,
-                              child: Image.asset(
-                                'assets/resource/images/social-rjw.png',
-                                width: 15*fem,
-                                height: 15*fem,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          // mydataXVX (160:10630)
-                          margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 78*fem, 0*fem),
-                          child: TextButton(
-                            onPressed: () {},
-                            style: TextButton.styleFrom (
-                              padding: EdgeInsets.zero,
-                            ),
-                            child: Container(
-                              width: 15*fem,
-                              height: 16*fem,
-                              child: Image.asset(
-                                'assets/resource/images/mydata-hW5.png',
-                                width: 15*fem,
-                                height: 16*fem,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          // autogroupaakxcms (92BeimKNmghvDcvbWTAaKX)
-                          margin: EdgeInsets.fromLTRB(0*fem, 5.5*fem, 0*fem, 0*fem),
-                          width: 21*fem,
-                          height: 19.5*fem,
-                          child: Image.asset(
-                            'assets/resource/images/auto-group-aakx.png',
-                            width: 21*fem,
-                            height: 19.5*fem,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
               ],
             ),
           ),
-        );
+        ),),
+    );
   }
 }
 
