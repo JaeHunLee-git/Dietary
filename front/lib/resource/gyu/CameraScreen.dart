@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
+import 'package:myapp/resource/ljh/use_update.dart';
 import 'package:path/path.dart' as Path;
 import 'dart:io';
 
@@ -12,7 +13,7 @@ class Cams extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false,
       home: CameraScreen(),
     );
   }
@@ -24,6 +25,7 @@ class CameraScreen extends StatefulWidget {
 }
 
 class _CameraScreenState extends State<CameraScreen> {
+  String? _imageUrl;
   late CameraController _controller;
   late Future<void>? _initializeControllerFuture;
 
@@ -31,6 +33,17 @@ class _CameraScreenState extends State<CameraScreen> {
   void initState() {
     super.initState();
     _initializeControllerFuture = _initializeCamera();
+  }
+
+  Future<void> _navigateToUseUpdate() async {
+    // 이미지가 업로드되었을 때, use_update() 클래스로 이동
+    if (_imageUrl != null) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => use_update(imageUrl: _imageUrl!)),
+      );
+    }
   }
 
   Future<void> _initializeCamera() async {
@@ -59,8 +72,10 @@ class _CameraScreenState extends State<CameraScreen> {
     try {
       File file = File(imagePath);
       String fileName = Path.basename(file.path);
-      firebase_storage.Reference firebaseStorageRef =
-      firebase_storage.FirebaseStorage.instance.ref().child('images/$fileName');
+      firebase_storage.Reference firebaseStorageRef = firebase_storage
+          .FirebaseStorage.instance
+          .ref()
+          .child('images/$fileName');
       await firebaseStorageRef.putFile(file);
       String downloadURL = await firebaseStorageRef.getDownloadURL();
       return downloadURL;
@@ -80,6 +95,15 @@ class _CameraScreenState extends State<CameraScreen> {
       return Center(child: CircularProgressIndicator());
     }
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Camera Screen'),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
       body: FutureBuilder<void>(
         future: _initializeControllerFuture,
         builder: (context, snapshot) {
@@ -98,11 +122,16 @@ class _CameraScreenState extends State<CameraScreen> {
                         // 촬영한 이미지에 대한 후속 작업을 여기에 추가하세요.
                         if (image != null) {
                           String? imageUrl = await _uploadImage(image.path);
-                          print('이미지가 Firebase Storage에 업로드되었습니다: $imageUrl');
+                          setState(() {
+                            _imageUrl = imageUrl;
+                          });
+                          print('이미지가 Firebase Storage에 업로드되었습니다: $_imageUrl');
+                          _navigateToUseUpdate();
                         }
                       } catch (e) {
                         // 에러 처리
                         print(e);
+                        return null;
                       }
                     },
                     child: Icon(Icons.camera),
