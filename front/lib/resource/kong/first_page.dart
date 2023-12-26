@@ -62,7 +62,7 @@ class first_page extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
-                        margin: EdgeInsets.fromLTRB(20 * fem, 0 * fem, 0 * fem, 0 * fem),
+                        margin: EdgeInsets.fromLTRB(30 * fem, 0 * fem, 0 * fem, 0 * fem),
                         width: 29 * fem,
                         height: 23 * fem,
                         child: Image.asset(
