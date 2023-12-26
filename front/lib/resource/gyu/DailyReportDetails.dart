@@ -162,7 +162,7 @@ class _DailyReportDetailsState extends State<DailyReportDetails> {
                                     children: [
                                       Container(
                                         // T6d (160:9718)
-                                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 151*fem, 0*fem),
+                                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 127*fem, 0*fem),
                                         child: Text(
                                           '비빔냉면',
                                           style: SafeGoogleFont (
@@ -203,7 +203,7 @@ class _DailyReportDetailsState extends State<DailyReportDetails> {
                                     children: [
                                       Container(
                                         // 2J9 (160:9723)
-                                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 165*fem, 0*fem),
+                                        margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 153*fem, 0*fem),
                                         child: Text(
                                           '총합',
                                           style: SafeGoogleFont (
@@ -279,7 +279,7 @@ class _DailyReportDetailsState extends State<DailyReportDetails> {
                             children: [
                               Container(
                                 // 36m (160:9710)
-                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 183*fem, 12*fem),
+                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 120*fem, 12*fem),
                                 child: Text(
                                   '영양정보 상세',
                                   style: SafeGoogleFont (
@@ -310,7 +310,7 @@ class _DailyReportDetailsState extends State<DailyReportDetails> {
                                   children: [
                                     Container(
                                       // cp5 (160:9721)
-                                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 149*fem, 0*fem),
+                                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 127*fem, 0*fem),
                                       child: Text(
                                         '비빔냉면',
                                         style: SafeGoogleFont (
@@ -357,7 +357,7 @@ class _DailyReportDetailsState extends State<DailyReportDetails> {
                                         children: [
                                           Container(
                                             // Kru (160:9726)
-                                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 181*fem, 0*fem),
+                                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 165*fem, 0*fem),
                                             child: Text(
                                               '탄수화물',
                                               style: SafeGoogleFont (
@@ -397,7 +397,7 @@ class _DailyReportDetailsState extends State<DailyReportDetails> {
                                         children: [
                                           Container(
                                             // 7nm (160:9728)
-                                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 190*fem, 0*fem),
+                                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 178*fem, 0*fem),
                                             child: Text(
                                               '단백질',
                                               style: SafeGoogleFont (
@@ -437,7 +437,7 @@ class _DailyReportDetailsState extends State<DailyReportDetails> {
                                         children: [
                                           Container(
                                             // ded (160:9730)
-                                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 209*fem, 0*fem),
+                                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 200*fem, 0*fem),
                                             child: Text(
                                               '지방',
                                               style: SafeGoogleFont (
@@ -485,28 +485,7 @@ class _DailyReportDetailsState extends State<DailyReportDetails> {
                   ),
                 ),
         
-                Positioned(
-                  // vectorxKX (160:9733)
-                  left: 25*fem,
-                  top: 60.9999980927*fem,
-                  child: Align(
-                    child: SizedBox(
-                      width: 11*fem,
-                      height: 20*fem,
-                      child: TextButton(
-                        onPressed: () {},
-                        style: TextButton.styleFrom (
-                          padding: EdgeInsets.zero,
-                        ),
-                        child: Image.asset(
-                          'assets/resource/images/vector-1Zf.png',
-                          width: 11*fem,
-                          height: 20*fem,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
+
         
         
               ],

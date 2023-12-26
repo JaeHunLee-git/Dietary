@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/resource/kong/mydata_page.dart';
+import 'package:myapp/resource/kong/see_more_page.dart';
 import 'package:myapp/utils.dart';
 import 'package:myapp/resource/gyu/Calendar.dart';
+
+import '../ljh/mainpage.dart';
+import '../sungjin/Calorie-Score_2.dart';
 
 class CalorieScore extends StatefulWidget {
   const CalorieScore({Key? key}) : super(key: key);
@@ -14,12 +19,43 @@ class CalorieScore extends StatefulWidget {
 
 class _CalorieScoreState extends State<CalorieScore> {
   late int calculatedScore;
+  int _currentIndex = 0;
+
+  void onTabTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+      if (_currentIndex == 0) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => mainpage()),
+        );
+      }
+      else if (_currentIndex == 1) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Calorie_Score_2()),
+        );
+      }
+      else if (_currentIndex == 2) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => mydata_page()),
+        );
+      }
+      else if (_currentIndex == 3) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => see_more_page()),
+        );
+      }
+    });
+  }
 
   @override
   void initState() {
     super.initState();
     // 생성자 내부의 수식을 사용하여 calculatedScore 초기화
-    calculatedScore = 100 + 200; // 예시로 100과 200을 더한 값을 할당
+    calculatedScore = 868;
   }
 
   @override
@@ -203,279 +239,145 @@ class _CalorieScoreState extends State<CalorieScore> {
                   ],
                 ),
               ),
+
               Container(
-                // autogroupvmthJKw (92BUfijYMWBQwfxmHevmth)
-                margin: EdgeInsets.fromLTRB(16*fem, 0*fem, 16*fem, 12*fem),
+                margin: EdgeInsets.fromLTRB(16 * fem, 0 * fem, 16 * fem, 12 * fem),
                 width: double.infinity,
-                height: 250*fem,
-                decoration: BoxDecoration (
+                decoration: BoxDecoration(
                   color: Color(0xff4e5566),
-                  borderRadius: BorderRadius.circular(15*fem),
+                  borderRadius: BorderRadius.circular(15 * fem),
                   boxShadow: [
                     BoxShadow(
                       color: Color(0x3f000000),
-                      offset: Offset(0*fem, 4*fem),
-                      blurRadius: 2*fem,
+                      offset: Offset(0 * fem, 4 * fem),
+                      blurRadius: 2 * fem,
                     ),
                   ],
                 ),
-                child: Stack(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Positioned(
-                      // line11CAR (160:10365)
-                      left: 10*fem,
-                      top: 45*fem,
-                      child: Align(
-                        child: SizedBox(
-                          width: 308*fem,
-                          height: 1*fem,
-                          child: Container(
-                            decoration: BoxDecoration (
-                              color: Color(0xffffffff),
-                            ),
-                          ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 16 * fem, horizontal: 20 * fem),
+                      child: Text(
+                        '스코어 그래프',
+                        style: SafeGoogleFont(
+                          'Inter',
+                          fontSize: 16 * ffem,
+                          fontWeight: FontWeight.w600,
+                          height: 1.2125 * ffem / fem,
+                          color: Color(0xffffffff),
                         ),
                       ),
                     ),
-                    Positioned(
-                      // 7oB (160:10366)
-                      left: 20*fem,
-                      top: 14.5*fem,
-                      child: Align(
-                        child: SizedBox(
-                          width: 100*fem,
-                          height: 25*fem,
-                          child: Text(
-                            '스코어  그래프',
-                            style: SafeGoogleFont (
-                              'Inter',
-                              fontSize: 16*ffem,
-                              fontWeight: FontWeight.w600,
-                              height: 1.2125*ffem/fem,
-                              color: Color(0xffffffff),
-                            ),
-                          ),
-                        ),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 200 * fem, // 점 그래프 영역의 높이 설정
+                      child: CustomPaint(
+                        painter: LineChartPainter(),
                       ),
                     ),
-                    Positioned(
-                      // autogrouppabfog1 (92BUz3YLnTXbUVvYPMpabF)
-                      left: 20*fem,
-                      top: 55*fem,
-                      child: Container(
-                        padding: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 14*fem),
-                        width: 288*fem,
-                        height: 172*fem,
-                        decoration: BoxDecoration (
-                          border: Border.all(color: Color(0xffffffff)),
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Container(
-                              // autogroupvzyvVoj (92BVcSfMnzNukv1cp8vzYV)
-                              width: double.infinity,
-                              height: 132*fem,
-                              child: Stack(
-                                children: [
-                                  Positioned(
-                                    // autogrouprlyjF2D (92BVN7jtz4ZVhuRW2YrLyj)
-                                    left: 30*fem,
-                                    top: 60*fem,
-                                    child: Align(
-                                      child: SizedBox(
-                                        width: 114*fem,
-                                        height: 6*fem,
-                                        child: Image.asset(
-                                          'assets/resource/images/auto-group-rlyj.png',
-                                          width: 114*fem,
-                                          height: 6*fem,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  Positioned(
-                                    // autogrouptod79tH (92BVHCiREzGDhYekZStoD7)
-                                    left: 144*fem,
-                                    top: 53*fem,
-                                    child: Align(
-                                      child: SizedBox(
-                                        width: 60*fem,
-                                        height: 6*fem,
-                                        child: Image.asset(
-                                          'assets/resource/images/auto-group-tod7.png',
-                                          width: 60*fem,
-                                          height: 6*fem,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  Positioned(
-                                    // autogroupg3zdrnh (92BVC3CMeY7tux3XKiG3zd)
-                                    left: 201*fem,
-                                    top: 40*fem,
-                                    child: Align(
-                                      child: SizedBox(
-                                        width: 60*fem,
-                                        height: 6*fem,
-                                        child: Image.asset(
-                                          'assets/resource/images/auto-group-g3zd.png',
-                                          width: 60*fem,
-                                          height: 6*fem,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  Positioned(
-                                    // autogrouph5wky6d (92BVThQvzonETZkrt1H5wK)
-                                    left: 27*fem,
-                                    top: 67*fem,
-                                    child: Container(
-                                      width: 120*fem,
-                                      height: 11*fem,
-                                      child: Row(
-                                        crossAxisAlignment: CrossAxisAlignment.center,
-                                        children: [
-                                          Container(
-                                            // ellipse29hHX (160:10392)
-                                            margin: EdgeInsets.fromLTRB(0*fem, 5*fem, 108*fem, 0*fem),
-                                            width: 6*fem,
-                                            height: 6*fem,
-                                            decoration: BoxDecoration (
-                                              borderRadius: BorderRadius.circular(3*fem),
-                                              color: Color(0xfff55050),
-                                            ),
-                                          ),
-                                          Container(
-                                            // ellipse31DWm (160:10390)
-                                            margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 5*fem),
-                                            width: 6*fem,
-                                            height: 6*fem,
-                                            decoration: BoxDecoration (
-                                              borderRadius: BorderRadius.circular(3*fem),
-                                              color: Color(0xfff55050),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              // line25YZ3 (160:10377)
-                              margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 11*fem),
-                              width: double.infinity,
-                              height: 2*fem,
-                              decoration: BoxDecoration (
-                                color: Color(0xffffffff),
-                              ),
-                            ),
-                            Container(
-                              // group1375os (160:10378)
-                              margin: EdgeInsets.fromLTRB(20.5*fem, 0*fem, 20*fem, 0*fem),
-                              width: double.infinity,
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Center(
-                                    // ozm (160:10383)
-                                    child: Container(
-                                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 36*fem, 0*fem),
-                                      child: Text(
-                                        '11.9',
-                                        textAlign: TextAlign.center,
-                                        style: SafeGoogleFont (
-                                          'Inter',
-                                          fontSize: 9*ffem,
-                                          fontWeight: FontWeight.w600,
-                                          height: 1.2125*ffem/fem,
-                                          color: Color(0xffffffff),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  Center(
-                                    // 7kZ (160:10382)
-                                    child: Container(
-                                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 33*fem, 0*fem),
-                                      child: Text(
-                                        '11.16',
-                                        textAlign: TextAlign.center,
-                                        style: SafeGoogleFont (
-                                          'Inter',
-                                          fontSize: 9*ffem,
-                                          fontWeight: FontWeight.w600,
-                                          height: 1.2125*ffem/fem,
-                                          color: Color(0xffffffff),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  Center(
-                                    // Z6m (160:10381)
-                                    child: Container(
-                                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 31.5*fem, 0*fem),
-                                      child: Text(
-                                        '11.23',
-                                        textAlign: TextAlign.center,
-                                        style: SafeGoogleFont (
-                                          'Inter',
-                                          fontSize: 9*ffem,
-                                          fontWeight: FontWeight.w600,
-                                          height: 1.2125*ffem/fem,
-                                          color: Color(0xffffffff),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  Center(
-                                    // Txq (160:10380)
-                                    child: Container(
-                                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 34*fem, 0*fem),
-                                      child: Text(
-                                        '11.30',
-                                        textAlign: TextAlign.center,
-                                        style: SafeGoogleFont (
-                                          'Inter',
-                                          fontSize: 9*ffem,
-                                          fontWeight: FontWeight.w600,
-                                          height: 1.2125*ffem/fem,
-                                          color: Color(0xffffffff),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  Center(
-                                    // Bdw (160:10379)
-                                    child: Text(
-                                      '12.6',
-                                      textAlign: TextAlign.center,
-                                      style: SafeGoogleFont (
-                                        'Inter',
-                                        fontSize: 9*ffem,
-                                        fontWeight: FontWeight.w600,
-                                        height: 1.2125*ffem/fem,
-                                        color: Color(0xffffffff),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
+                    Padding(
+                      padding: EdgeInsets.only(bottom: 10 * fem),
+                      child: Text(
+                        '   11.9             11.16             11.23             11.30             12.7',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 12 * fem,
                         ),
                       ),
                     ),
                   ],
                 ),
               ),
-
             ],
           ),
         ),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
+        selectedItemColor: Colors.grey, // 선택된 아이콘 색상 설정
+        unselectedItemColor: Colors.grey,
+        selectedFontSize: 12,
+        unselectedFontSize: 12,
+        onTap: onTabTapped, // 탭이 선택되면 onTabTapped 메서드 호출
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home), // 아이콘 예시: 홈
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.insert_chart), // 아이콘 예시: 검색
+            label: 'Search',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.notifications), // 아이콘 예시: 알림
+            label: 'Notifications',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person), // 아이콘 예시: 프로필
+            label: 'Profile',
+          ),
+        ],
+      ),
     );
+  }
+}
+class LineChartPainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final Paint paint = Paint()
+      ..color = Colors.white
+      ..strokeWidth = 3.0
+      ..strokeCap = StrokeCap.round;
+
+    final List<Offset> points = [
+      Offset(25, 110),
+      Offset(100, 90),
+      Offset(175, 85),
+      Offset(250, 75),
+      Offset(325, 65),
+    ];
+
+    for (int i = 0; i < points.length - 1; i++) {
+      canvas.drawLine(points[i], points[i + 1], paint);
+      canvas.drawCircle(points[i], 5.0, paint);
+
+      final calculatedValue = 923 - points[i].dy.toInt();
+      final TextPainter textPainter = TextPainter(
+        text: TextSpan(
+          text: '$calculatedValue',
+          style: TextStyle(
+
+            fontSize: 13,
+          ),
+        ),
+        textDirection: TextDirection.ltr,
+      );
+
+      textPainter.layout();
+      textPainter.paint(canvas, Offset(points[i].dx - 10, points[i].dy + 10));
+    }
+    canvas.drawCircle(points.last, 5.0, paint);
+
+    final calculatedValue = 933 - points.last.dy.toInt();
+    final TextPainter textPainter = TextPainter(
+      text: TextSpan(
+        text: '$calculatedValue',
+        style: TextStyle(
+
+          fontSize: 13,
+        ),
+      ),
+      textDirection: TextDirection.ltr,
+    );
+
+    textPainter.layout();
+    textPainter.paint(canvas, Offset(points.last.dx - 10, points.last.dy + 10));
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) {
+    return false;
   }
 }
