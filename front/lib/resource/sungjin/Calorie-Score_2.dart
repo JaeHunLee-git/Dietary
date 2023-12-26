@@ -1205,7 +1205,9 @@ class Calorie_Score_2 extends StatelessWidget {
                           // vectorxqj (160:8525)
                           margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 73.5*fem, 0*fem),
                           child: TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
                             style: TextButton.styleFrom (
                               padding: EdgeInsets.zero,
                             ),
