@@ -4,7 +4,9 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 
+import '../ljh/mainpage.dart';
 import 'CalorieScore.dart';
+import 'daily_report_exe.dart';
 
 class DailyReport extends StatefulWidget {
   @override
@@ -731,7 +733,10 @@ class _DailyReportState extends State<DailyReport> {
                                         child: Center(
                                           child: TextButton(
                                             onPressed: () {
-                                              //TODO rr
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(builder: (context) => daily_report()),
+                                              );
                                             },
                                             child: Text(
                                               '적립',
@@ -1014,7 +1019,10 @@ class _DailyReportState extends State<DailyReport> {
                     child: TextButton(
                       // group91x3F (160:9965)
                       onPressed: () {
-                        Navigator.pop(context);
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => mainpage()),
+                        );
                       },
                       style: TextButton.styleFrom (
                         padding: EdgeInsets.zero,
