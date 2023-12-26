@@ -1,9 +1,12 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 import 'package:myapp/resource/ljh/use_update.dart';
 import 'package:path/path.dart' as Path;
 import 'dart:io';
+import 'package:http/http.dart' as http;
 
 void main() {
   runApp(Cams());
@@ -34,6 +37,53 @@ class _CameraScreenState extends State<CameraScreen> {
     super.initState();
     _initializeControllerFuture = _initializeCamera();
   }
+
+  Future<void> postData() async {  // 서버에서 JSON 형식의 응답을 받아 처리하는 함수
+    var url = Uri.parse('http://your-django-api-url.com/endpoint'); // Django API의 엔드포인트 URL
+    var headers = {'Content-Type': 'application/json'}; // 요청 헤더
+
+    var data = {
+      'key1': 'value1',
+      'key2': 'value2',
+      // 이와 같이 요청할 데이터를 JSON 형식으로 구성
+    };
+
+    try {
+      var response = await http.post(
+        url,
+        headers: headers,
+        body: jsonEncode(data), // 데이터를 JSON 문자열로 변환하여 요청
+      );
+
+      if (response.statusCode == 200) {
+        // 성공적으로 요청이 완료되었을 때
+        var jsonResponse = jsonDecode(response.body); // JSON 데이터로 변환
+
+        // jsonResponse를 이용해 데이터를 처리하거나 필요에 따라 다른 작업 수행
+        print('Response data: $jsonResponse');
+      } else {
+        // 요청이 실패했을 때 처리할 내용
+        print('Request failed with status: ${response.statusCode}');
+      }
+    } catch (e) {
+      // 에러 처리
+      print('Error: $e');
+    }
+  }
+
+  Future<void> uploadImageUrl(String imageUrl) async {    //이미지를 서버에 업로드
+    var response = await http.post(
+      Uri.parse('https://your-server-api-endpoint'),
+      body: {'imageUrl': imageUrl},
+    );
+
+    if (response.statusCode == 200) {
+      print('이미지 URL이 성공적으로 업로드되었습니다.');
+    } else {
+      print('이미지 URL 업로드 실패: ${response.reasonPhrase}');
+    }
+  }
+
 
   Future<void> _navigateToUseUpdate() async {
     // 이미지가 업로드되었을 때, use_update() 클래스로 이동
@@ -68,14 +118,14 @@ class _CameraScreenState extends State<CameraScreen> {
     super.dispose();
   }
 
-  Future<String?> _uploadImage(String imagePath) async {
+  Future<String?> _uploadImage(String imagePath) async {    // 찍은 사진을 firestorage에 업로드 하는 함수
     try {
       File file = File(imagePath);
       String fileName = Path.basename(file.path);
       firebase_storage.Reference firebaseStorageRef = firebase_storage
           .FirebaseStorage.instance
           .ref()
-          .child('images/$fileName');
+          .child('CaloriePay/$fileName');
       await firebaseStorageRef.putFile(file);
       String downloadURL = await firebaseStorageRef.getDownloadURL();
       return downloadURL;
