@@ -243,7 +243,7 @@ class _more_usereditState extends State<more_useredit> {
                                 fontWeight: FontWeight.w700,
                                 height: 1.2125 * ffem / fem,
                                 letterSpacing: 1.2 * fem,
-                                color: Color(0xffa5a5a5),
+                                color: Color(0xff000000),
                               ),
                             ),
                           ),
