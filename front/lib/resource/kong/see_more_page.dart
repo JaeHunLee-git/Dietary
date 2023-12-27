@@ -537,7 +537,7 @@ class _see_more_pageState extends State<see_more_page> {
                             children: [
                               Container(
                                 // Lgd (160:10604)
-                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 150*fem, 15*fem),
+                                margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 107*fem, 15*fem),
                                 child: Text(
                                   '이메일',
                                   style: SafeGoogleFont (

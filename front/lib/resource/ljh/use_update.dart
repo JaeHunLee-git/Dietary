@@ -4,6 +4,7 @@ import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myapp/utils.dart';
 
+import 'lastpage.dart';
 import 'mainpage.dart';
 
 class use_update extends StatelessWidget {
@@ -66,7 +67,7 @@ class use_update extends StatelessWidget {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => mainpage()), // MainPage로 이동
+                          MaterialPageRoute(builder: (context) => lastpage()), // MainPage로 이동
                         );
                       },
                       child: Container(
@@ -216,9 +217,9 @@ class use_update extends StatelessWidget {
                                                 Container(
                                                   // WsX (160:10088)
                                                   margin: EdgeInsets.fromLTRB(
-                                                      0 * fem, 0 * fem, 120 * fem, 0 * fem),
+                                                      0 * fem, 0 * fem, 160 * fem, 0 * fem),
                                                   child: Text(
-                                                    '비빔냉면',
+                                                    '쌀밥',
                                                     style: SafeGoogleFont(
                                                       'Inter',
                                                       fontSize: 20 * ffem,
@@ -231,7 +232,7 @@ class use_update extends StatelessWidget {
                                                 ),
                                                 Text(
                                                   // kcal36m (160:10087)
-                                                  '427kcal',
+                                                  '335kcal',
                                                   style: SafeGoogleFont(
                                                     'Inter',
                                                     fontSize: 15 * ffem,
@@ -273,7 +274,7 @@ class use_update extends StatelessWidget {
                                                 ),
                                                 Text(
                                                   // kcalpmj (160:10092)
-                                                  '71.5 g',
+                                                  '73.7 g',
                                                   textAlign: TextAlign.right,
                                                   style: SafeGoogleFont(
                                                     'Inter',
@@ -302,7 +303,7 @@ class use_update extends StatelessWidget {
                                                 Container(
                                                   // JoP (160:10093)
                                                   margin: EdgeInsets.fromLTRB(
-                                                      0 * fem, 0 * fem, 160 * fem, 0 * fem),
+                                                      0 * fem, 0 * fem, 170 * fem, 0 * fem),
                                                   child: Text(
                                                     '단백질',
                                                     style: SafeGoogleFont(
@@ -317,7 +318,7 @@ class use_update extends StatelessWidget {
                                                 ),
                                                 Text(
                                                   // kcalpmj (160:10092)
-                                                  '18.5 g',
+                                                  '5.8 g',
                                                   textAlign: TextAlign.right,
                                                   style: SafeGoogleFont(
                                                     'Inter',
@@ -346,7 +347,7 @@ class use_update extends StatelessWidget {
                                                 Container(
                                                   // JoP (160:10093)
                                                   margin: EdgeInsets.fromLTRB(
-                                                      0 * fem, 0 * fem, 188 * fem, 0 * fem),
+                                                      0 * fem, 0 * fem, 184 * fem, 0 * fem),
                                                   child: Text(
                                                     '지방',
                                                     style: SafeGoogleFont(
@@ -361,7 +362,7 @@ class use_update extends StatelessWidget {
                                                 ),
                                                 Text(
                                                   // kcalpmj (160:10092)
-                                                  '7.3 g',
+                                                  '0.5 g',
                                                   textAlign: TextAlign.right,
                                                   style: SafeGoogleFont(
                                                     'Inter',
@@ -385,14 +386,10 @@ class use_update extends StatelessWidget {
                                               width: 288 * fem,
                                               height: 182 * fem,
                                               child: Container(
-                                                decoration: BoxDecoration(
-                                                  borderRadius:
-                                                  BorderRadius.circular(15 * fem),
-                                                  color: Color(0xffd9d9d9),
-                                                  image: DecorationImage(
-                                                    fit: BoxFit.cover,
-                                                    image: NetworkImage(imageUrl),
-                                                  ),
+                                                child: Image.asset(
+                                                  'assets/resource/images/bob.jpg',
+                                                  // width: 6 * fem,
+                                                  // height: 10 * fem,
                                                 ),
                                               ),
                                             ),
@@ -510,7 +507,7 @@ class use_update extends StatelessWidget {
                                                   margin: EdgeInsets.fromLTRB(
                                                       0 * fem, 0 * fem, 120 * fem, 0 * fem),
                                                   child: Text(
-                                                    '비빔냉면',
+                                                    '된장찌개',
                                                     style: SafeGoogleFont(
                                                       'Inter',
                                                       fontSize: 20 * ffem,
@@ -523,7 +520,7 @@ class use_update extends StatelessWidget {
                                                 ),
                                                 Text(
                                                   // kcal36m (160:10087)
-                                                  '427kcal',
+                                                  '147kcal',
                                                   style: SafeGoogleFont(
                                                     'Inter',
                                                     fontSize: 15 * ffem,
@@ -550,7 +547,7 @@ class use_update extends StatelessWidget {
                                                 Container(
                                                   // JoP (160:10093)
                                                   margin: EdgeInsets.fromLTRB(
-                                                      0 * fem, 0 * fem, 145 * fem, 0 * fem),
+                                                      0 * fem, 0 * fem, 170 * fem, 0 * fem),
                                                   child: Text(
                                                     '탄수화물',
                                                     style: SafeGoogleFont(
@@ -565,7 +562,7 @@ class use_update extends StatelessWidget {
                                                 ),
                                                 Text(
                                                   // kcalpmj (160:10092)
-                                                  '71.5 g',
+                                                  '16 g',
                                                   textAlign: TextAlign.right,
                                                   style: SafeGoogleFont(
                                                     'Inter',
@@ -594,7 +591,7 @@ class use_update extends StatelessWidget {
                                                 Container(
                                                   // JoP (160:10093)
                                                   margin: EdgeInsets.fromLTRB(
-                                                      0 * fem, 0 * fem, 160 * fem, 0 * fem),
+                                                      0 * fem, 0 * fem, 173 * fem, 0 * fem),
                                                   child: Text(
                                                     '단백질',
                                                     style: SafeGoogleFont(
@@ -609,7 +606,7 @@ class use_update extends StatelessWidget {
                                                 ),
                                                 Text(
                                                   // kcalpmj (160:10092)
-                                                  '18.5 g',
+                                                  '11.7 g',
                                                   textAlign: TextAlign.right,
                                                   style: SafeGoogleFont(
                                                     'Inter',
@@ -638,7 +635,7 @@ class use_update extends StatelessWidget {
                                                 Container(
                                                   // JoP (160:10093)
                                                   margin: EdgeInsets.fromLTRB(
-                                                      0 * fem, 0 * fem, 188 * fem, 0 * fem),
+                                                      0 * fem, 0 * fem, 193 * fem, 0 * fem),
                                                   child: Text(
                                                     '지방',
                                                     style: SafeGoogleFont(
@@ -653,7 +650,7 @@ class use_update extends StatelessWidget {
                                                 ),
                                                 Text(
                                                   // kcalpmj (160:10092)
-                                                  '7.3 g',
+                                                  '5.3 g',
                                                   textAlign: TextAlign.right,
                                                   style: SafeGoogleFont(
                                                     'Inter',
@@ -677,14 +674,10 @@ class use_update extends StatelessWidget {
                                               width: 288 * fem,
                                               height: 182 * fem,
                                               child: Container(
-                                                decoration: BoxDecoration(
-                                                  borderRadius:
-                                                  BorderRadius.circular(15 * fem),
-                                                  color: Color(0xffd9d9d9),
-                                                  image: DecorationImage(
-                                                    fit: BoxFit.cover,
-                                                    image: NetworkImage(imageUrl),
-                                                  ),
+                                                child: Image.asset(
+                                                  'assets/resource/images/deng.jpg',
+                                                  // width: 6 * fem,
+                                                  // height: 10 * fem,
                                                 ),
                                               ),
                                             ),
@@ -802,7 +795,7 @@ class use_update extends StatelessWidget {
                                                   margin: EdgeInsets.fromLTRB(
                                                       0 * fem, 0 * fem, 120 * fem, 0 * fem),
                                                   child: Text(
-                                                    '비빔냉면',
+                                                    '고기만두',
                                                     style: SafeGoogleFont(
                                                       'Inter',
                                                       fontSize: 20 * ffem,
@@ -815,7 +808,7 @@ class use_update extends StatelessWidget {
                                                 ),
                                                 Text(
                                                   // kcal36m (160:10087)
-                                                  '427kcal',
+                                                  '457kcal',
                                                   style: SafeGoogleFont(
                                                     'Inter',
                                                     fontSize: 15 * ffem,
@@ -842,7 +835,7 @@ class use_update extends StatelessWidget {
                                                 Container(
                                                   // JoP (160:10093)
                                                   margin: EdgeInsets.fromLTRB(
-                                                      0 * fem, 0 * fem, 145 * fem, 0 * fem),
+                                                      0 * fem, 0 * fem, 155 * fem, 0 * fem),
                                                   child: Text(
                                                     '탄수화물',
                                                     style: SafeGoogleFont(
@@ -857,7 +850,7 @@ class use_update extends StatelessWidget {
                                                 ),
                                                 Text(
                                                   // kcalpmj (160:10092)
-                                                  '71.5 g',
+                                                  '55.3 g',
                                                   textAlign: TextAlign.right,
                                                   style: SafeGoogleFont(
                                                     'Inter',
@@ -886,7 +879,7 @@ class use_update extends StatelessWidget {
                                                 Container(
                                                   // JoP (160:10093)
                                                   margin: EdgeInsets.fromLTRB(
-                                                      0 * fem, 0 * fem, 160 * fem, 0 * fem),
+                                                      0 * fem, 0 * fem, 173 * fem, 0 * fem),
                                                   child: Text(
                                                     '단백질',
                                                     style: SafeGoogleFont(
@@ -901,7 +894,7 @@ class use_update extends StatelessWidget {
                                                 ),
                                                 Text(
                                                   // kcalpmj (160:10092)
-                                                  '18.5 g',
+                                                  '18.7 g',
                                                   textAlign: TextAlign.right,
                                                   style: SafeGoogleFont(
                                                     'Inter',
@@ -945,7 +938,7 @@ class use_update extends StatelessWidget {
                                                 ),
                                                 Text(
                                                   // kcalpmj (160:10092)
-                                                  '7.3 g',
+                                                  '18.3 g',
                                                   textAlign: TextAlign.right,
                                                   style: SafeGoogleFont(
                                                     'Inter',
@@ -969,14 +962,10 @@ class use_update extends StatelessWidget {
                                               width: 288 * fem,
                                               height: 182 * fem,
                                               child: Container(
-                                                decoration: BoxDecoration(
-                                                  borderRadius:
-                                                  BorderRadius.circular(15 * fem),
-                                                  color: Color(0xffd9d9d9),
-                                                  image: DecorationImage(
-                                                    fit: BoxFit.cover,
-                                                    image: NetworkImage(imageUrl),
-                                                  ),
+                                                child: Image.asset(
+                                                  'assets/resource/images/go.jpg',
+                                                  // width: 6 * fem,
+                                                  // height: 10 * fem,
                                                 ),
                                               ),
                                             ),
@@ -1093,9 +1082,9 @@ class use_update extends StatelessWidget {
                                                 Container(
                                                   // WsX (160:10088)
                                                   margin: EdgeInsets.fromLTRB(
-                                                      0 * fem, 0 * fem, 120 * fem, 0 * fem),
+                                                      0 * fem, 0 * fem, 160 * fem, 0 * fem),
                                                   child: Text(
-                                                    '비빔냉면',
+                                                    '쌀밥',
                                                     style: SafeGoogleFont(
                                                       'Inter',
                                                       fontSize: 20 * ffem,
@@ -1108,7 +1097,7 @@ class use_update extends StatelessWidget {
                                                 ),
                                                 Text(
                                                   // kcal36m (160:10087)
-                                                  '427kcal',
+                                                  '335kcal',
                                                   style: SafeGoogleFont(
                                                     'Inter',
                                                     fontSize: 15 * ffem,
@@ -1138,7 +1127,7 @@ class use_update extends StatelessWidget {
                                                   margin: EdgeInsets.fromLTRB(
                                                       0 * fem, 0 * fem, 120 * fem, 0 * fem),
                                                   child: Text(
-                                                    '비빔냉면',
+                                                    '고기만두',
                                                     style: SafeGoogleFont(
                                                       'Inter',
                                                       fontSize: 20 * ffem,
@@ -1151,7 +1140,7 @@ class use_update extends StatelessWidget {
                                                 ),
                                                 Text(
                                                   // kcal36m (160:10087)
-                                                  '427kcal',
+                                                  '457kcal',
                                                   style: SafeGoogleFont(
                                                     'Inter',
                                                     fontSize: 15 * ffem,
@@ -1181,7 +1170,7 @@ class use_update extends StatelessWidget {
                                                   margin: EdgeInsets.fromLTRB(
                                                       0 * fem, 0 * fem, 120 * fem, 0 * fem),
                                                   child: Text(
-                                                    '비빔냉면',
+                                                    '된장찌개',
                                                     style: SafeGoogleFont(
                                                       'Inter',
                                                       fontSize: 20 * ffem,
@@ -1194,7 +1183,7 @@ class use_update extends StatelessWidget {
                                                 ),
                                                 Text(
                                                   // kcal36m (160:10087)
-                                                  '427kcal',
+                                                  '147kcal',
                                                   style: SafeGoogleFont(
                                                     'Inter',
                                                     fontSize: 15 * ffem,
@@ -1221,7 +1210,7 @@ class use_update extends StatelessWidget {
                                                 Container(
                                                   // JoP (160:10093)
                                                   margin: EdgeInsets.fromLTRB(
-                                                      0 * fem, 0 * fem, 150 * fem, 0 * fem),
+                                                      0 * fem, 0 * fem, 135 * fem, 0 * fem),
                                                   child: Text(
                                                     '총합',
                                                     style: SafeGoogleFont(
@@ -1236,7 +1225,7 @@ class use_update extends StatelessWidget {
                                                 ),
                                                 Text(
                                                   // kcalpmj (160:10092)
-                                                  '427kcal',
+                                                  '939.3kcal',
                                                   textAlign: TextAlign.right,
                                                   style: SafeGoogleFont(
                                                     'Inter',
