@@ -20,7 +20,7 @@ class _CalendarState extends State<Calendar> {
   Widget build(BuildContext context) {
     double baseWidth = 360;
     double fem = MediaQuery.of(context).size.width / baseWidth;
-    double ffem = fem * 0.97;
+    double ffem = fem * 0.65;
     return
       Scaffold(
         appBar: AppBar(
@@ -50,16 +50,7 @@ class _CalendarState extends State<Calendar> {
             ),
           ],
         ),
-        body:  Container(
-          width: double.infinity,
-          child: Container(
-            // akr1 (160:9406)
-            width: double.infinity,
-            height: double.infinity,
-            decoration: BoxDecoration (
-              color: Color(0xffededed),
-            ),
-            child: Stack(
+        body:  ListView(
               children: [
                 Positioned(
                   // autogroupsf5fSiq (92Am3faxjhKMc3uDvbsF5F)
@@ -185,12 +176,12 @@ class _CalendarState extends State<Calendar> {
                                       children: [
                                         Container(
                                           // K5f (160:9523)
-                                          margin: EdgeInsets.fromLTRB(3*fem, 0*fem, 10*fem, 0*fem),
+                                          margin: EdgeInsets.fromLTRB(16*fem, 0*fem, 10*fem, 0*fem),
                                           child: Text(
                                             '상세보기',
                                             style: SafeGoogleFont (
                                               'Inter',
-                                              fontSize: 15*ffem,
+                                              fontSize: 24*ffem,
                                               fontWeight: FontWeight.w700,
                                               height: 1.2125*ffem/fem,
                                               letterSpacing: 1*fem,
@@ -198,7 +189,6 @@ class _CalendarState extends State<Calendar> {
                                             ),
                                           ),
                                         ),
-
                                       ],
                                     ),
                                   ),
@@ -213,7 +203,7 @@ class _CalendarState extends State<Calendar> {
                                   children: [
                                     Container(
                                       // autogroup8zp1Usf (92Annx1XohRT65MxWF8Zp1)
-                                      padding: EdgeInsets.fromLTRB(15*fem, 0*fem, 15*fem, 10*fem),
+                                      padding: EdgeInsets.fromLTRB(15*fem, 0*fem, 15*fem, 0*fem),
                                       width: double.infinity,
                                       child: Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -335,7 +325,7 @@ class _CalendarState extends State<Calendar> {
                                     ),
                                     Container(
                                       // line11ZCH (160:9526)
-                                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 0*fem, 6*fem),
+                                      margin: EdgeInsets.fromLTRB(0*fem, 10*fem, 0*fem, 0*fem),
                                       width: double.infinity,
                                       height: 1*fem,
                                       decoration: BoxDecoration (
@@ -344,7 +334,7 @@ class _CalendarState extends State<Calendar> {
                                     ),
                                     Container(
                                       // kcalHty (160:9529)
-                                      margin: EdgeInsets.fromLTRB(0*fem, 0*fem, 5*fem, 0*fem),
+                                      margin: EdgeInsets.fromLTRB(0*fem, 4*fem, 5*fem, 0*fem),
                                       child: Text(
                                         '1290kcal 적립 예정',
                                         textAlign: TextAlign.right,
@@ -370,8 +360,6 @@ class _CalendarState extends State<Calendar> {
                 ),
               ],
             ),
-          ),
-        ),
       );
   }
 }

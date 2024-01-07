@@ -26,7 +26,7 @@ void main() async {
   runApp(MyApp());
 }
 
-String? userId='';
+String? userId='JB8NA7Z6YCVQyroyilToge9MTZD3';
 
 class MyApp extends StatelessWidget {
   @override

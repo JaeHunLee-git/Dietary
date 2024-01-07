@@ -16,7 +16,7 @@ import 'package:table_calendar/table_calendar.dart';
 import '../kong/mydata_page.dart';
 import '../sungjin/Calorie-Score_2.dart';
 
-class mainpage extends StatelessWidget {
+class lastpage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double baseWidth = 360;
@@ -233,10 +233,10 @@ class mainpage extends StatelessWidget {
                                           width: 107 * fem,
                                           height: 31 * fem,
                                           child: Text(
-                                            '1210 Kcal',
+                                            '270.7 Kcal',
                                             style: SafeGoogleFont(
                                               'Inter',
-                                              fontSize: 23 * ffem,
+                                              fontSize: 21 * ffem,
                                               fontWeight: FontWeight.w700,
                                               height: 1.2125 * ffem / fem,
                                               color: Color(0xff000000),
